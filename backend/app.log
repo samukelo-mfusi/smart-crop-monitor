@@ -1,0 +1,1611 @@
+2025-10-21 13:21:16,280 - main - INFO - Database tables created successfully
+2025-10-21 13:21:16,295 - __main__ - INFO - Starting IoT Smart Crop Monitoring System...
+2025-10-21 13:21:16,295 - __main__ - INFO - System initialized with real-world data integration
+2025-10-21 13:21:16,295 - __main__ - INFO - API endpoints available at http://localhost:8000
+2025-10-21 13:21:16,295 - __main__ - INFO - Dashboard available at http://localhost:8501
+2025-10-21 13:21:18,568 - main - INFO - Database tables created successfully
+2025-10-21 13:21:18,696 - main - INFO - Starting IoT Smart Crop Monitoring System
+2025-10-21 13:21:18,696 - main - INFO - Version: 1.0.0
+2025-10-21 13:21:18,696 - main - INFO - Debug Mode: False
+2025-10-21 13:21:18,696 - main - INFO - Initializing communication protocols...
+2025-10-21 13:21:18,697 - src.communication.mqtt_client - ERROR - Failed to connect to MQTT broker: 'Settings' object has no attribute 'MQTT_USERNAME'
+2025-10-21 13:21:18,698 - src.communication.http_server - INFO - HTTP server started on port 8080
+2025-10-21 13:21:18,698 - src.communication.protocol_manager - INFO - HTTP protocol initialized
+2025-10-21 13:21:18,714 - websockets.server - INFO - server listening on 0.0.0.0:8683
+2025-10-21 13:21:18,719 - src.communication.coap_server - ERROR - CoAP server startup failed: The transport can not be bound to any-address.
+2025-10-21 13:21:18,720 - src.communication.protocol_manager - INFO - Active protocols: ['http']
+2025-10-21 13:21:18,720 - main - INFO - All communication protocols initialized successfully
+2025-10-21 13:21:18,720 - main - INFO - Initializing services...
+2025-10-21 13:21:18,720 - main - ERROR - Startup failed: 'Settings' object has no attribute 'OPENWEATHER_API_KEY'
+2025-10-21 13:26:01,124 - main - INFO - Database tables created successfully
+2025-10-21 13:26:01,237 - main - INFO - Starting IoT Smart Crop Monitoring System
+2025-10-21 13:26:01,237 - main - INFO - Version: 1.0.0
+2025-10-21 13:26:01,238 - main - INFO - Debug Mode: False
+2025-10-21 13:26:01,238 - main - INFO - Initializing communication protocols...
+2025-10-21 13:26:36,270 - src.communication.mqtt_client - ERROR - Failed to connect to MQTT broker: timed out
+2025-10-21 13:26:36,271 - src.communication.http_server - INFO - HTTP server started on port 8080
+2025-10-21 13:26:36,272 - src.communication.protocol_manager - INFO - HTTP protocol initialized
+2025-10-21 13:26:36,285 - websockets.server - INFO - server listening on 0.0.0.0:8683
+2025-10-21 13:26:36,289 - src.communication.coap_server - ERROR - CoAP server startup failed: The transport can not be bound to any-address.
+2025-10-21 13:26:36,289 - src.communication.protocol_manager - INFO - Active protocols: ['http']
+2025-10-21 13:26:36,290 - main - INFO - All communication protocols initialized successfully
+2025-10-21 13:26:36,290 - main - INFO - Initializing services...
+2025-10-21 13:26:36,290 - src.communication.mqtt_client - INFO - Registered handler for MQTT topic: crop_monitoring/commands
+2025-10-21 13:26:36,290 - src.communication.http_server - INFO - Registered HTTP handler for: commands
+2025-10-21 13:26:36,290 - src.communication.http_server - INFO - Registered HTTP handler for: sensor_data
+2025-10-21 13:26:36,290 - src.communication.http_server - INFO - Registered HTTP handler for: alerts
+2025-10-21 13:26:36,290 - main - INFO - Services initialized successfully
+2025-10-21 13:26:36,290 - main - INFO - Starting background tasks...
+2025-10-21 13:26:36,291 - main - INFO - Background tasks started
+2025-10-21 13:26:36,291 - main - INFO - System startup completed successfully
+2025-10-21 13:26:36,291 - src.services.data_services - INFO - Starting data collection service
+2025-10-21 13:26:36,291 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 13:26:36,298 - src.services.data_services - INFO - Collecting data for 3 users
+2025-10-21 13:26:36,300 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 13:26:36,300 - src.services.simulation_service - INFO - Sensor simulation service started
+2025-10-21 13:26:38,320 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 13:26:38,321 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 13:26:38,321 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 13:26:38,323 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 13:26:38,324 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 13:26:38,324 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 13:26:38,324 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 13:26:38,325 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 13:26:38,325 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 13:26:38,325 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 13:26:38,325 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 13:26:38,325 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 13:26:38,325 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 13:26:38,325 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 13:26:48,819 - main - INFO - Database tables created successfully
+2025-10-21 13:26:48,835 - __main__ - INFO - Starting IoT Smart Crop Monitoring System...
+2025-10-21 13:26:48,835 - __main__ - INFO - System initialized with real-world data integration
+2025-10-21 13:26:48,835 - __main__ - INFO - API endpoints available at http://localhost:8000
+2025-10-21 13:26:48,835 - __main__ - INFO - Dashboard available at http://localhost:8501
+2025-10-21 13:26:51,241 - main - INFO - Database tables created successfully
+2025-10-21 13:26:51,300 - main - INFO - Starting IoT Smart Crop Monitoring System
+2025-10-21 13:26:51,301 - main - INFO - Version: 1.0.0
+2025-10-21 13:26:51,301 - main - INFO - Debug Mode: False
+2025-10-21 13:26:51,301 - main - INFO - Initializing communication protocols...
+2025-10-21 13:27:26,311 - src.communication.mqtt_client - ERROR - Failed to connect to MQTT broker: timed out
+2025-10-21 13:27:26,312 - src.communication.http_server - INFO - HTTP server started on port 8080
+2025-10-21 13:27:26,312 - src.communication.protocol_manager - INFO - HTTP protocol initialized
+2025-10-21 13:27:26,320 - websockets.server - INFO - server listening on 0.0.0.0:8683
+2025-10-21 13:27:26,322 - src.communication.coap_server - ERROR - CoAP server startup failed: The transport can not be bound to any-address.
+2025-10-21 13:27:26,323 - src.communication.protocol_manager - INFO - Active protocols: ['http']
+2025-10-21 13:27:26,323 - main - INFO - All communication protocols initialized successfully
+2025-10-21 13:27:26,323 - main - INFO - Initializing services...
+2025-10-21 13:27:26,323 - src.communication.mqtt_client - INFO - Registered handler for MQTT topic: crop_monitoring/commands
+2025-10-21 13:27:26,323 - src.communication.http_server - INFO - Registered HTTP handler for: commands
+2025-10-21 13:27:26,324 - src.communication.http_server - INFO - Registered HTTP handler for: sensor_data
+2025-10-21 13:27:26,324 - src.communication.http_server - INFO - Registered HTTP handler for: alerts
+2025-10-21 13:27:26,324 - main - INFO - Services initialized successfully
+2025-10-21 13:27:26,324 - main - INFO - Starting background tasks...
+2025-10-21 13:27:26,324 - main - INFO - Background tasks started
+2025-10-21 13:27:26,324 - main - INFO - System startup completed successfully
+2025-10-21 13:27:26,324 - src.services.data_services - INFO - Starting data collection service
+2025-10-21 13:27:26,324 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 13:27:26,331 - src.services.data_services - INFO - Collecting data for 3 users
+2025-10-21 13:27:26,333 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 13:27:26,333 - src.services.simulation_service - INFO - Sensor simulation service started
+2025-10-21 13:27:28,433 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 13:27:28,434 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 13:27:28,434 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 13:27:28,434 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 13:27:28,434 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 13:27:28,435 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 13:27:28,435 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 13:27:28,435 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 13:27:28,435 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 13:27:28,435 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 13:27:28,435 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 13:27:28,435 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 13:27:28,435 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 13:27:28,435 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 13:27:28,436 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 13:27:28,436 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 13:27:28,436 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 13:27:28,436 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 13:27:28,864 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 13:27:28,864 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.93, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=50156 lux
+2025-10-21 13:27:28,865 - src.services.data_services - INFO - OpenWeather calculated light: 50155.715855083916 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 13:27:29,111 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 13:27:29,112 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:27:29,112 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 13:27:29,112 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 13:27:29,113 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 13:27:29,113 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 13:27:29,225 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 13:27:29,239 - src.services.data_services - INFO - Created warning alert for user 1: LIGHT LEVEL SENSOR: Very low light levels in zone1 (0.0 lux)
+2025-10-21 13:27:29,240 - src.services.data_services - INFO - Created 1 new alerts for user 1 (duplicates prevented)
+2025-10-21 13:27:29,242 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 13:27:29,242 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:27:29,242 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 13:27:29,242 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 13:27:29,242 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 13:27:29,243 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 13:27:29,339 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 13:27:29,347 - src.services.data_services - INFO - Created warning alert for user 2: LIGHT LEVEL SENSOR: Very low light levels in zone1 (0.0 lux)
+2025-10-21 13:27:29,349 - src.services.data_services - INFO - Created 1 new alerts for user 2 (duplicates prevented)
+2025-10-21 13:27:29,349 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 13:27:29,349 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:27:29,349 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 13:27:29,350 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 13:27:29,350 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 13:27:29,350 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 13:27:29,461 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 13:27:29,470 - src.services.data_services - INFO - Created warning alert for user 3: LIGHT LEVEL SENSOR: Very low light levels in zone1 (0.0 lux)
+2025-10-21 13:27:29,471 - src.services.data_services - INFO - Created 1 new alerts for user 3 (duplicates prevented)
+2025-10-21 13:27:29,472 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 13:27:29.472439
+2025-10-21 13:27:29,472 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 13:27:29,473 - src.services.data_services - INFO - Collecting data for 3 users
+2025-10-21 13:27:29,473 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 13:27:31,585 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 13:27:31,585 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 13:27:31,585 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 13:27:31,586 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 13:27:31,586 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 13:27:31,586 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 13:27:31,586 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 13:27:31,586 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 13:27:31,586 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 13:27:31,586 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 13:27:31,586 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 13:27:31,586 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 13:27:31,587 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 13:27:31,587 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 13:27:31,587 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 13:27:31,588 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 13:27:31,588 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 13:27:31,588 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 13:27:31,824 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 13:27:31,826 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.93, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=50156 lux
+2025-10-21 13:27:31,826 - src.services.data_services - INFO - OpenWeather calculated light: 50155.715855083916 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 13:27:32,092 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 13:27:32,092 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:27:32,093 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 13:27:32,093 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 13:27:32,093 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 13:27:32,093 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 13:27:32,208 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 13:27:32,212 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 13:27:32,212 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:27:32,213 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 13:27:32,213 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 13:27:32,213 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 13:27:32,213 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 13:27:32,321 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 13:27:32,325 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 13:27:32,325 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:27:32,325 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 13:27:32,325 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 13:27:32,325 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 13:27:32,327 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 13:27:32,443 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 13:27:32,446 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 13:27:32.446693
+2025-10-21 13:28:17,962 - main - INFO - Shutting down IoT Smart Crop Monitoring System...
+2025-10-21 13:28:17,963 - src.communication.mqtt_client - INFO - MQTT client disconnected gracefully
+2025-10-21 13:28:17,964 - src.communication.http_server - INFO - HTTP server shutdown complete
+2025-10-21 13:28:17,965 - src.communication.coap_server - INFO - CoAP server shutdown complete
+2025-10-21 13:28:17,966 - main - INFO - System shutdown completed
+2025-10-21 13:28:17,967 - src.services.data_services - INFO - Data collection task cancelled
+2025-10-21 13:37:55,438 - main - INFO - Database tables created successfully
+2025-10-21 13:37:55,493 - __main__ - INFO - Starting IoT Smart Crop Monitoring System...
+2025-10-21 13:37:55,493 - __main__ - INFO - System initialized with real-world data integration
+2025-10-21 13:37:55,493 - __main__ - INFO - API endpoints available at http://localhost:8000
+2025-10-21 13:37:55,494 - __main__ - INFO - Dashboard available at http://localhost:8501
+2025-10-21 13:38:04,394 - main - INFO - Database tables created successfully
+2025-10-21 13:38:04,766 - main - INFO - Starting IoT Smart Crop Monitoring System
+2025-10-21 13:38:04,768 - main - INFO - Version: 1.0.0
+2025-10-21 13:38:04,768 - main - INFO - Debug Mode: False
+2025-10-21 13:38:04,770 - main - INFO - Initializing communication protocols...
+2025-10-21 13:38:39,832 - src.communication.mqtt_client - ERROR - Failed to connect to MQTT broker: timed out
+2025-10-21 13:38:39,834 - src.communication.http_server - INFO - HTTP server started on port 8080
+2025-10-21 13:38:39,834 - src.communication.protocol_manager - INFO - HTTP protocol initialized
+2025-10-21 13:38:39,871 - websockets.server - INFO - server listening on 0.0.0.0:8683
+2025-10-21 13:38:39,884 - src.communication.coap_server - ERROR - CoAP server startup failed: The transport can not be bound to any-address.
+2025-10-21 13:38:39,885 - src.communication.protocol_manager - INFO - Active protocols: ['http']
+2025-10-21 13:38:39,885 - main - INFO - All communication protocols initialized successfully
+2025-10-21 13:38:39,885 - main - INFO - Initializing services...
+2025-10-21 13:38:39,886 - src.communication.mqtt_client - INFO - Registered handler for MQTT topic: crop_monitoring/commands
+2025-10-21 13:38:39,887 - src.communication.http_server - INFO - Registered HTTP handler for: commands
+2025-10-21 13:38:39,888 - src.communication.http_server - INFO - Registered HTTP handler for: sensor_data
+2025-10-21 13:38:39,888 - src.communication.http_server - INFO - Registered HTTP handler for: alerts
+2025-10-21 13:38:39,889 - main - INFO - Services initialized successfully
+2025-10-21 13:38:39,889 - main - INFO - Starting background tasks...
+2025-10-21 13:38:39,890 - main - INFO - Background tasks started
+2025-10-21 13:38:39,891 - main - INFO - System startup completed successfully
+2025-10-21 13:38:39,892 - src.services.data_services - INFO - Starting data collection service
+2025-10-21 13:38:39,893 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 13:38:39,926 - src.services.data_services - INFO - Collecting data for 3 users
+2025-10-21 13:38:39,934 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 13:38:39,934 - src.services.simulation_service - INFO - Sensor simulation service started
+2025-10-21 13:38:42,138 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 13:38:42,140 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 13:38:42,140 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 13:38:42,141 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 13:38:42,142 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 13:38:42,143 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 13:38:42,143 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 13:38:42,144 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 13:38:42,144 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 13:38:42,146 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 13:38:42,146 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 13:38:42,147 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 13:38:42,148 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 13:38:42,149 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 13:38:42,150 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 13:38:42,151 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 13:38:42,154 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 13:38:42,156 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 13:38:42,584 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 13:38:42,585 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.91, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=49138 lux
+2025-10-21 13:38:42,587 - src.services.data_services - INFO - OpenWeather calculated light: 49137.90862733334 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 13:38:42,821 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 13:38:42,824 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:38:42,825 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 13:38:42,825 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 13:38:42,825 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 13:38:42,827 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 13:38:43,073 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 13:38:43,098 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 13:38:43,098 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:38:43,099 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 13:38:43,100 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 13:38:43,101 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 13:38:43,102 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 13:38:43,526 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 13:38:43,536 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 13:38:43,537 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:38:43,539 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 13:38:43,539 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 13:38:43,541 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 13:38:43,541 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 13:38:43,851 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 13:38:43,861 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 13:38:43.861541
+2025-10-21 13:38:43,862 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 13:38:43,865 - src.services.data_services - INFO - Collecting data for 3 users
+2025-10-21 13:38:43,876 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 13:38:45,108 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 13:38:45,110 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 13:38:45,111 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 13:38:45,111 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 13:38:45,111 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 13:38:45,113 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 13:38:45,113 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 13:38:45,115 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 13:38:45,115 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 13:38:45,117 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 13:38:45,118 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 13:38:45,118 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 13:38:45,119 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 13:38:45,119 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 13:38:45,121 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 13:38:45,121 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 13:38:45,121 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 13:38:45,123 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 13:38:45,332 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 13:38:45,334 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.91, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=49138 lux
+2025-10-21 13:38:45,335 - src.services.data_services - INFO - OpenWeather calculated light: 49137.90862733334 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 13:38:45,550 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 13:38:45,551 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:38:45,551 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 13:38:45,551 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 13:38:45,551 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 13:38:45,553 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 13:38:45,849 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 13:38:45,861 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 13:38:45,862 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:38:45,863 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 13:38:45,864 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 13:38:45,865 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 13:38:45,865 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 13:38:46,210 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 13:38:46,219 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 13:38:46,220 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:38:46,220 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 13:38:46,220 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 13:38:46,221 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 13:38:46,223 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 13:38:46,482 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 13:38:46,489 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 13:38:46.489035
+2025-10-21 13:50:04,708 - main - INFO - Database tables created successfully
+2025-10-21 13:50:04,738 - __main__ - INFO - Starting IoT Smart Crop Monitoring System...
+2025-10-21 13:50:04,739 - __main__ - INFO - System initialized with real-world data integration
+2025-10-21 13:50:04,739 - __main__ - INFO - API endpoints available at http://localhost:8000
+2025-10-21 13:50:04,740 - __main__ - INFO - Dashboard available at http://localhost:8501
+2025-10-21 13:50:08,830 - main - INFO - Database tables created successfully
+2025-10-21 13:50:09,010 - main - INFO - Starting IoT Smart Crop Monitoring System
+2025-10-21 13:50:09,010 - main - INFO - Version: 1.0.0
+2025-10-21 13:50:09,010 - main - INFO - Debug Mode: False
+2025-10-21 13:50:09,011 - main - INFO - Initializing communication protocols...
+2025-10-21 13:50:44,039 - src.communication.mqtt_client - ERROR - Failed to connect to MQTT broker: timed out
+2025-10-21 13:50:44,040 - src.communication.http_server - INFO - HTTP server started on port 8080
+2025-10-21 13:50:44,041 - src.communication.protocol_manager - INFO - HTTP protocol initialized
+2025-10-21 13:50:44,065 - websockets.server - INFO - server listening on 0.0.0.0:8683
+2025-10-21 13:50:44,074 - src.communication.coap_server - ERROR - CoAP server startup failed: The transport can not be bound to any-address.
+2025-10-21 13:50:44,075 - src.communication.protocol_manager - INFO - Active protocols: ['http']
+2025-10-21 13:50:44,075 - main - INFO - All communication protocols initialized successfully
+2025-10-21 13:50:44,075 - main - INFO - Initializing services...
+2025-10-21 13:50:44,076 - src.communication.mqtt_client - INFO - Registered handler for MQTT topic: crop_monitoring/commands
+2025-10-21 13:50:44,076 - src.communication.http_server - INFO - Registered HTTP handler for: commands
+2025-10-21 13:50:44,077 - src.communication.http_server - INFO - Registered HTTP handler for: sensor_data
+2025-10-21 13:50:44,077 - src.communication.http_server - INFO - Registered HTTP handler for: alerts
+2025-10-21 13:50:44,077 - main - INFO - Services initialized successfully
+2025-10-21 13:50:44,077 - main - INFO - Starting background tasks...
+2025-10-21 13:50:44,078 - main - INFO - Background tasks started
+2025-10-21 13:50:44,078 - main - INFO - System startup completed successfully
+2025-10-21 13:50:44,078 - src.services.data_services - INFO - Starting data collection service
+2025-10-21 13:50:44,078 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 13:50:44,100 - src.services.data_services - INFO - Collecting data for 3 users
+2025-10-21 13:50:44,103 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 13:50:44,103 - src.services.simulation_service - INFO - Sensor simulation service started
+2025-10-21 13:50:46,578 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 13:50:46,579 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 13:50:46,579 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 13:50:46,579 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 13:50:46,579 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 13:50:46,579 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 13:50:46,579 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 13:50:46,580 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 13:50:46,580 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 13:50:46,580 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 13:50:46,580 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 13:50:46,580 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 13:50:46,580 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 13:50:46,580 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 13:50:46,582 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 13:50:46,582 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 13:50:46,582 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 13:50:46,583 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 13:50:46,996 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 13:50:46,997 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.89, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=47899 lux
+2025-10-21 13:50:46,998 - src.services.data_services - INFO - OpenWeather calculated light: 47898.58499162398 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 13:50:47,233 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 13:50:47,233 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:50:47,234 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 13:50:47,234 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 13:50:47,234 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 13:50:47,234 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 13:50:47,402 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 13:50:47,416 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 13:50:47,416 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:50:47,417 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 13:50:47,417 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 13:50:47,418 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 13:50:47,418 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 13:50:47,568 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 13:50:47,574 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 13:50:47,575 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:50:47,575 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 13:50:47,575 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 13:50:47,575 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 13:50:47,576 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 13:50:47,734 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 13:50:47,739 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 13:50:47.739716
+2025-10-21 13:50:47,740 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 13:50:47,742 - src.services.data_services - INFO - Collecting data for 3 users
+2025-10-21 13:50:47,742 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 13:50:49,724 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 13:50:49,724 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 13:50:49,725 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 13:50:49,725 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 13:50:49,725 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 13:50:49,725 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 13:50:49,726 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 13:50:49,726 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 13:50:49,726 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 13:50:49,726 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 13:50:49,726 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 13:50:49,726 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 13:50:49,727 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 13:50:49,727 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 13:50:49,727 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 13:50:49,728 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 13:50:49,729 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 13:50:49,729 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 13:50:49,930 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 13:50:49,930 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.89, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=47899 lux
+2025-10-21 13:50:49,931 - src.services.data_services - INFO - OpenWeather calculated light: 47898.58499162398 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 13:50:50,145 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 13:50:50,145 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:50:50,146 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 13:50:50,147 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 13:50:50,147 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 13:50:50,147 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 13:50:50,300 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 13:50:50,307 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 13:50:50,307 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:50:50,307 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 13:50:50,308 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 13:50:50,308 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 13:50:50,308 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 13:50:50,494 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 13:50:50,500 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 13:50:50,501 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:50:50,501 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 13:50:50,501 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 13:50:50,501 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 13:50:50,502 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 13:50:50,659 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 13:50:50,665 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 13:50:50.665342
+2025-10-21 13:55:50,680 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 13:55:50,682 - src.services.data_services - INFO - Collecting data for 3 users
+2025-10-21 13:55:50,682 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 13:55:51,982 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 13:55:51,982 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 13:55:51,982 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 13:55:51,982 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 13:55:51,982 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 13:55:51,982 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 13:55:51,982 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 13:55:51,983 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 13:55:51,983 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 13:55:51,983 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 13:55:51,983 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 13:55:51,983 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 13:55:51,983 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 13:55:51,983 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 13:55:51,984 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 13:55:51,984 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 13:55:51,984 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 13:55:51,985 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 13:55:52,436 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 13:55:52,438 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.88, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=47343 lux
+2025-10-21 13:55:52,438 - src.services.data_services - INFO - OpenWeather calculated light: 47343.244808205425 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 13:55:52,675 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 13:55:52,675 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:55:52,675 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 13:55:52,675 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 13:55:52,676 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 13:55:52,676 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 13:55:52,809 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 13:55:52,813 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 13:55:52,815 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:55:52,815 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 13:55:52,815 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 13:55:52,816 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 13:55:52,816 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 13:55:52,923 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 13:55:52,928 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 13:55:52,929 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:55:52,929 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 13:55:52,929 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 13:55:52,929 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 13:55:52,929 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 13:55:53,060 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 13:55:53,064 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 13:55:53.064713
+2025-10-21 13:58:46,156 - main - INFO - Shutting down IoT Smart Crop Monitoring System...
+2025-10-21 13:58:46,156 - src.communication.mqtt_client - INFO - MQTT client disconnected gracefully
+2025-10-21 13:58:46,157 - src.communication.http_server - INFO - HTTP server shutdown complete
+2025-10-21 13:58:46,157 - src.communication.coap_server - INFO - CoAP server shutdown complete
+2025-10-21 13:58:46,157 - main - INFO - System shutdown completed
+2025-10-21 13:58:46,158 - src.services.data_services - INFO - Data collection task cancelled
+2025-10-21 13:58:59,959 - main - INFO - Database tables created successfully
+2025-10-21 13:58:59,980 - __main__ - INFO - Starting IoT Smart Crop Monitoring System...
+2025-10-21 13:58:59,980 - __main__ - INFO - System initialized with real-world data integration
+2025-10-21 13:58:59,982 - __main__ - INFO - API endpoints available at http://localhost:8000
+2025-10-21 13:58:59,982 - __main__ - INFO - Dashboard available at http://localhost:8501
+2025-10-21 13:59:04,362 - main - INFO - Database tables created successfully
+2025-10-21 13:59:04,545 - main - INFO - Starting IoT Smart Crop Monitoring System
+2025-10-21 13:59:04,546 - main - INFO - Version: 1.0.0
+2025-10-21 13:59:04,546 - main - INFO - Debug Mode: False
+2025-10-21 13:59:04,546 - main - INFO - Initializing communication protocols...
+2025-10-21 13:59:39,598 - src.communication.mqtt_client - ERROR - Failed to connect to MQTT broker: timed out
+2025-10-21 13:59:39,599 - src.communication.http_server - INFO - HTTP server started on port 8080
+2025-10-21 13:59:39,599 - src.communication.protocol_manager - INFO - HTTP protocol initialized
+2025-10-21 13:59:39,616 - websockets.server - INFO - server listening on 0.0.0.0:8683
+2025-10-21 13:59:39,623 - src.communication.coap_server - ERROR - CoAP server startup failed: The transport can not be bound to any-address.
+2025-10-21 13:59:39,624 - src.communication.protocol_manager - INFO - Active protocols: ['http']
+2025-10-21 13:59:39,624 - main - INFO - All communication protocols initialized successfully
+2025-10-21 13:59:39,624 - main - INFO - Initializing services...
+2025-10-21 13:59:39,626 - src.communication.mqtt_client - INFO - Registered handler for MQTT topic: crop_monitoring/commands
+2025-10-21 13:59:39,627 - src.communication.http_server - INFO - Registered HTTP handler for: commands
+2025-10-21 13:59:39,627 - src.communication.http_server - INFO - Registered HTTP handler for: sensor_data
+2025-10-21 13:59:39,627 - src.communication.http_server - INFO - Registered HTTP handler for: alerts
+2025-10-21 13:59:39,627 - main - INFO - Services initialized successfully
+2025-10-21 13:59:39,627 - main - INFO - Starting background tasks...
+2025-10-21 13:59:39,628 - main - INFO - Background tasks started
+2025-10-21 13:59:39,629 - main - INFO - System startup completed successfully
+2025-10-21 13:59:39,629 - src.services.data_services - INFO - Starting data collection service
+2025-10-21 13:59:39,629 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 13:59:39,640 - src.services.data_services - INFO - Collecting data for 3 users
+2025-10-21 13:59:39,643 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 13:59:39,643 - src.services.simulation_service - INFO - Sensor simulation service started
+2025-10-21 13:59:41,587 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 13:59:41,587 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 13:59:41,587 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 13:59:41,587 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 13:59:41,587 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 13:59:41,587 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 13:59:41,587 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 13:59:41,587 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 13:59:41,588 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 13:59:41,588 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 13:59:41,588 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 13:59:41,589 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 13:59:41,589 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 13:59:41,589 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 13:59:41,589 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 13:59:41,589 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 13:59:41,589 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 13:59:41,590 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 13:59:42,012 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 13:59:42,013 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.87, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=46883 lux
+2025-10-21 13:59:42,013 - src.services.data_services - INFO - OpenWeather calculated light: 46882.735982413695 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 13:59:42,258 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 13:59:42,258 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:59:42,258 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 13:59:42,259 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 13:59:42,259 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 13:59:42,259 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 13:59:42,364 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 13:59:42,372 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 13:59:42,372 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:59:42,372 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 13:59:42,372 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 13:59:42,373 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 13:59:42,373 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 13:59:42,481 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 13:59:42,485 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 13:59:42,485 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:59:42,485 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 13:59:42,485 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 13:59:42,485 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 13:59:42,486 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 13:59:42,593 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 13:59:42,598 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 13:59:42.598066
+2025-10-21 13:59:42,598 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 13:59:42,599 - src.services.data_services - INFO - Collecting data for 3 users
+2025-10-21 13:59:42,599 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 13:59:45,116 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 13:59:45,117 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 13:59:45,117 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 13:59:45,117 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 13:59:45,117 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 13:59:45,117 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 13:59:45,117 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 13:59:45,117 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 13:59:45,117 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 13:59:45,118 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 13:59:45,118 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 13:59:45,118 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 13:59:45,118 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 13:59:45,118 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 13:59:45,118 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 13:59:45,118 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 13:59:45,118 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 13:59:45,119 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 13:59:45,330 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 13:59:45,331 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.87, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=46883 lux
+2025-10-21 13:59:45,331 - src.services.data_services - INFO - OpenWeather calculated light: 46882.735982413695 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 13:59:45,543 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 13:59:45,543 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:59:45,543 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 13:59:45,544 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 13:59:45,544 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 13:59:45,544 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 13:59:45,671 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 13:59:45,678 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 13:59:45,678 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:59:45,679 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 13:59:45,679 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 13:59:45,679 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 13:59:45,679 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 13:59:45,821 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 13:59:45,827 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 13:59:45,827 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 13:59:45,828 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 13:59:45,828 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 13:59:45,828 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 13:59:45,828 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 13:59:45,971 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 13:59:45,977 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 13:59:45.977740
+2025-10-21 14:01:22,213 - src.services.data_services - INFO - Getting dashboard data for user 1
+2025-10-21 14:01:22,215 - src.services.data_services - WARNING - Light level is 0.0 for user 1, calculating realistic value
+2025-10-21 14:01:22,216 - src.services.data_services - INFO - Using calculated light level: 28000.0 lux
+2025-10-21 14:01:22,224 - src.services.data_services - INFO - Returning dashboard data for user 1: 144 readings, 7 alerts
+2025-10-21 14:01:25,289 - src.services.data_services - INFO - Starting historical data fetch for 7 days for user 1
+2025-10-21 14:01:25,294 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 14:01:27,244 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 14:01:27,245 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 14:01:27,245 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 14:01:27,245 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 14:01:27,245 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 14:01:27,245 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 14:01:27,245 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 14:01:27,245 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 14:01:27,245 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 14:01:27,245 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 14:01:27,245 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 14:01:27,246 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 14:01:27,246 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 14:01:27,246 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 14:01:27,246 - src.services.data_services - INFO - Using NASA-enhanced data
+2025-10-21 14:01:27,246 - src.services.data_services - INFO - Production: Returning 7 days of historical data
+2025-10-21 14:02:06,041 - main - INFO - Shutting down IoT Smart Crop Monitoring System...
+2025-10-21 14:02:06,043 - src.communication.mqtt_client - INFO - MQTT client disconnected gracefully
+2025-10-21 14:02:06,043 - src.communication.http_server - INFO - HTTP server shutdown complete
+2025-10-21 14:02:06,043 - src.communication.coap_server - INFO - CoAP server shutdown complete
+2025-10-21 14:02:06,044 - main - INFO - System shutdown completed
+2025-10-21 14:02:06,046 - src.services.data_services - INFO - Data collection task cancelled
+2025-10-21 15:57:32,104 - main - INFO - Database tables created successfully
+2025-10-21 15:57:32,124 - __main__ - INFO - Starting IoT Smart Crop Monitoring System...
+2025-10-21 15:57:32,125 - __main__ - INFO - System initialized with real-world data integration
+2025-10-21 15:57:32,125 - __main__ - INFO - API endpoints available at http://localhost:8000
+2025-10-21 15:57:32,126 - __main__ - INFO - Dashboard available at http://localhost:8501
+2025-10-21 15:57:34,159 - main - INFO - Database tables created successfully
+2025-10-21 15:57:34,243 - main - INFO - Starting IoT Smart Crop Monitoring System
+2025-10-21 15:57:34,244 - main - INFO - Version: 1.0.0
+2025-10-21 15:57:34,244 - main - INFO - Debug Mode: False
+2025-10-21 15:57:34,244 - main - INFO - Initializing communication protocols...
+2025-10-21 15:58:09,600 - src.communication.mqtt_client - ERROR - Failed to connect to MQTT broker: timed out
+2025-10-21 15:58:09,602 - src.communication.http_server - INFO - HTTP server started on port 8080
+2025-10-21 15:58:09,602 - src.communication.protocol_manager - INFO - HTTP protocol initialized
+2025-10-21 15:58:09,614 - websockets.server - INFO - server listening on 0.0.0.0:8683
+2025-10-21 15:58:09,621 - src.communication.coap_server - ERROR - CoAP server startup failed: The transport can not be bound to any-address.
+2025-10-21 15:58:09,621 - src.communication.protocol_manager - INFO - Active protocols: ['http']
+2025-10-21 15:58:09,621 - main - INFO - All communication protocols initialized successfully
+2025-10-21 15:58:09,622 - main - INFO - Initializing services...
+2025-10-21 15:58:09,622 - src.communication.mqtt_client - INFO - Registered handler for MQTT topic: crop_monitoring/commands
+2025-10-21 15:58:09,622 - src.communication.http_server - INFO - Registered HTTP handler for: commands
+2025-10-21 15:58:09,623 - src.communication.http_server - INFO - Registered HTTP handler for: sensor_data
+2025-10-21 15:58:09,623 - src.communication.http_server - INFO - Registered HTTP handler for: alerts
+2025-10-21 15:58:09,623 - main - INFO - Services initialized successfully
+2025-10-21 15:58:09,623 - main - INFO - Starting background tasks...
+2025-10-21 15:58:09,623 - main - INFO - Background tasks started
+2025-10-21 15:58:09,624 - main - INFO - System startup completed successfully
+2025-10-21 15:58:09,624 - src.services.data_services - INFO - Starting data collection service
+2025-10-21 15:58:09,624 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 15:58:09,635 - src.services.data_services - INFO - Collecting data for 3 users
+2025-10-21 15:58:09,638 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 15:58:09,638 - src.services.simulation_service - INFO - Sensor simulation service started
+2025-10-21 15:58:12,056 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 15:58:12,056 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 15:58:12,056 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 15:58:12,056 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 15:58:12,056 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 15:58:12,056 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 15:58:12,058 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 15:58:12,058 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 15:58:12,058 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 15:58:12,058 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 15:58:12,058 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 15:58:12,058 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 15:58:12,058 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 15:58:12,058 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 15:58:12,059 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 15:58:12,059 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 15:58:12,059 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 15:58:12,059 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 15:58:12,792 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 15:58:12,793 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.51, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=27407 lux
+2025-10-21 15:58:12,793 - src.services.data_services - INFO - OpenWeather calculated light: 27407.07159987801 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 15:58:12,994 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 15:58:12,994 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 15:58:12,995 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 15:58:12,995 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 15:58:12,995 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 15:58:12,996 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 15:58:13,118 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 15:58:13,130 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 15:58:13,130 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 15:58:13,130 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 15:58:13,131 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 15:58:13,131 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 15:58:13,132 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 15:58:13,228 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 15:58:13,230 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 15:58:13,231 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 15:58:13,231 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 15:58:13,231 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 15:58:13,231 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 15:58:13,232 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 15:58:13,330 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 15:58:13,333 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 15:58:13.333306
+2025-10-21 15:58:13,333 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 15:58:13,333 - src.services.data_services - INFO - Collecting data for 3 users
+2025-10-21 15:58:13,334 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 15:58:15,464 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 15:58:15,464 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 15:58:15,464 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 15:58:15,464 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 15:58:15,464 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 15:58:15,464 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 15:58:15,465 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 15:58:15,465 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 15:58:15,465 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 15:58:15,466 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 15:58:15,466 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 15:58:15,466 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 15:58:15,466 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 15:58:15,466 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 15:58:15,467 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 15:58:15,467 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 15:58:15,467 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 15:58:15,467 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 15:58:15,651 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 15:58:15,653 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.51, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=27407 lux
+2025-10-21 15:58:15,653 - src.services.data_services - INFO - OpenWeather calculated light: 27407.07159987801 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 15:58:15,837 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 15:58:15,838 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 15:58:15,838 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 15:58:15,838 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 15:58:15,838 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 15:58:15,838 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 15:58:15,945 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 15:58:15,950 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 15:58:15,951 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 15:58:15,951 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 15:58:15,951 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 15:58:15,951 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 15:58:15,951 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 15:58:16,053 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 15:58:16,056 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 15:58:16,057 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 15:58:16,057 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 15:58:16,057 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 15:58:16,057 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 15:58:16,058 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 15:58:16,156 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 15:58:16,160 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 15:58:16.160296
+2025-10-21 16:03:16,164 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 16:03:16,167 - src.services.data_services - INFO - Collecting data for 3 users
+2025-10-21 16:03:16,167 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 16:03:18,834 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 16:03:18,835 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 16:03:18,835 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 16:03:18,835 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 16:03:18,836 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 16:03:18,836 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 16:03:18,836 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 16:03:18,836 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 16:03:18,836 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 16:03:18,837 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 16:03:18,837 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 16:03:18,837 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 16:03:18,837 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 16:03:18,837 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 16:03:18,837 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 16:03:18,837 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 16:03:18,837 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 16:03:18,837 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 16:03:19,251 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 16:03:19,252 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.49, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=26386 lux
+2025-10-21 16:03:19,252 - src.services.data_services - INFO - OpenWeather calculated light: 26385.54704083556 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 16:03:19,473 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 16:03:19,474 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:03:19,474 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 16:03:19,475 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 16:03:19,475 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 16:03:19,475 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 16:03:19,552 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 16:03:19,554 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 16:03:19,554 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:03:19,554 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 16:03:19,554 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 16:03:19,554 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 16:03:19,554 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 16:03:19,624 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 16:03:19,627 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 16:03:19,627 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:03:19,627 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 16:03:19,627 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 16:03:19,628 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 16:03:19,628 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 16:03:19,689 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 16:03:19,691 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 16:03:19.691539
+2025-10-21 16:07:19,087 - src.services.data_services - INFO - Getting dashboard data for user 4
+2025-10-21 16:07:19,087 - src.services.data_services - INFO - No recent data found for user 4, triggering data collection
+2025-10-21 16:07:19,088 - src.services.data_services - INFO - Manual data refresh requested via API for user 4
+2025-10-21 16:07:19,088 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 16:07:19,090 - src.services.data_services - INFO - Collecting data for 4 users
+2025-10-21 16:07:19,090 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 16:07:41,659 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 16:07:41,659 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 16:07:41,659 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 16:07:41,659 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 16:07:41,659 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 16:07:41,659 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 16:07:41,661 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 16:07:41,661 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 16:07:41,661 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 16:07:41,661 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 16:07:41,661 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 16:07:41,661 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 16:07:41,661 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 16:07:41,661 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 16:07:41,662 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 16:07:41,662 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 16:07:41,662 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 16:07:41,662 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 16:07:42,046 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 16:07:42,046 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.47, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=25559 lux
+2025-10-21 16:07:42,047 - src.services.data_services - INFO - OpenWeather calculated light: 25559.262027981546 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 16:07:42,137 - src.services.data_services - INFO - Starting historical data fetch for 7 days for user 4
+2025-10-21 16:07:42,141 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 16:07:42,233 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 16:07:42,233 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:07:42,233 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 16:07:42,234 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 16:07:42,234 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 16:07:42,234 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 16:07:42,330 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 16:07:42,335 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 16:07:42,335 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:07:42,335 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 16:07:42,335 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 16:07:42,335 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 16:07:42,335 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 16:07:42,416 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 16:07:42,475 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 16:07:42,475 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:07:42,475 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 16:07:42,475 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 16:07:42,475 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 16:07:42,476 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 16:07:42,579 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 16:07:42,584 - src.services.data_services - INFO - Processing data for user 4
+2025-10-21 16:07:42,584 - src.services.data_services - INFO - NASA data for user 4 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:07:42,584 - src.services.data_services - INFO - Generated 4 NASA readings for user 4
+2025-10-21 16:07:42,584 - src.services.data_services - INFO - Processed 4 NASA readings for user 4
+2025-10-21 16:07:42,584 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 4
+2025-10-21 16:07:42,585 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 4
+2025-10-21 16:07:42,678 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 4
+2025-10-21 16:07:42,689 - src.services.data_services - INFO - Created warning alert for user 4: LIGHT LEVEL SENSOR: Very low light levels in zone1 (0.0 lux)
+2025-10-21 16:07:42,691 - src.services.data_services - INFO - Created 1 new alerts for user 4 (duplicates prevented)
+2025-10-21 16:07:42,692 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 16:07:42.692235
+2025-10-21 16:07:44,696 - src.services.data_services - WARNING - Light level is 0.0 for user 4, calculating realistic value
+2025-10-21 16:07:44,696 - src.services.data_services - INFO - Using calculated light level: 14000.0 lux
+2025-10-21 16:07:44,699 - src.services.data_services - INFO - Returning dashboard data for user 4: 16 readings, 1 alerts
+2025-10-21 16:08:05,229 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 16:08:05,230 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 16:08:05,230 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 16:08:05,230 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 16:08:05,231 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 16:08:05,232 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 16:08:05,232 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 16:08:05,233 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 16:08:05,233 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 16:08:05,233 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 16:08:05,233 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 16:08:05,233 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 16:08:05,233 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 16:08:05,233 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 16:08:05,235 - src.services.data_services - INFO - Using NASA-enhanced data
+2025-10-21 16:08:05,235 - src.services.data_services - INFO - Production: Returning 7 days of historical data
+2025-10-21 16:08:05,242 - src.services.data_services - INFO - Getting dashboard data for user 4
+2025-10-21 16:08:05,244 - src.services.data_services - WARNING - Light level is 0.0 for user 4, calculating realistic value
+2025-10-21 16:08:05,244 - src.services.data_services - INFO - Getting dashboard data for user 4
+2025-10-21 16:08:05,244 - src.services.data_services - INFO - Using calculated light level: 14000.0 lux
+2025-10-21 16:08:05,245 - src.services.data_services - WARNING - Light level is 0.0 for user 4, calculating realistic value
+2025-10-21 16:08:05,247 - src.services.data_services - INFO - Using calculated light level: 14000.0 lux
+2025-10-21 16:08:05,247 - src.services.data_services - INFO - Returning dashboard data for user 4: 16 readings, 1 alerts
+2025-10-21 16:08:05,249 - src.services.data_services - INFO - Returning dashboard data for user 4: 16 readings, 1 alerts
+2025-10-21 16:08:07,312 - src.services.data_services - INFO - Starting historical data fetch for 7 days for user 4
+2025-10-21 16:08:07,314 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 16:08:30,415 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 16:08:30,415 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 16:08:30,416 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 16:08:30,417 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 16:08:30,417 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 16:08:30,417 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 16:08:30,418 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 16:08:30,418 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 16:08:30,419 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 16:08:30,419 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 16:08:30,420 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 16:08:30,420 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 16:08:30,420 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 16:08:30,420 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 16:08:30,421 - src.services.data_services - INFO - Using NASA-enhanced data
+2025-10-21 16:08:30,422 - src.services.data_services - INFO - Production: Returning 7 days of historical data
+2025-10-21 16:08:30,423 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 16:08:30,425 - src.services.data_services - INFO - Collecting data for 4 users
+2025-10-21 16:08:30,425 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 16:08:32,396 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 16:08:32,397 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 16:08:32,397 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 16:08:32,397 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 16:08:32,399 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 16:08:32,399 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 16:08:32,400 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 16:08:32,400 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 16:08:32,400 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 16:08:32,400 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 16:08:32,400 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 16:08:32,401 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 16:08:32,401 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 16:08:32,401 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 16:08:32,402 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 16:08:32,402 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 16:08:32,402 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 16:08:32,402 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 16:08:32,795 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 16:08:32,796 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.47, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=25351 lux
+2025-10-21 16:08:32,796 - src.services.data_services - INFO - OpenWeather calculated light: 25351.464390438097 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 16:08:32,981 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 16:08:32,983 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:08:32,983 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 16:08:32,984 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 16:08:32,984 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 16:08:32,985 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 16:08:33,066 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 16:08:33,070 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 16:08:33,070 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:08:33,070 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 16:08:33,071 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 16:08:33,071 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 16:08:33,071 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 16:08:33,143 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 16:08:33,146 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 16:08:33,147 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:08:33,147 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 16:08:33,147 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 16:08:33,147 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 16:08:33,147 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 16:08:33,217 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 16:08:33,221 - src.services.data_services - INFO - Processing data for user 4
+2025-10-21 16:08:33,221 - src.services.data_services - INFO - NASA data for user 4 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:08:33,221 - src.services.data_services - INFO - Generated 4 NASA readings for user 4
+2025-10-21 16:08:33,221 - src.services.data_services - INFO - Processed 4 NASA readings for user 4
+2025-10-21 16:08:33,221 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 4
+2025-10-21 16:08:33,221 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 4
+2025-10-21 16:08:33,294 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 4
+2025-10-21 16:08:33,295 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 16:08:33.295827
+2025-10-21 16:08:48,507 - src.services.data_services - INFO - Getting dashboard data for user 4
+2025-10-21 16:08:48,508 - src.services.data_services - WARNING - Light level is 0.0 for user 4, calculating realistic value
+2025-10-21 16:08:48,508 - src.services.data_services - INFO - Using calculated light level: 14000.0 lux
+2025-10-21 16:08:48,510 - src.services.data_services - INFO - Returning dashboard data for user 4: 32 readings, 1 alerts
+2025-10-21 16:08:52,553 - src.services.data_services - INFO - Starting historical data fetch for 7 days for user 4
+2025-10-21 16:08:52,555 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 16:08:54,431 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 16:08:54,432 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 16:08:54,432 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 16:08:54,432 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 16:08:54,432 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 16:08:54,433 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 16:08:54,433 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 16:08:54,433 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 16:08:54,433 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 16:08:54,433 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 16:08:54,433 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 16:08:54,434 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 16:08:54,434 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 16:08:54,434 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 16:08:54,435 - src.services.data_services - INFO - Using NASA-enhanced data
+2025-10-21 16:08:54,435 - src.services.data_services - INFO - Production: Returning 7 days of historical data
+2025-10-21 16:09:23,722 - src.database.crud - INFO - Created irrigation event: zone1, 5min, 12.5L water
+2025-10-21 16:09:25,751 - src.services.data_services - INFO - Getting dashboard data for user 4
+2025-10-21 16:09:25,753 - src.services.data_services - WARNING - Light level is 0.0 for user 4, calculating realistic value
+2025-10-21 16:09:25,753 - src.services.data_services - INFO - Using calculated light level: 14000.0 lux
+2025-10-21 16:09:25,759 - src.services.data_services - INFO - Returning dashboard data for user 4: 32 readings, 1 alerts
+2025-10-21 16:09:28,835 - src.services.data_services - INFO - Starting historical data fetch for 7 days for user 4
+2025-10-21 16:09:28,836 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 16:09:30,868 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 16:09:30,868 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 16:09:30,868 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 16:09:30,868 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 16:09:30,868 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 16:09:30,868 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 16:09:30,868 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 16:09:30,868 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 16:09:30,869 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 16:09:30,869 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 16:09:30,869 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 16:09:30,870 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 16:09:30,871 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 16:09:30,871 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 16:09:30,872 - src.services.data_services - INFO - Using NASA-enhanced data
+2025-10-21 16:09:30,872 - src.services.data_services - INFO - Production: Returning 7 days of historical data
+2025-10-21 16:09:36,098 - src.services.data_services - INFO - Starting historical data fetch for 7 days for user 4
+2025-10-21 16:09:36,100 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 16:09:38,516 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 16:09:38,516 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 16:09:38,516 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 16:09:38,516 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 16:09:38,516 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 16:09:38,516 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 16:09:38,516 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 16:09:38,516 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 16:09:38,517 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 16:09:38,517 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 16:09:38,517 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 16:09:38,518 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 16:09:38,518 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 16:09:38,519 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 16:09:38,519 - src.services.data_services - INFO - Using NASA-enhanced data
+2025-10-21 16:09:38,520 - src.services.data_services - INFO - Production: Returning 7 days of historical data
+2025-10-21 16:10:31,718 - src.services.data_services - INFO - Getting dashboard data for user 4
+2025-10-21 16:10:31,719 - src.services.data_services - WARNING - Light level is 0.0 for user 4, calculating realistic value
+2025-10-21 16:10:31,720 - src.services.data_services - INFO - Using calculated light level: 14000.0 lux
+2025-10-21 16:10:31,722 - src.services.data_services - INFO - Returning dashboard data for user 4: 32 readings, 0 alerts
+2025-10-21 16:10:48,417 - src.api.routes.auth - INFO - Password reset token generated for user: jd@gmail.com
+2025-10-21 16:10:48,419 - src.api.routes.auth - WARNING - Email sending disabled. Reset link for jd@gmail.com: http://localhost:8501/?token=QJS8W1ZkUAqKWjRhsqciOaL8kpLS4yH0kKAUmzVuV4KL1WCWh3v-yUpyiToV-LpLf_YAVXmjO4VlkrbJFOLJPw
+2025-10-21 16:10:48,419 - src.api.routes.auth - WARNING - EMAIL_ENABLED: False, SENDGRID_API_KEY: Set
+2025-10-21 16:13:33,300 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 16:13:33,301 - src.services.data_services - INFO - Collecting data for 4 users
+2025-10-21 16:13:33,302 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 16:13:34,821 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 16:13:34,822 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 16:13:34,823 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 16:13:34,823 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 16:13:34,824 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 16:13:34,824 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 16:13:34,825 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 16:13:34,825 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 16:13:34,825 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 16:13:34,826 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 16:13:34,826 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 16:13:34,826 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 16:13:34,826 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 16:13:34,827 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 16:13:34,827 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 16:13:34,827 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 16:13:34,827 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 16:13:34,828 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 16:13:35,223 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 16:13:35,224 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.45, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=24305 lux
+2025-10-21 16:13:35,225 - src.services.data_services - INFO - OpenWeather calculated light: 24305.315816021506 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 16:13:35,440 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 16:13:35,441 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:13:35,442 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 16:13:35,442 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 16:13:35,442 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 16:13:35,443 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 16:13:35,525 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 16:13:35,529 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 16:13:35,529 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:13:35,529 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 16:13:35,529 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 16:13:35,529 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 16:13:35,529 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 16:13:35,611 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 16:13:35,614 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 16:13:35,614 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:13:35,614 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 16:13:35,614 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 16:13:35,614 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 16:13:35,614 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 16:13:35,682 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 16:13:35,686 - src.services.data_services - INFO - Processing data for user 4
+2025-10-21 16:13:35,686 - src.services.data_services - INFO - NASA data for user 4 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:13:35,686 - src.services.data_services - INFO - Generated 4 NASA readings for user 4
+2025-10-21 16:13:35,686 - src.services.data_services - INFO - Processed 4 NASA readings for user 4
+2025-10-21 16:13:35,686 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 4
+2025-10-21 16:13:35,687 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 4
+2025-10-21 16:13:35,754 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 4
+2025-10-21 16:13:35,762 - src.services.data_services - INFO - Created warning alert for user 4: LIGHT LEVEL SENSOR: Very low light levels in zone1 (0.0 lux)
+2025-10-21 16:13:35,772 - src.services.data_services - INFO - Created 1 new alerts for user 4 (duplicates prevented)
+2025-10-21 16:13:35,772 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 16:13:35.772023
+2025-10-21 16:18:35,764 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 16:18:35,765 - src.services.data_services - INFO - Collecting data for 4 users
+2025-10-21 16:18:35,765 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 16:18:37,202 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 16:18:37,203 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 16:18:37,203 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 16:18:37,203 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 16:18:37,203 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 16:18:37,203 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 16:18:37,203 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 16:18:37,203 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 16:18:37,203 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 16:18:37,203 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 16:18:37,203 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 16:18:37,203 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 16:18:37,203 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 16:18:37,205 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 16:18:37,205 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 16:18:37,205 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 16:18:37,205 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 16:18:37,205 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 16:18:37,590 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 16:18:37,590 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.43, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=23248 lux
+2025-10-21 16:18:37,591 - src.services.data_services - INFO - OpenWeather calculated light: 23247.599227647937 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 16:18:37,801 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 16:18:37,801 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:18:37,801 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 16:18:37,801 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 16:18:37,802 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 16:18:37,802 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 16:18:37,875 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 16:18:37,878 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 16:18:37,878 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:18:37,878 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 16:18:37,878 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 16:18:37,878 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 16:18:37,878 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 16:18:37,954 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 16:18:37,957 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 16:18:37,957 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:18:37,957 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 16:18:37,957 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 16:18:37,957 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 16:18:37,957 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 16:18:38,043 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 16:18:38,048 - src.services.data_services - INFO - Processing data for user 4
+2025-10-21 16:18:38,049 - src.services.data_services - INFO - NASA data for user 4 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:18:38,049 - src.services.data_services - INFO - Generated 4 NASA readings for user 4
+2025-10-21 16:18:38,049 - src.services.data_services - INFO - Processed 4 NASA readings for user 4
+2025-10-21 16:18:38,049 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 4
+2025-10-21 16:18:38,049 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 4
+2025-10-21 16:18:38,125 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 4
+2025-10-21 16:18:38,128 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 16:18:38.128531
+2025-10-21 16:23:38,134 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 16:23:38,136 - src.services.data_services - INFO - Collecting data for 4 users
+2025-10-21 16:23:38,137 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 16:24:00,895 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 16:24:00,896 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 16:24:00,896 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 16:24:00,896 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 16:24:00,898 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 16:24:00,898 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 16:24:00,898 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 16:24:00,899 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 16:24:00,899 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 16:24:00,900 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 16:24:00,900 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 16:24:00,900 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 16:24:00,901 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 16:24:00,901 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 16:24:00,901 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 16:24:00,901 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 16:24:00,902 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 16:24:00,902 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 16:24:01,309 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 16:24:01,310 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.41, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=21964 lux
+2025-10-21 16:24:01,310 - src.services.data_services - INFO - OpenWeather calculated light: 21963.778726093224 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 16:24:01,522 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 16:24:01,522 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:24:01,523 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 16:24:01,523 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 16:24:01,523 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 16:24:01,524 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 16:24:01,602 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 16:24:01,605 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 16:24:01,605 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:24:01,605 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 16:24:01,606 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 16:24:01,606 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 16:24:01,606 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 16:24:01,688 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 16:24:01,691 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 16:24:01,702 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:24:01,703 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 16:24:01,703 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 16:24:01,703 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 16:24:01,703 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 16:24:01,784 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 16:24:01,787 - src.services.data_services - INFO - Processing data for user 4
+2025-10-21 16:24:01,787 - src.services.data_services - INFO - NASA data for user 4 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:24:01,788 - src.services.data_services - INFO - Generated 4 NASA readings for user 4
+2025-10-21 16:24:01,788 - src.services.data_services - INFO - Processed 4 NASA readings for user 4
+2025-10-21 16:24:01,788 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 4
+2025-10-21 16:24:01,788 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 4
+2025-10-21 16:24:01,868 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 4
+2025-10-21 16:24:01,870 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 16:24:01.870640
+2025-10-21 16:29:01,882 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 16:29:01,883 - src.services.data_services - INFO - Collecting data for 4 users
+2025-10-21 16:29:01,883 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 16:29:03,676 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 16:29:03,677 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 16:29:03,677 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 16:29:03,677 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 16:29:03,677 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 16:29:03,677 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 16:29:03,677 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 16:29:03,677 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 16:29:03,677 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 16:29:03,677 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 16:29:03,677 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 16:29:03,677 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 16:29:03,677 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 16:29:03,678 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 16:29:03,678 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 16:29:03,678 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 16:29:03,679 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 16:29:03,679 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 16:29:04,067 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 16:29:04,068 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.39, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=20882 lux
+2025-10-21 16:29:04,068 - src.services.data_services - INFO - OpenWeather calculated light: 20882.391928388304 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 16:29:04,277 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 16:29:04,278 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:29:04,278 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 16:29:04,278 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 16:29:04,278 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 16:29:04,279 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 16:29:04,355 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 16:29:04,365 - src.services.data_services - INFO - Created warning alert for user 1: LIGHT LEVEL SENSOR: Very low light levels in zone1 (0.0 lux)
+2025-10-21 16:29:04,393 - src.services.data_services - INFO - Created 1 new alerts for user 1 (duplicates prevented)
+2025-10-21 16:29:04,394 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 16:29:04,394 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:29:04,394 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 16:29:04,394 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 16:29:04,395 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 16:29:04,395 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 16:29:04,476 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 16:29:04,484 - src.services.data_services - INFO - Created warning alert for user 2: LIGHT LEVEL SENSOR: Very low light levels in zone1 (0.0 lux)
+2025-10-21 16:29:04,515 - src.services.data_services - INFO - Created 1 new alerts for user 2 (duplicates prevented)
+2025-10-21 16:29:04,517 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 16:29:04,517 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:29:04,517 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 16:29:04,517 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 16:29:04,517 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 16:29:04,517 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 16:29:04,598 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 16:29:04,605 - src.services.data_services - INFO - Created warning alert for user 3: LIGHT LEVEL SENSOR: Very low light levels in zone1 (0.0 lux)
+2025-10-21 16:29:04,649 - src.services.data_services - INFO - Created 1 new alerts for user 3 (duplicates prevented)
+2025-10-21 16:29:04,650 - src.services.data_services - INFO - Processing data for user 4
+2025-10-21 16:29:04,651 - src.services.data_services - INFO - NASA data for user 4 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:29:04,651 - src.services.data_services - INFO - Generated 4 NASA readings for user 4
+2025-10-21 16:29:04,651 - src.services.data_services - INFO - Processed 4 NASA readings for user 4
+2025-10-21 16:29:04,651 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 4
+2025-10-21 16:29:04,652 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 4
+2025-10-21 16:29:04,752 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 4
+2025-10-21 16:29:04,754 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 16:29:04.754831
+2025-10-21 16:34:04,756 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 16:34:04,758 - src.services.data_services - INFO - Collecting data for 4 users
+2025-10-21 16:34:04,759 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 16:34:27,381 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 16:34:27,381 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 16:34:27,383 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 16:34:27,383 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 16:34:27,383 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 16:34:27,383 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 16:34:27,383 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 16:34:27,383 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 16:34:27,383 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 16:34:27,383 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 16:34:27,383 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 16:34:27,383 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 16:34:27,383 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 16:34:27,383 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 16:34:27,385 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 16:34:27,385 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 16:34:27,385 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 16:34:27,385 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 16:34:27,779 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 16:34:27,780 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.37, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=19791 lux
+2025-10-21 16:34:27,780 - src.services.data_services - INFO - OpenWeather calculated light: 19791.06624311207 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 16:34:27,985 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 16:34:27,986 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:34:27,986 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 16:34:27,986 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 16:34:27,986 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 16:34:27,986 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 16:34:28,080 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 16:34:28,083 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 16:34:28,084 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:34:28,084 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 16:34:28,084 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 16:34:28,084 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 16:34:28,084 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 16:34:28,165 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 16:34:28,168 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 16:34:28,169 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:34:28,169 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 16:34:28,169 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 16:34:28,169 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 16:34:28,169 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 16:34:28,253 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 16:34:28,256 - src.services.data_services - INFO - Processing data for user 4
+2025-10-21 16:34:28,256 - src.services.data_services - INFO - NASA data for user 4 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:34:28,256 - src.services.data_services - INFO - Generated 4 NASA readings for user 4
+2025-10-21 16:34:28,256 - src.services.data_services - INFO - Processed 4 NASA readings for user 4
+2025-10-21 16:34:28,256 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 4
+2025-10-21 16:34:28,256 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 4
+2025-10-21 16:34:28,338 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 4
+2025-10-21 16:34:28,340 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 16:34:28.340333
+2025-10-21 16:39:28,339 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 16:39:28,341 - src.services.data_services - INFO - Collecting data for 4 users
+2025-10-21 16:39:28,342 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 16:39:51,489 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 16:39:51,489 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 16:39:51,489 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 16:39:51,490 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 16:39:51,490 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 16:39:51,490 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 16:39:51,490 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 16:39:51,491 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 16:39:51,491 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 16:39:51,491 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 16:39:51,491 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 16:39:51,491 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 16:39:51,491 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 16:39:51,491 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 16:39:51,492 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 16:39:51,492 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 16:39:51,492 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 16:39:51,493 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 16:39:51,872 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 16:39:51,873 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.35, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=18690 lux
+2025-10-21 16:39:51,873 - src.services.data_services - INFO - OpenWeather calculated light: 18690.32108218466 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 16:39:52,059 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 16:39:52,059 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:39:52,059 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 16:39:52,060 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 16:39:52,061 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 16:39:52,061 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 16:39:52,139 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 16:39:52,143 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 16:39:52,143 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:39:52,143 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 16:39:52,143 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 16:39:52,143 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 16:39:52,143 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 16:39:52,216 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 16:39:52,220 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 16:39:52,221 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:39:52,221 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 16:39:52,221 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 16:39:52,221 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 16:39:52,221 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 16:39:52,299 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 16:39:52,301 - src.services.data_services - INFO - Processing data for user 4
+2025-10-21 16:39:52,302 - src.services.data_services - INFO - NASA data for user 4 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:39:52,302 - src.services.data_services - INFO - Generated 4 NASA readings for user 4
+2025-10-21 16:39:52,302 - src.services.data_services - INFO - Processed 4 NASA readings for user 4
+2025-10-21 16:39:52,302 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 4
+2025-10-21 16:39:52,302 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 4
+2025-10-21 16:39:52,376 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 4
+2025-10-21 16:39:52,379 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 16:39:52.379451
+2025-10-21 16:44:52,370 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 16:44:52,371 - src.services.data_services - INFO - Collecting data for 4 users
+2025-10-21 16:44:52,372 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 16:44:54,086 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 16:44:54,086 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 16:44:54,086 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 16:44:54,086 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 16:44:54,086 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 16:44:54,086 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 16:44:54,088 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 16:44:54,088 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 16:44:54,088 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 16:44:54,088 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 16:44:54,088 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 16:44:54,088 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 16:44:54,088 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 16:44:54,088 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 16:44:54,089 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 16:44:54,089 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 16:44:54,089 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 16:44:54,090 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 16:44:54,498 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 16:44:54,499 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.33, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=17581 lux
+2025-10-21 16:44:54,499 - src.services.data_services - INFO - OpenWeather calculated light: 17580.680340686456 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 16:44:54,713 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 16:44:54,714 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:44:54,714 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 16:44:54,714 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 16:44:54,715 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 16:44:54,716 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 16:44:54,799 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 16:44:54,805 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 16:44:54,805 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:44:54,805 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 16:44:54,805 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 16:44:54,805 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 16:44:54,806 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 16:44:54,878 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 16:44:54,882 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 16:44:54,883 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:44:54,883 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 16:44:54,883 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 16:44:54,883 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 16:44:54,883 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 16:44:54,963 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 16:44:54,967 - src.services.data_services - INFO - Processing data for user 4
+2025-10-21 16:44:54,967 - src.services.data_services - INFO - NASA data for user 4 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:44:54,967 - src.services.data_services - INFO - Generated 4 NASA readings for user 4
+2025-10-21 16:44:54,967 - src.services.data_services - INFO - Processed 4 NASA readings for user 4
+2025-10-21 16:44:54,967 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 4
+2025-10-21 16:44:54,967 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 4
+2025-10-21 16:44:55,048 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 4
+2025-10-21 16:44:55,052 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 16:44:55.052504
+2025-10-21 16:49:55,037 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 16:49:55,038 - src.services.data_services - INFO - Collecting data for 4 users
+2025-10-21 16:49:55,039 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 16:49:57,264 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 16:49:57,264 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 16:49:57,264 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 16:49:57,264 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 16:49:57,264 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 16:49:57,265 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 16:49:57,265 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 16:49:57,265 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 16:49:57,265 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 16:49:57,265 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 16:49:57,265 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 16:49:57,265 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 16:49:57,265 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 16:49:57,265 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 16:49:57,266 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 16:49:57,266 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 16:49:57,266 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 16:49:57,266 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 16:49:57,663 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 16:49:57,664 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.30, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=16463 lux
+2025-10-21 16:49:57,665 - src.services.data_services - INFO - OpenWeather calculated light: 16462.67214751258 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 16:49:57,880 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 16:49:57,881 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:49:57,881 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 16:49:57,881 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 16:49:57,882 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 16:49:57,882 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 16:49:57,959 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 16:49:57,963 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 16:49:57,963 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:49:57,963 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 16:49:57,963 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 16:49:57,963 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 16:49:57,963 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 16:49:58,031 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 16:49:58,034 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 16:49:58,035 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:49:58,035 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 16:49:58,035 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 16:49:58,035 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 16:49:58,035 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 16:49:58,111 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 16:49:58,114 - src.services.data_services - INFO - Processing data for user 4
+2025-10-21 16:49:58,114 - src.services.data_services - INFO - NASA data for user 4 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 16:49:58,114 - src.services.data_services - INFO - Generated 4 NASA readings for user 4
+2025-10-21 16:49:58,114 - src.services.data_services - INFO - Processed 4 NASA readings for user 4
+2025-10-21 16:49:58,114 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 4
+2025-10-21 16:49:58,114 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 4
+2025-10-21 16:49:58,193 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 4
+2025-10-21 16:49:58,196 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 16:49:58.196189
+2025-10-21 16:54:58,208 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 16:54:58,213 - src.services.data_services - INFO - Collecting data for 4 users
+2025-10-21 16:54:58,213 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 18:40:31,936 - main - INFO - Database tables created successfully
+2025-10-21 18:40:31,952 - __main__ - INFO - Starting IoT Smart Crop Monitoring System...
+2025-10-21 18:40:31,953 - __main__ - INFO - System initialized with real-world data integration
+2025-10-21 18:40:31,953 - __main__ - INFO - API endpoints available at http://localhost:8000
+2025-10-21 18:40:31,953 - __main__ - INFO - Dashboard available at http://localhost:8501
+2025-10-21 18:40:33,694 - main - INFO - Database tables created successfully
+2025-10-21 18:40:33,788 - main - INFO - Starting IoT Smart Crop Monitoring System
+2025-10-21 18:40:33,788 - main - INFO - Version: 1.0.0
+2025-10-21 18:40:33,788 - main - INFO - Debug Mode: False
+2025-10-21 18:40:33,791 - main - INFO - Initializing communication protocols...
+2025-10-21 18:40:34,068 - src.communication.mqtt_client - INFO - MQTT client connecting to broker.hivemq.com:8883
+2025-10-21 18:40:34,372 - src.communication.mqtt_client - WARNING - MQTT unexpected disconnection (code: 7)
+2025-10-21 18:40:34,372 - src.communication.mqtt_client - INFO - Reconnecting in 2 seconds (attempt 1)
+2025-10-21 18:40:36,083 - src.communication.mqtt_client - ERROR - MQTT connection timeout
+2025-10-21 18:40:36,083 - src.communication.http_server - INFO - HTTP server started on port 8080
+2025-10-21 18:40:36,084 - src.communication.protocol_manager - INFO - HTTP protocol initialized
+2025-10-21 18:40:36,097 - websockets.server - INFO - server listening on 0.0.0.0:8683
+2025-10-21 18:40:36,104 - src.communication.coap_server - ERROR - CoAP server startup failed: The transport can not be bound to any-address.
+2025-10-21 18:40:36,104 - src.communication.protocol_manager - INFO - Active protocols: ['http']
+2025-10-21 18:40:36,104 - main - INFO - All communication protocols initialized successfully
+2025-10-21 18:40:36,104 - main - INFO - Initializing services...
+2025-10-21 18:40:36,107 - src.communication.mqtt_client - INFO - Registered handler for MQTT topic: crop_monitoring/commands
+2025-10-21 18:40:36,107 - src.communication.http_server - INFO - Registered HTTP handler for: commands
+2025-10-21 18:40:36,107 - src.communication.http_server - INFO - Registered HTTP handler for: sensor_data
+2025-10-21 18:40:36,107 - src.communication.http_server - INFO - Registered HTTP handler for: alerts
+2025-10-21 18:40:36,107 - main - INFO - Services initialized successfully
+2025-10-21 18:40:36,107 - main - INFO - Starting background tasks...
+2025-10-21 18:40:36,107 - main - INFO - Background tasks started
+2025-10-21 18:40:36,107 - main - INFO - System startup completed successfully
+2025-10-21 18:40:36,108 - src.services.data_services - INFO - Starting data collection service
+2025-10-21 18:40:36,108 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 18:40:36,122 - src.services.data_services - INFO - Collecting data for 4 users
+2025-10-21 18:40:36,125 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 18:40:36,125 - src.services.simulation_service - INFO - Sensor simulation service started
+2025-10-21 18:40:39,095 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 18:40:39,095 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 18:40:39,095 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 18:40:39,095 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 18:40:39,095 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 18:40:39,095 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 18:40:39,095 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 18:40:39,098 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 18:40:39,098 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 18:40:39,099 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 18:40:39,099 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 18:40:39,099 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 18:40:39,099 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 18:40:39,099 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 18:40:39,099 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 18:40:39,099 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 18:40:39,103 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 18:40:39,104 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 18:40:40,005 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 18:40:40,005 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.01, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=540 lux
+2025-10-21 18:40:40,005 - src.services.data_services - INFO - OpenWeather calculated light: 540.0 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 18:40:40,478 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 18:40:40,479 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 18:40:40,479 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 18:40:40,479 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 18:40:40,479 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 18:40:40,479 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 18:40:40,629 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 18:40:40,647 - src.services.data_services - INFO - Created warning alert for user 1: LIGHT LEVEL SENSOR: Very low light levels in zone2 (486.0 lux)
+2025-10-21 18:40:40,682 - src.services.data_services - INFO - Created 1 new alerts for user 1 (duplicates prevented)
+2025-10-21 18:40:40,683 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 18:40:40,683 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 18:40:40,684 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 18:40:40,684 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 18:40:40,684 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 18:40:40,685 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 18:40:40,790 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 18:40:40,803 - src.services.data_services - INFO - Created warning alert for user 2: LIGHT LEVEL SENSOR: Very low light levels in zone2 (486.0 lux)
+2025-10-21 18:40:40,842 - src.services.data_services - INFO - Created 1 new alerts for user 2 (duplicates prevented)
+2025-10-21 18:40:40,844 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 18:40:40,844 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 18:40:40,844 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 18:40:40,844 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 18:40:40,844 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 18:40:40,844 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 18:40:40,941 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 18:40:40,952 - src.services.data_services - INFO - Created warning alert for user 3: LIGHT LEVEL SENSOR: Very low light levels in zone2 (486.0 lux)
+2025-10-21 18:40:40,987 - src.services.data_services - INFO - Created 1 new alerts for user 3 (duplicates prevented)
+2025-10-21 18:40:40,987 - src.services.data_services - INFO - Processing data for user 4
+2025-10-21 18:40:40,987 - src.services.data_services - INFO - NASA data for user 4 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 18:40:40,987 - src.services.data_services - INFO - Generated 4 NASA readings for user 4
+2025-10-21 18:40:40,987 - src.services.data_services - INFO - Processed 4 NASA readings for user 4
+2025-10-21 18:40:40,987 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 4
+2025-10-21 18:40:40,987 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 4
+2025-10-21 18:40:41,081 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 4
+2025-10-21 18:40:41,089 - src.services.data_services - INFO - Created warning alert for user 4: LIGHT LEVEL SENSOR: Very low light levels in zone2 (486.0 lux)
+2025-10-21 18:40:41,121 - src.services.data_services - INFO - Created 1 new alerts for user 4 (duplicates prevented)
+2025-10-21 18:40:41,121 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 18:40:41.121289
+2025-10-21 18:40:41,121 - src.services.data_services - INFO - Starting real-time data collection cycle for all users
+2025-10-21 18:40:41,122 - src.services.data_services - INFO - Collecting data for 4 users
+2025-10-21 18:40:41,123 - src.data_simulation.nasa_power_client - INFO - NASA POWER API Request: lat=-29.8587, lon=31.0218, dates=20251014 to 20251021
+2025-10-21 18:40:43,271 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'T2M' has 5 valid data points
+2025-10-21 18:40:43,272 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'RH2M' has 5 valid data points
+2025-10-21 18:40:43,273 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'PRECTOTCORR' has 5 valid data points
+2025-10-21 18:40:43,273 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'ALLSKY_SFC_SW_DWN' has 3 valid data points
+2025-10-21 18:40:43,273 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'WS2M' has 5 valid data points
+2025-10-21 18:40:43,273 - src.data_simulation.nasa_power_client - INFO - NASA Parameter 'GWETTOP' has 5 valid data points
+2025-10-21 18:40:43,273 - src.data_simulation.nasa_power_client - INFO - NASA Available parameters: ['T2M', 'RH2M', 'PRECTOTCORR', 'ALLSKY_SFC_SW_DWN', 'WS2M', 'GWETTOP']
+2025-10-21 18:40:43,273 - src.data_simulation.nasa_power_client - INFO - Found valid data for T2M on 20251018
+2025-10-21 18:40:43,273 - src.data_simulation.nasa_power_client - INFO - Found valid data for RH2M on 20251018
+2025-10-21 18:40:43,273 - src.data_simulation.nasa_power_client - INFO - Found valid data for PRECTOTCORR on 20251018
+2025-10-21 18:40:43,276 - src.data_simulation.nasa_power_client - INFO - Found valid data for ALLSKY_SFC_SW_DWN on 20251018
+2025-10-21 18:40:43,276 - src.data_simulation.nasa_power_client - INFO - Found valid data for WS2M on 20251018
+2025-10-21 18:40:43,276 - src.data_simulation.nasa_power_client - INFO - Found valid data for GWETTOP on 20251018
+2025-10-21 18:40:43,276 - src.data_simulation.nasa_power_client - INFO - NASA POWER API: Successfully retrieved real agricultural data
+2025-10-21 18:40:43,276 - src.services.data_services - INFO - NASA data retrieved for 20251014 to 20251021
+2025-10-21 18:40:43,279 - src.services.data_services - INFO - NASA solar radiation: 0.0 W/m²
+2025-10-21 18:40:43,279 - src.services.data_services - INFO - Calculated light level from NASA: 0.0 lux
+2025-10-21 18:40:43,279 - src.data_simulation.openweather_client - INFO - OpenWeather API Request: -29.8587, 31.0218
+2025-10-21 18:40:43,691 - src.data_simulation.openweather_client - INFO - OpenWeather API: Successfully retrieved real weather data
+2025-10-21 18:40:43,695 - src.services.data_services - INFO - Comprehensive light calculation: base=100000 lux, time_factor=0.01, cloud_factor=0.60, weather_factor=1.00, seasonal_factor=0.90, final=540 lux
+2025-10-21 18:40:43,695 - src.services.data_services - INFO - OpenWeather calculated light: 540.0 lux (clouds: 50.0%, weather: 'clear sky')
+2025-10-21 18:40:44,206 - src.services.data_services - INFO - Processing data for user 1
+2025-10-21 18:40:44,206 - src.services.data_services - INFO - NASA data for user 1 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 18:40:44,206 - src.services.data_services - INFO - Generated 4 NASA readings for user 1
+2025-10-21 18:40:44,206 - src.services.data_services - INFO - Processed 4 NASA readings for user 1
+2025-10-21 18:40:44,215 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 1
+2025-10-21 18:40:44,217 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 1
+2025-10-21 18:40:44,369 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 1
+2025-10-21 18:40:44,372 - src.services.data_services - INFO - Processing data for user 2
+2025-10-21 18:40:44,377 - src.services.data_services - INFO - NASA data for user 2 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 18:40:44,377 - src.services.data_services - INFO - Generated 4 NASA readings for user 2
+2025-10-21 18:40:44,379 - src.services.data_services - INFO - Processed 4 NASA readings for user 2
+2025-10-21 18:40:44,379 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 2
+2025-10-21 18:40:44,379 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 2
+2025-10-21 18:40:44,570 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 2
+2025-10-21 18:40:44,579 - src.services.data_services - INFO - Processing data for user 3
+2025-10-21 18:40:44,582 - src.services.data_services - INFO - NASA data for user 3 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 18:40:44,582 - src.services.data_services - INFO - Generated 4 NASA readings for user 3
+2025-10-21 18:40:44,583 - src.services.data_services - INFO - Processed 4 NASA readings for user 3
+2025-10-21 18:40:44,585 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 3
+2025-10-21 18:40:44,585 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 3
+2025-10-21 18:40:44,749 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 3
+2025-10-21 18:40:44,757 - src.services.data_services - INFO - Processing data for user 4
+2025-10-21 18:40:44,757 - src.services.data_services - INFO - NASA data for user 4 - Soil: 79.0, Temp: 21.8, Solar: 0.0, Light: 0.0
+2025-10-21 18:40:44,757 - src.services.data_services - INFO - Generated 4 NASA readings for user 4
+2025-10-21 18:40:44,757 - src.services.data_services - INFO - Processed 4 NASA readings for user 4
+2025-10-21 18:40:44,757 - src.services.data_services - INFO - Generated 12 OpenWeather readings for user 4
+2025-10-21 18:40:44,757 - src.services.data_services - INFO - Processed 12 OpenWeather readings for user 4
+2025-10-21 18:40:44,921 - src.services.data_services - INFO - Stored 16 valid sensor readings for user 4
+2025-10-21 18:40:44,933 - src.services.data_services - INFO - Data collection completed for all users at 2025-10-21 18:40:44.933188
+2025-10-21 18:41:26,022 - main - INFO - Shutting down IoT Smart Crop Monitoring System...
+2025-10-21 18:41:26,024 - src.communication.mqtt_client - INFO - MQTT client disconnected gracefully
+2025-10-21 18:41:26,024 - src.communication.http_server - INFO - HTTP server shutdown complete
+2025-10-21 18:41:26,024 - src.communication.coap_server - INFO - CoAP server shutdown complete
+2025-10-21 18:41:26,024 - main - INFO - System shutdown completed
+2025-10-21 18:41:26,029 - src.services.data_services - INFO - Data collection task cancelled
