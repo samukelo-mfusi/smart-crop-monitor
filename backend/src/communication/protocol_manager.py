@@ -4,7 +4,7 @@ import time
 from typing import Dict, Any
 from .mqtt_client import MQTTClient
 from .http_server import HTTPServer
-from .coap_server import CoAPServer
+# from .coap_server import CoAPServer
 from ..core.config import settings
 
 logger = logging.getLogger(__name__)
@@ -14,7 +14,7 @@ class ProtocolManager:
     def __init__(self):
         self.mqtt_client = MQTTClient()
         self.http_server = HTTPServer()
-        self.coap_server = CoAPServer()
+        # self.coap_server = CoAPServer()
         self.active_protocols = []
         self.start_time = time.time()
 
@@ -35,10 +35,10 @@ class ProtocolManager:
                 logger.info("HTTP protocol initialized")
 
         # Initialize CoAP
-        if settings.COAP_ENABLED:
-            if await self.coap_server.start_server():
-                protocols.append('coap')
-                logger.info("CoAP protocol initialized")
+        # if settings.COAP_ENABLED:
+        #     if await self.coap_server.start_server():
+        #         protocols.append('coap')
+        #         logger.info("CoAP protocol initialized")
 
         self.active_protocols = protocols
 
@@ -60,8 +60,8 @@ class ProtocolManager:
         if settings.HTTP_ENABLED:
             self.http_server.register_message_handler(message_type, handler)
 
-        if settings.COAP_ENABLED:
-            self.coap_server.register_message_handler(message_type, handler)
+        # if settings.COAP_ENABLED:
+        #     self.coap_server.register_message_handler(message_type, handler)
 
     async def broadcast_sensor_data(self, sensor_data: Dict[str, Any]):
         """Broadcast sensor data through all protocols"""
@@ -73,8 +73,8 @@ class ProtocolManager:
         if 'http' in self.active_protocols:
             tasks.append(self.http_server.broadcast_sensor_data(sensor_data))
 
-        if 'coap' in self.active_protocols:
-            tasks.append(self.coap_server.publish_sensor_data(sensor_data))
+        # if 'coap' in self.active_protocols:
+        #     tasks.append(self.coap_server.publish_sensor_data(sensor_data))
 
         if tasks:
             await asyncio.gather(*tasks, return_exceptions=True)
@@ -89,8 +89,8 @@ class ProtocolManager:
         if 'http' in self.active_protocols:
             tasks.append(self.http_server.broadcast_alert(alert_data))
 
-        if 'coap' in self.active_protocols:
-            tasks.append(self.coap_server.publish_alert(alert_data))
+        # if 'coap' in self.active_protocols:
+        #     tasks.append(self.coap_server.publish_alert(alert_data))
 
         if tasks:
             await asyncio.gather(*tasks, return_exceptions=True)
@@ -111,12 +111,12 @@ class ProtocolManager:
                 'enabled': settings.HTTP_ENABLED,
                 'port': settings.HTTP_PORT
             },
-            'coap': {
-                'enabled': settings.COAP_ENABLED,
-                'running': self.coap_server.is_running if settings.COAP_ENABLED else False,
-                'active_clients': len(
-                    self.coap_server.observation_manager.get_active_clients()) if settings.COAP_ENABLED else 0
-            },
+            # 'coap': {
+                # 'enabled': settings.COAP_ENABLED,
+                # 'running': self.coap_server.is_running if settings.COAP_ENABLED else False,
+                # 'active_clients': len(
+                    # self.coap_server.observation_manager.get_active_clients()) if settings.COAP_ENABLED else 0
+            # },
             'active_protocols': self.active_protocols,
             'uptime': time.time() - self.start_time
         }
