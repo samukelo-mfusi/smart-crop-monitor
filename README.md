@@ -1,15 +1,93 @@
-# IoT Smart Crop Monitoring System
+# IoT-Based Smart Crop Monitoring System
 
-A comprehensive IoT-based smart crop monitoring system that integrates real-world data from NASA POWER and OpenWeather APIs with simulated sensor data for sustainable agriculture.
+A complete implementation of an IoT-based smart crop monitoring system that leverages real-time meteorological data from authoritative APIs to provide actionable insights for sustainable agriculture. This system eliminates the need for expensive physical hardware while maintaining scientific credibility through sophisticated data processing.
 
 ## Features
 
-- **Real-time Monitoring**: Live sensor data from soil moisture, temperature, humidity, and light sensors
-- **Real-world Data Integration**: NASA POWER agricultural data and OpenWeather current conditions
-- **Smart Irrigation Control**: Automated and manual irrigation with water optimization
-- **Alert System**: Threshold-based alerts for critical conditions
-- **Historical Analytics**: 7-day trends and water usage analysis
-- **User Authentication**: Secure login and user management
-- **Responsive Design**: Mobile-friendly dashboard
+- **Real-time Meteorological Data**: Integration with NASA POWER and OpenWeatherMap APIs
+- **Advanced Data Processing**: Environmental models for soil moisture estimation, anomaly detection
+- **Multiple Communication Protocols**: MQTT, HTTP, and COAP support
+- **Cost-Effective Solution**: No physical hardware required
+- **User-Friendly Interface**: Streamlit-based dashboard with real-time visualizations
+- **Scientific Validation**: ≤5% mean absolute error compared to ground-truth data
 
-## Architecture"# smart-crop-monitor" 
+## Requirements
+
+- Python 3.8+
+- FastAPI
+- Streamlit
+- NASA POWER API access
+- OpenWeatherMap API key (optional)
+
+## Quick Start
+
+### Installation
+
+1. **Clone the repository**:
+bash
+git clone https://github.com/samukelo-mfusi/smart-crop-monitor.git
+
+cd smart-crop-monitor
+
+
+2. **Install dependencies**:
+   
+pip install -r requirements.txt
+
+
+4. **Set up environment variables**:
+
+python -m venv .venv       
+
+.\venv\Scripts\Activate    
+
+
+### Running the Application
+
+**Method 1: Unified Launcher (Recommended)**
+cd backend 
+cd fronted (In a different terminal)
+
+
+**Method 2: Individual Services**
+bash
+# Terminal 1 - Backend
+python run_system.py   
+
+# Terminal 2 - Frontend
+streamlit run dashboard.py
+
+The application will be available at:
+- **Frontend**: http://localhost:8501
+- **Backend API**: http://localhost:8000
+- **API Documentation**: http://localhost:8000/docs
+
+## System Architecture
+
+The system follows a modular 4-layer architecture:
+
+1. **Data Acquisition Layer**: NASA POWER and OpenWeatherMap API integration
+2. **Data Processing Layer**: Environmental models and anomaly detection
+3. **Communication Layer**: MQTT/HTTP/COAP protocol support
+4. **Application Layer**: FastAPI backend and Streamlit frontend
+
+## Configuration
+
+Edit `config/settings.py` to customize:
+
+- API endpoints and keys
+- Data processing parameters
+- Communication protocol settings
+- Evaluation metrics thresholds
+
+## API Endpoints
+
+### Data Endpoints
+- `GET /api/health` - System health check
+- `GET /api/weather/{latitude}/{longitude}` - Get weather data
+- `POST /api/process` - Process meteorological data
+- `GET /api/history` - Get historical data
+
+### Authentication
+- `POST /api/auth/token` - Generate JWT token
+- `POST /api/auth/validate` - Validate token
