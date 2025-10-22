@@ -14,7 +14,7 @@ from ..database.crud import create_sensor_reading, get_latest_sensor_readings, g
     get_recent_irrigation_events
 from ..processing.data_processor import DataProcessor
 from ..alerts.alert_manager import AlertManager
-from ..communication import protocol_manager
+# from ..communication import protocol_manager
 from ..core.config import settings
 from ..database.database import SessionLocal
 
