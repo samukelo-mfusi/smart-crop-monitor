@@ -57,6 +57,8 @@ python run_system.py
 # Terminal 2 - Frontend
 streamlit run dashboard.py
 
+*Run executable in the dist folder*
+
 The application will be available at:
 - **Frontend**: http://localhost:8501
 - **Backend API**: http://localhost:8000
