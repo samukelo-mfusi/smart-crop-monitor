@@ -35,7 +35,7 @@ cd smart-crop-monitor
 pip install -r requirements.txt
 
 
-4. **Set up environment variables**:
+3. **Set up environment variables**:
 
 python -m venv .venv       
 
