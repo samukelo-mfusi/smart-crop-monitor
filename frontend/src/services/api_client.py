@@ -96,7 +96,7 @@ class APIClient:
         return False, f"Login error: {str(e)}", None
 
 
-    def register(self, user_data: Dict[str, str]) -> tuple[bool, str]:
+def register(self, user_data: Dict[str, str]) -> tuple[bool, str]:
     response = self.make_request("POST", "/auth/register", user_data)
 
     if response and response.status_code in [200, 201]:
@@ -110,6 +110,7 @@ class APIClient:
             except Exception:
                 error_msg = f"HTTP {response.status_code}: {response.text}"
         return False, error_msg
+
 
 
     def get_dashboard_data(self) -> Optional[Dict]:
