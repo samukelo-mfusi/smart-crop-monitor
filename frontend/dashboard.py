@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Configuration
-API_BASE_URL = os.getenv("API_BASE_URL", "http://localhost:8000")
+API_BASE_URL = os.getenv("API_BASE_URL", "https://smart-crop-monitor-backend.onrender.com/")
 API_TIMEOUT = 30
 MAX_RETRIES = 3
 
