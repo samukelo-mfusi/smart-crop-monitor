@@ -64,6 +64,11 @@ The application will be available at:
 - **Backend API**: http://localhost:8000
 - **API Documentation**: http://localhost:8000/docs
 
+
+*Login* 
+Username: john
+Password: Johndoe@01
+
 ## System Architecture
 
 The system follows a modular 4-layer architecture:
