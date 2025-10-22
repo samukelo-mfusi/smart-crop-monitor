@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 import os
 import json
 from dotenv import load_dotenv
-from frontend.src.services.api_client import APIClient  
+from src.services.api_client import APIClient  
 
 load_dotenv()
 
