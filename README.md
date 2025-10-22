@@ -12,4 +12,4 @@ A comprehensive IoT-based smart crop monitoring system that integrates real-worl
 - **User Authentication**: Secure login and user management
 - **Responsive Design**: Mobile-friendly dashboard
 
-## Architecture
+## Architecture"# smart-crop-monitor" 
