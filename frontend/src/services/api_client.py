@@ -64,54 +64,52 @@ class APIClient:
             return None
 
     def login(self, username: str, password: str, remember_me: bool = True) -> tuple[bool, str, Optional[Dict]]:
-    """Authenticate user and get token"""
-    data = {
-        "username": username,
-        "password": password,
-        "remember_me": remember_me
-    }
+        """Authenticate user and get token"""
+        data = {
+            "username": username,
+            "password": password,
+            "remember_me": remember_me
+        }
 
-    try:
-        response = requests.post(
-            f"{self.base_url}/login",
-            json=data,  # send JSON payload
-            headers={"Content-Type": "application/json"},
-            timeout=self.timeout
-        )
+        try:
+            response = requests.post(
+                f"{self.base_url}/login",
+                json=data,  # send JSON payload
+                headers={"Content-Type": "application/json"},
+                timeout=self.timeout
+            )
 
-        if response and response.status_code == 200:
-            token_data = response.json()
-            self.token = token_data['access_token']
-            return True, "Login successful", token_data
+            if response and response.status_code == 200:
+                token_data = response.json()
+                self.token = token_data['access_token']
+                return True, "Login successful", token_data
+            else:
+                error_msg = "Invalid username or password"
+                if response:
+                    try:
+                        error_data = response.json()
+                        error_msg = error_data.get('detail', error_msg)
+                    except:
+                        error_msg = f"HTTP {response.status_code}: {response.text}"
+                return False, error_msg, None
+        except Exception as e:
+            return False, f"Login error: {str(e)}", None
+
+    def register(self, user_data: Dict[str, str]) -> tuple[bool, str]:
+        """Register a new user"""
+        response = self.make_request("POST", "/auth/register", user_data)
+
+        if response and response.status_code in [200, 201]:
+            return True, "Registration successful"
         else:
-            error_msg = "Invalid username or password"
-            if response:
+            error_msg = "Registration failed"
+            if response is not None:
                 try:
                     error_data = response.json()
                     error_msg = error_data.get('detail', error_msg)
-                except:
+                except Exception:
                     error_msg = f"HTTP {response.status_code}: {response.text}"
-            return False, error_msg, None
-    except Exception as e:
-        return False, f"Login error: {str(e)}", None
-
-
-def register(self, user_data: Dict[str, str]) -> tuple[bool, str]:
-    response = self.make_request("POST", "/auth/register", user_data)
-
-    if response and response.status_code in [200, 201]:
-        return True, "Registration successful"
-    else:
-        error_msg = "Registration failed"
-        if response is not None:
-            try:
-                error_data = response.json()
-                error_msg = error_data.get('detail', error_msg)
-            except Exception:
-                error_msg = f"HTTP {response.status_code}: {response.text}"
-        return False, error_msg
-
-
+            return False, error_msg
 
     def get_dashboard_data(self) -> Optional[Dict]:
         """Get dashboard data"""
