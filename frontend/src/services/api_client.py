@@ -73,7 +73,7 @@ class APIClient:
 
         try:
             response = requests.post(
-                f"{self.base_url}/auth/login",  # ✅ Corrected path
+                f"{self.base_url}/auth/login",  
                 json=data,
                 headers={"Content-Type": "application/json"},
                 timeout=self.timeout
