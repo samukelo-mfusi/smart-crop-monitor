@@ -73,8 +73,8 @@ class APIClient:
 
         try:
             response = requests.post(
-                f"{self.base_url}/login",
-                json=data,  # send JSON payload
+                f"{self.base_url}/auth/login",  # ✅ Corrected path
+                json=data,
                 headers={"Content-Type": "application/json"},
                 timeout=self.timeout
             )
@@ -112,96 +112,68 @@ class APIClient:
             return False, error_msg
 
     def get_dashboard_data(self) -> Optional[Dict]:
-        """Get dashboard data"""
         response = self.make_request("GET", "/api/dashboard-data")
-
         if response and response.status_code == 200:
             return response.json()
         return None
 
     def get_sensor_data(self, hours: int = 24) -> list:
-        """Get sensor data"""
         response = self.make_request("GET", f"/api/data/readings?hours={hours}")
-
         if response and response.status_code == 200:
             return response.json()
         return []
 
     def get_historical_data(self, days: int = 7) -> list:
-        """Get historical data"""
         response = self.make_request("GET", f"/api/historical-data?days={days}")
-
         if response and response.status_code == 200:
-            data = response.json()
-            return data.get('historical_data', [])
+            return response.json().get('historical_data', [])
         return []
 
     def start_irrigation(self, zone: str, duration: int) -> tuple[bool, str]:
-        """Start irrigation for a zone"""
-        data = {
-            "zone": zone,
-            "duration": duration
-        }
-
+        data = {"zone": zone, "duration": duration}
         response = self.make_request("POST", "/api/control/irrigate", data)
-
         if response and response.status_code == 200:
             return True, "Irrigation started successfully"
         else:
-            error_msg = "Failed to start irrigation"
-            if response:
-                error_msg = f"HTTP {response.status_code}: {response.text}"
+            error_msg = f"HTTP {response.status_code}: {response.text}" if response else "Failed to start irrigation"
             return False, error_msg
 
     def get_alerts(self, acknowledged: bool = False) -> list:
-        """Get system alerts"""
         response = self.make_request("GET", f"/api/data/alerts?acknowledged={str(acknowledged).lower()}")
-
         if response and response.status_code == 200:
             return response.json()
         return []
 
     def acknowledge_alert(self, alert_id: int) -> bool:
-        """Acknowledge an alert"""
         response = self.make_request("POST", f"/api/alerts/{alert_id}/acknowledge")
         return response and response.status_code == 200
 
     def get_system_settings(self) -> Dict:
-        """Get system settings"""
         response = self.make_request("GET", "/api/system/settings")
-
         if response and response.status_code == 200:
             return response.json().get('settings', {})
         return {}
 
     def update_system_setting(self, key: str, value: str) -> bool:
-        """Update system setting"""
         data = {"setting_value": value}
         response = self.make_request("PUT", f"/api/system/settings/{key}", data)
         return response and response.status_code == 200
 
     def refresh_real_world_data(self) -> tuple[bool, str]:
-        """Trigger real-world data refresh"""
         response = self.make_request("POST", "/api/data/refresh")
-
         if response and response.status_code == 200:
             return True, "Data refresh started"
         else:
-            error_msg = "Failed to start data refresh"
-            if response:
-                error_msg = f"HTTP {response.status_code}: {response.text}"
+            error_msg = f"HTTP {response.status_code}: {response.text}" if response else "Failed to start data refresh"
             return False, error_msg
 
     def get_data_status(self) -> Optional[Dict]:
-        """Get data refresh status"""
         response = self.make_request("GET", "/api/data/status")
-
         if response and response.status_code == 200:
             return response.json()
         return None
 
     def health_check(self) -> bool:
-        """Check API health"""
         try:
             response = self.session.get(f"{self.base_url}/health", timeout=5)
             return response.status_code == 200
