@@ -130,7 +130,7 @@ app.add_middleware(
         "http://localhost:8501",
         "http://127.0.0.1:8501",
         "http://localhost:3000",
-        "https://smart-crop-monitor.onrender.com"  # ✅ added deployed frontend URL
+        "https://smart-crop-monitor.onrender.com" 
     ],
     allow_credentials=True,
     allow_methods=["*"],
