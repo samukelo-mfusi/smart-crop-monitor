@@ -30,18 +30,20 @@ git clone https://github.com/samukelo-mfusi/smart-crop-monitor.git
 cd smart-crop-monitor
 
 
-2. **Install dependencies**:
-   
-pip install -r requirements.txt
-
-
-3. **Set up environment variables**:
+2. **Set up environment variables**:
 
 python -m venv .venv       
 
 .venv\Scripts\Activate.ps1
-  
 
+
+3. **Install dependencies**:
+   
+pip install -r requirements.txt
+
+
+##EXECUTABLE:
+The exe app is located in the dist/launcher folder. Double click on it to run the app.
 
 ### Running the Application
 
