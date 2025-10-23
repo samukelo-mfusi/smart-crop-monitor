@@ -24,7 +24,8 @@ A complete implementation of an IoT-based smart crop monitoring system that leve
 ### Installation
 
 1. **Clone the repository**:
-bash
+
+
 git clone https://github.com/samukelo-mfusi/smart-crop-monitor.git
 
 cd smart-crop-monitor
