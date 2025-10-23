@@ -15,7 +15,6 @@ from src.services.simulation_service import SimulationService
 from src.api.routes import auth, sensor_data, alerts, system
 from src.communication import protocol_manager
 
-
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
@@ -62,7 +61,6 @@ async def startup_event():
     else:
         logger.info("All communication protocols initialized successfully")
 
-
     # Initialize services
     logger.info("Initializing services...")
     data_service = DataService()
@@ -92,6 +90,7 @@ async def startup_event():
         "message": "System started successfully"
     }
     await protocol_manager.broadcast_system_status(startup_status)
+
 
 async def shutdown_event():
     """Shutdown tasks"""
@@ -127,13 +126,6 @@ app = FastAPI(
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:8501",
-        "http://127.0.0.1:8501",
-        "http://localhost:3000",
-        "https://smart-crop-monitor.onrender.com" 
-    ],
-
     allow_origins=["http://localhost:8501", "http://127.0.0.1:8501", "http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
@@ -180,12 +172,6 @@ async def health_check():
 
     return {
         "status": health_status,
-            protocols_status['http']['enabled'])
-    health_status = "healthy" if critical_protocols_healthy else "degraded"
-
-    return {
-        # "status": health_status,
-
         "timestamp": datetime.now().isoformat(),
         "version": settings.VERSION,
         "protocols": protocols_status,
@@ -280,4 +266,3 @@ if __name__ == "__main__":
         log_level="info",
         access_log=True
     )
-
