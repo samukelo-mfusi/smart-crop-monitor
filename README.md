@@ -49,6 +49,13 @@ https://smart-crop-monitor.streamlit.app/
 
 
 
+## Available Accounts: Use to login
+
+username: jane
+password: Janedoe@01
+
+
+
 ## EXECUTABLE:
 
 The exe app is located in the dist/launcher folder. Double click on it to run the app.
@@ -77,12 +84,6 @@ The application will be available at:
 - **Backend API**: http://localhost:8000
 - **API Documentation**: http://localhost:8000/docs
 
-
-*Login* 
-
-Username: john
-
-Password: Johndoe@01
 
 ## System Architecture
 
