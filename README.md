@@ -17,7 +17,7 @@ A complete implementation of an IoT-based smart crop monitoring system that leve
 - FastAPI
 - Streamlit
 - NASA POWER API access
-- OpenWeatherMap API key (optional)
+- OpenWeatherMap API key 
 
 ## Quick Start
 
