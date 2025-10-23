@@ -42,6 +42,11 @@ python -m venv .venv
    
 pip install -r requirements.txt
 
+##REGISTER AND LOGIN - Click on the live link below
+
+https://smart-crop-monitor.streamlit.app/
+
+
 
 ## EXECUTABLE:
 
