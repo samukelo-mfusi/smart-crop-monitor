@@ -4,7 +4,7 @@ import time
 from typing import Dict, Any
 from .mqtt_client import MQTTClient
 from .http_server import HTTPServer
-from .coap_server import CoAPServer
+# from .coap_server import CoAPServer
 from ..core.config import settings
 
 logger = logging.getLogger(__name__)
@@ -14,7 +14,7 @@ class ProtocolManager:
     def __init__(self):
         self.mqtt_client = MQTTClient()
         self.http_server = HTTPServer()
-        self.coap_server = CoAPServer()
+        # self.coap_server = CoAPServer()
         self.active_protocols = []
         self.start_time = time.time()
 
