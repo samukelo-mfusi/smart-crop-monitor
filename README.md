@@ -76,6 +76,7 @@ python -m venv .venv
 
 **Method 1: Unified Launcher (Recommended)**
 cd backend 
+
 cd fronted (In a different terminal)
 
 
