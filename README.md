@@ -42,8 +42,11 @@ python -m venv .venv
 pip install -r requirements.txt
 
 
-##EXECUTABLE:
+## EXECUTABLE:
+
 The exe app is located in the dist/launcher folder. Double click on it to run the app.
+
+
 
 ### Running the Application
 
