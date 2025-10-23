@@ -15,6 +15,10 @@ from src.services.simulation_service import SimulationService
 from src.api.routes import auth, sensor_data, alerts, system
 from src.communication import protocol_manager
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b46545bf3 (Add build and dist folders)
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
@@ -55,11 +59,19 @@ async def startup_event():
     logger.info("Initializing communication protocols...")
     protocols_initialized = await protocol_manager.initialize_protocols()
 
+<<<<<<< HEAD
     if not protocols_initialized:
         logger.error("Failed to initialize communication protocols")
         raise RuntimeError("Failed to initialize communication protocols")
     else:
         logger.info("All communication protocols initialized successfully")
+=======
+    # if not protocols_initialized:
+    #     logger.error("Failed to initialize communication protocols")
+    #     raise RuntimeError("Failed to initialize communication protocols")
+    # else:
+    #     logger.info("All communication protocols initialized successfully")
+>>>>>>> b46545bf3 (Add build and dist folders)
 
     # Initialize services
     logger.info("Initializing services...")
@@ -82,6 +94,7 @@ async def startup_event():
     logger.info("System startup completed successfully")
 
     # Broadcast system startup status
+<<<<<<< HEAD
     startup_status = {
         "status": "online",
         "timestamp": datetime.now().isoformat(),
@@ -91,6 +104,17 @@ async def startup_event():
     }
     await protocol_manager.broadcast_system_status(startup_status)
 
+=======
+    # startup_status = {
+    #     "status": "online",
+    #     "timestamp": datetime.now().isoformat(),
+    #     "version": settings.VERSION,
+    #     "protocols": protocol_manager.get_protocol_status(),
+    #     "message": "System started successfully"
+    # }
+    # await protocol_manager.broadcast_system_status(startup_status)
+    #
+>>>>>>> b46545bf3 (Add build and dist folders)
 
 async def shutdown_event():
     """Shutdown tasks"""
@@ -126,12 +150,16 @@ app = FastAPI(
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
+<<<<<<< HEAD
     allow_origins=[
         "http://localhost:8501",
         "http://127.0.0.1:8501",
         "http://localhost:3000",
         "https://smart-crop-monitor.onrender.com" 
     ],
+=======
+    allow_origins=["http://localhost:8501", "http://127.0.0.1:8501", "http://localhost:3000"],
+>>>>>>> b46545bf3 (Add build and dist folders)
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -168,6 +196,7 @@ async def health_check():
 
     # Check if critical protocols are working
     critical_protocols_healthy = (
+<<<<<<< HEAD
             protocols_status['mqtt']['enabled'] == protocols_status['mqtt']['connected'] and
             protocols_status['http']['enabled'] and
             protocols_status['coap']['enabled'] == protocols_status['coap']['running']
@@ -177,6 +206,17 @@ async def health_check():
 
     return {
         "status": health_status,
+=======
+
+            protocols_status['http']['enabled'])
+    #         protocols_status['coap']['enabled'] == protocols_status['coap']['running']
+    # )
+    #
+    health_status = "healthy" if critical_protocols_healthy else "degraded"
+
+    return {
+        # "status": health_status,
+>>>>>>> b46545bf3 (Add build and dist folders)
         "timestamp": datetime.now().isoformat(),
         "version": settings.VERSION,
         "protocols": protocols_status,
@@ -262,6 +302,7 @@ async def restart_protocols():
         )
 
 
+<<<<<<< HEAD
 if __name__ == "__main__":
     uvicorn.run(
         "main:app",
@@ -271,3 +312,14 @@ if __name__ == "__main__":
         log_level="info",
         access_log=True
     )
+=======
+# if __name__ == "__main__":
+#     uvicorn.run(
+#         "main:app",
+#         host="0.0.0.0",
+#         port=8001,
+#         reload=settings.DEBUG,
+#         log_level="info",
+#         access_log=True
+#     )
+>>>>>>> b46545bf3 (Add build and dist folders)

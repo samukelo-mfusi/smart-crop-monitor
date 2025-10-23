@@ -43,7 +43,11 @@ class Settings:
     MQTT_PASSWORD = os.getenv("MQTT_PASSWORD", "0r8xAs?>@d.Iu13JEHLy")
 
     HTTP_ENABLED = os.getenv("HTTP_ENABLED", "True").lower() == "true"
+<<<<<<< HEAD
     HTTP_PORT = int(os.getenv("HTTP_PORT", "8080"))
+=======
+    HTTP_PORT = int(os.getenv("HTTP_PORT", "8081"))
+>>>>>>> b46545bf3 (Add build and dist folders)
     HTTP_HOST = os.getenv("HTTP_HOST", "0.0.0.0")
 
     COAP_ENABLED = os.getenv("COAP_ENABLED", "True").lower() == "true"

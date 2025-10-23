@@ -1,0 +1,19 @@
+# Ignore Python bytecode
+**/__pycache__/
+*.py[cod]
+*.pyo
+
+# Ignore virtual environments
+.venv/
+venv/
+
+# Ignore IDE/editor files
+.idea/
+
+# Ignore database files
+*.db
+
+# Ignore environment files
+.env
+backend/.env
+frontend/.env

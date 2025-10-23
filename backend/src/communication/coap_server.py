@@ -640,4 +640,8 @@
 #             logger.info("CoAP server shutdown complete")
 
 #         except Exception as e:
+<<<<<<< HEAD
 #             logger.error(f"CoAP shutdown error: {e}")
+=======
+#             logger.error(f"CoAP shutdown error: {e}")
+>>>>>>> b46545bf3 (Add build and dist folders)

@@ -63,6 +63,7 @@ class APIClient:
             logger.error(f"Request failed: {str(e)}")
             return None
 
+<<<<<<< HEAD
     def login(self, username: str, password: str, remember_me: bool = True) -> tuple[bool, str, Optional[Dict]]:
         """Authenticate user and get token"""
         data = {
@@ -76,6 +77,22 @@ class APIClient:
                 f"{self.base_url}/auth/login",  
                 json=data,
                 headers={"Content-Type": "application/json"},
+=======
+    def login(self, username: str, password: str) -> tuple[bool, str, Optional[Dict]]:
+        """Authenticate user and get token - FIXED"""
+        data = {
+            "username": username,
+            "password": password,
+            "grant_type": "password"
+        }
+
+        # Use requests directly for proper form data
+        try:
+            response = requests.post(
+                f"{self.base_url}/auth/token",
+                data=data,  # This encodes as form data automatically
+                headers={"Content-Type": "application/x-www-form-urlencoded"},
+>>>>>>> b46545bf3 (Add build and dist folders)
                 timeout=self.timeout
             )
 
@@ -95,7 +112,11 @@ class APIClient:
         except Exception as e:
             return False, f"Login error: {str(e)}", None
 
+<<<<<<< HEAD
     def register(self, user_data: Dict[str, str]) -> tuple[bool, str]:
+=======
+    def register(self, user_data: Dict) -> tuple[bool, str]:
+>>>>>>> b46545bf3 (Add build and dist folders)
         """Register a new user"""
         response = self.make_request("POST", "/auth/register", user_data)
 
@@ -103,27 +124,48 @@ class APIClient:
             return True, "Registration successful"
         else:
             error_msg = "Registration failed"
+<<<<<<< HEAD
             if response is not None:
                 try:
                     error_data = response.json()
                     error_msg = error_data.get('detail', error_msg)
                 except Exception:
+=======
+            if response:
+                try:
+                    error_data = response.json()
+                    error_msg = error_data.get('detail', error_msg)
+                except:
+>>>>>>> b46545bf3 (Add build and dist folders)
                     error_msg = f"HTTP {response.status_code}: {response.text}"
             return False, error_msg
 
     def get_dashboard_data(self) -> Optional[Dict]:
+<<<<<<< HEAD
         response = self.make_request("GET", "/api/dashboard-data")
+=======
+        """Get dashboard data"""
+        response = self.make_request("GET", "/api/dashboard-data")
+
+>>>>>>> b46545bf3 (Add build and dist folders)
         if response and response.status_code == 200:
             return response.json()
         return None
 
     def get_sensor_data(self, hours: int = 24) -> list:
+<<<<<<< HEAD
         response = self.make_request("GET", f"/api/data/readings?hours={hours}")
+=======
+        """Get sensor data"""
+        response = self.make_request("GET", f"/api/data/readings?hours={hours}")
+
+>>>>>>> b46545bf3 (Add build and dist folders)
         if response and response.status_code == 200:
             return response.json()
         return []
 
     def get_historical_data(self, days: int = 7) -> list:
+<<<<<<< HEAD
         response = self.make_request("GET", f"/api/historical-data?days={days}")
         if response and response.status_code == 200:
             return response.json().get('historical_data', [])
@@ -140,26 +182,72 @@ class APIClient:
 
     def get_alerts(self, acknowledged: bool = False) -> list:
         response = self.make_request("GET", f"/api/data/alerts?acknowledged={str(acknowledged).lower()}")
+=======
+        """Get historical data"""
+        response = self.make_request("GET", f"/api/historical-data?days={days}")
+
+        if response and response.status_code == 200:
+            data = response.json()
+            return data.get('historical_data', [])
+        return []
+
+    def start_irrigation(self, zone: str, duration: int) -> tuple[bool, str]:
+        """Start irrigation for a zone"""
+        data = {
+            "zone": zone,
+            "duration": duration
+        }
+
+        response = self.make_request("POST", "/api/control/irrigate", data)
+
+        if response and response.status_code == 200:
+            return True, "Irrigation started successfully"
+        else:
+            error_msg = "Failed to start irrigation"
+            if response:
+                error_msg = f"HTTP {response.status_code}: {response.text}"
+            return False, error_msg
+
+    def get_alerts(self, acknowledged: bool = False) -> list:
+        """Get system alerts"""
+        response = self.make_request("GET", f"/api/data/alerts?acknowledged={str(acknowledged).lower()}")
+
+>>>>>>> b46545bf3 (Add build and dist folders)
         if response and response.status_code == 200:
             return response.json()
         return []
 
     def acknowledge_alert(self, alert_id: int) -> bool:
+<<<<<<< HEAD
+=======
+        """Acknowledge an alert"""
+>>>>>>> b46545bf3 (Add build and dist folders)
         response = self.make_request("POST", f"/api/alerts/{alert_id}/acknowledge")
         return response and response.status_code == 200
 
     def get_system_settings(self) -> Dict:
+<<<<<<< HEAD
         response = self.make_request("GET", "/api/system/settings")
+=======
+        """Get system settings"""
+        response = self.make_request("GET", "/api/system/settings")
+
+>>>>>>> b46545bf3 (Add build and dist folders)
         if response and response.status_code == 200:
             return response.json().get('settings', {})
         return {}
 
     def update_system_setting(self, key: str, value: str) -> bool:
+<<<<<<< HEAD
+=======
+        """Update system setting"""
+>>>>>>> b46545bf3 (Add build and dist folders)
         data = {"setting_value": value}
         response = self.make_request("PUT", f"/api/system/settings/{key}", data)
         return response and response.status_code == 200
 
     def refresh_real_world_data(self) -> tuple[bool, str]:
+<<<<<<< HEAD
         response = self.make_request("POST", "/api/data/refresh")
         if response and response.status_code == 200:
             return True, "Data refresh started"
@@ -169,13 +257,38 @@ class APIClient:
 
     def get_data_status(self) -> Optional[Dict]:
         response = self.make_request("GET", "/api/data/status")
+=======
+        """Trigger real-world data refresh"""
+        response = self.make_request("POST", "/api/data/refresh")
+
+        if response and response.status_code == 200:
+            return True, "Data refresh started"
+        else:
+            error_msg = "Failed to start data refresh"
+            if response:
+                error_msg = f"HTTP {response.status_code}: {response.text}"
+            return False, error_msg
+
+    def get_data_status(self) -> Optional[Dict]:
+        """Get data refresh status"""
+        response = self.make_request("GET", "/api/data/status")
+
+>>>>>>> b46545bf3 (Add build and dist folders)
         if response and response.status_code == 200:
             return response.json()
         return None
 
     def health_check(self) -> bool:
+<<<<<<< HEAD
+=======
+        """Check API health"""
+>>>>>>> b46545bf3 (Add build and dist folders)
         try:
             response = self.session.get(f"{self.base_url}/health", timeout=5)
             return response.status_code == 200
         except:
+<<<<<<< HEAD
             return False
+=======
+            return False
+>>>>>>> b46545bf3 (Add build and dist folders)

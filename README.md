@@ -24,13 +24,18 @@ A complete implementation of an IoT-based smart crop monitoring system that leve
 ### Installation
 
 1. **Clone the repository**:
+<<<<<<< HEAD
 
 
+=======
+bash
+>>>>>>> b46545bf3 (Add build and dist folders)
 git clone https://github.com/samukelo-mfusi/smart-crop-monitor.git
 
 cd smart-crop-monitor
 
 
+<<<<<<< HEAD
 2. **Set up environment variables**:
 
 python -m venv .venv       
@@ -39,10 +44,14 @@ python -m venv .venv
 
 
 3. **Install dependencies**:
+=======
+2. **Install dependencies**:
+>>>>>>> b46545bf3 (Add build and dist folders)
    
 pip install -r requirements.txt
 
 
+<<<<<<< HEAD
 ## REGISTER AND LOGIN - Click on the live link below
 
 https://smart-crop-monitor.streamlit.app/
@@ -62,6 +71,14 @@ password: Samukelo@01
 
 The exe app is located in the dist/launcher folder. Double click on it to run the app. If it doesn`t run use the link https://smart-crop-monitor.streamlit.app/ (Recommended). Create accoount or use the above login details.
 
+=======
+3. **Set up environment variables**:
+
+python -m venv .venv       
+
+.venv\Scripts\Activate.ps1
+  
+>>>>>>> b46545bf3 (Add build and dist folders)
 
 
 ### Running the Application
@@ -87,6 +104,15 @@ The application will be available at:
 - **API Documentation**: http://localhost:8000/docs
 
 
+<<<<<<< HEAD
+=======
+*Login* 
+
+Username: john
+
+Password: Johndoe@01
+
+>>>>>>> b46545bf3 (Add build and dist folders)
 ## System Architecture
 
 The system follows a modular 4-layer architecture:
