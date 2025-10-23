@@ -36,9 +36,9 @@ class ProtocolManager:
 
         # Initialize CoAP
         # if settings.COAP_ENABLED:
-        #     if await self.coap_server.start_server():
-        #         protocols.append('coap')
-        #         logger.info("CoAP protocol initialized")
+        # if await self.coap_server.start_server():
+        # protocols.append('coap')
+        # logger.info("CoAP protocol initialized")
 
         self.active_protocols = protocols
 
@@ -61,7 +61,7 @@ class ProtocolManager:
             self.http_server.register_message_handler(message_type, handler)
 
         # if settings.COAP_ENABLED:
-        #     self.coap_server.register_message_handler(message_type, handler)
+        # self.coap_server.register_message_handler(message_type, handler)
 
     async def broadcast_sensor_data(self, sensor_data: Dict[str, Any]):
         """Broadcast sensor data through all protocols"""
@@ -74,7 +74,7 @@ class ProtocolManager:
             tasks.append(self.http_server.broadcast_sensor_data(sensor_data))
 
         # if 'coap' in self.active_protocols:
-        #     tasks.append(self.coap_server.publish_sensor_data(sensor_data))
+        # tasks.append(self.coap_server.publish_sensor_data(sensor_data))
 
         if tasks:
             await asyncio.gather(*tasks, return_exceptions=True)
@@ -90,22 +90,22 @@ class ProtocolManager:
             tasks.append(self.http_server.broadcast_alert(alert_data))
 
         # if 'coap' in self.active_protocols:
-        #     tasks.append(self.coap_server.publish_alert(alert_data))
+        # tasks.append(self.coap_server.publish_alert(alert_data))
 
         if tasks:
             await asyncio.gather(*tasks, return_exceptions=True)
 
     async def broadcast_system_status(self, status_data: Dict[str, Any]):
-    """Broadcast system status"""
-    tasks = []
-    if 'mqtt' in self.active_protocols:
-        tasks.append(self.mqtt_client.publish_system_status(status_data))
+        """Broadcast system status"""
+        tasks = []
+        if 'mqtt' in self.active_protocols:
+            tasks.append(self.mqtt_client.publish_system_status(status_data))
 
-    if 'http' in self.active_protocols:
-        tasks.append(self.http_server.broadcast_system_status(status_data))
+        if 'http' in self.active_protocols:
+            tasks.append(self.http_server.broadcast_system_status(status_data))
 
-    if tasks:
-        await asyncio.gather(*tasks, return_exceptions=True)
+        if tasks:
+            await asyncio.gather(*tasks, return_exceptions=True)
 
     def get_protocol_status(self) -> Dict[str, Any]:
         """Get status of all protocols"""
@@ -119,10 +119,10 @@ class ProtocolManager:
                 'port': settings.HTTP_PORT
             },
             # 'coap': {
-            #     'enabled': settings.COAP_ENABLED,
-            #     'running': self.coap_server.is_running if settings.COAP_ENABLED else False,
-            #     'active_clients': len(
-            #         self.coap_server.observation_manager.get_active_clients()) if settings.COAP_ENABLED else 0
+            # 'enabled': settings.COAP_ENABLED,
+            # 'running': self.coap_server.is_running if settings.COAP_ENABLED else False,
+            # 'active_clients': len(
+            # self.coap_server.observation_manager.get_active_clients()) if settings.COAP_ENABLED else 0
             # },
             'active_protocols': self.active_protocols,
             'uptime': time.time() - self.start_time
@@ -139,7 +139,7 @@ class ProtocolManager:
             shutdown_tasks.append(self.http_server.shutdown())
 
         # if settings.COAP_ENABLED:
-        #     shutdown_tasks.append(self.coap_server.shutdown())
+        # shutdown_tasks.append(self.coap_server.shutdown())
 
         if shutdown_tasks:
             await asyncio.gather(*shutdown_tasks, return_exceptions=True)
