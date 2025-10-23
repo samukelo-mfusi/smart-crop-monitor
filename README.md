@@ -32,6 +32,8 @@ cd smart-crop-monitor
 
 
 
+
+
 2. **Set up environment variables**:
 
 python -m venv .venv       
@@ -42,6 +44,8 @@ python -m venv .venv
 3. **Install dependencies**:
 
 pip install -r requirements.txt
+
+
 
 
 ## REGISTER AND LOGIN - Click on the live link below
@@ -64,6 +68,8 @@ password: Samukelo@01
 The exe app is located in the dist/launcher folder. Double click on it to run the app. If it doesn`t run use the link https://smart-crop-monitor.streamlit.app/ (Recommended). 
 
 Create accoount or use the above login details.
+
+
 
 
 
