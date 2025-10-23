@@ -51,9 +51,9 @@ https://smart-crop-monitor.streamlit.app/
 
 ## Available Accounts: Use to login
 
-username: jane
+username: samukelo
 
-password: Janedoe@01
+password: Samukelo@01
 
 
 
