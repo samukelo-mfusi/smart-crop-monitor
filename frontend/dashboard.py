@@ -1,5 +1,3 @@
-import sys
-import os
 import streamlit as st
 import requests
 import time
@@ -7,6 +5,7 @@ from datetime import datetime, timedelta
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+import os
 import json
 from dotenv import load_dotenv
 
@@ -16,8 +15,6 @@ API_BASE_URL = os.getenv("API_BASE_URL", "https://smart-crop-monitor-backend.onr
 API_TIMEOUT = 30
 
 client = APIClient(base_url=API_BASE_URL, timeout=API_TIMEOUT)
-
-
 
 API_TIMEOUT = 30
 MAX_RETRIES = 3
