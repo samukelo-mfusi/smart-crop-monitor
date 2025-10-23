@@ -14,11 +14,8 @@ from ..database.crud import create_sensor_reading, get_latest_sensor_readings, g
     get_recent_irrigation_events
 from ..processing.data_processor import DataProcessor
 from ..alerts.alert_manager import AlertManager
-<<<<<<< HEAD
 # from ..communication import protocol_manager
-=======
 from ..communication import protocol_manager
->>>>>>> b46545bf3 (Add build and dist folders)
 from ..core.config import settings
 from ..database.database import SessionLocal
 
@@ -501,7 +498,6 @@ class DataService:
                     "user_id": user_id
                 }
 
-<<<<<<< HEAD
                 try:
                     await protocol_manager.broadcast_alert(broadcast_alert_data)
                 except Exception as e:
@@ -514,7 +510,6 @@ class DataService:
                     "user_id": user_id,
                     "timestamp": datetime.now().isoformat()
                 }
-=======
                 # try:
                 #     await protocol_manager.broadcast_alert(broadcast_alert_data)
                 # except Exception as e:
@@ -527,7 +522,6 @@ class DataService:
                 #     "user_id": user_id,
                 #     "timestamp": datetime.now().isoformat()
                 # }
->>>>>>> b46545bf3 (Add build and dist folders)
 
             except Exception as e:
                 logger.error(f"Error storing incoming alert: {e}")
@@ -1558,7 +1552,6 @@ class DataService:
             logger.error(f"Error validating sensor data: {e}")
             return False
 
-<<<<<<< HEAD
     async def _broadcast_alerts(self, alerts: List[Any]):
         """Broadcast alerts to communication protocols"""
         try:
@@ -1586,7 +1579,7 @@ class DataService:
 
         except Exception as e:
             logger.error(f"Error broadcasting alerts: {e}")
-=======
+
     # async def _broadcast_alerts(self, alerts: List[Any]):
     #     """Broadcast alerts to communication protocols"""
     #     try:
@@ -1614,4 +1607,4 @@ class DataService:
     #
     #     except Exception as e:
     #         logger.error(f"Error broadcasting alerts: {e}")
->>>>>>> b46545bf3 (Add build and dist folders)
+
