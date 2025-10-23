@@ -82,8 +82,11 @@ cd backend
 cd fronted (In a different terminal)
 
 
+
+
 **Method 2: Individual Services**
-bash
+
+
 # Terminal 1 - Backend
 python run_system.py   
 
