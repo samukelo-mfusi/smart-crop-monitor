@@ -98,13 +98,6 @@ The application will be available at:
 
 
 
-*Login* 
-
-Username: john
-
-Password: Johndoe@01
-
-
 ## System Architecture
 
 The system follows a modular 4-layer architecture:
