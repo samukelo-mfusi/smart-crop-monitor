@@ -3,10 +3,8 @@ import json
 import logging
 from typing import Dict, Any, Callable
 from ..core.config import settings
-import self
 
 logger = logging.getLogger(__name__)
-
 
 class HTTPServer:
     def __init__(self):
