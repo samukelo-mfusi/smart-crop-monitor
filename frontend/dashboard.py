@@ -9,7 +9,6 @@ import os
 import json
 from dotenv import load_dotenv
 from src.services.api_client import APIClient  
-from src.services.api_client import APIClient
 
 load_dotenv()
 
