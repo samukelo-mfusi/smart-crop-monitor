@@ -22,7 +22,7 @@ class HTTPServer:
     async def start_server(self):
         """Start HTTP server"""
         try:
-            # Add routes
+            # routes
             self.app.router.add_post('/api/sensor-data', self.handle_sensor_data)
             self.app.router.add_post('/api/alerts', self.handle_alerts)
             self.app.router.add_get('/api/health', self.handle_health)
