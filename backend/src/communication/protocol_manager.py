@@ -25,10 +25,10 @@ class ProtocolManager:
         protocols = []
 
         # Initialize MQTT
-        if settings.MQTT_ENABLED:
-            if await self.mqtt_client.connect():
-                protocols.append('mqtt')
-                logger.info("MQTT protocol initialized")
+        # if settings.MQTT_ENABLED:
+        #     if await self.mqtt_client.connect():
+        #         protocols.append('mqtt')
+        #         logger.info("MQTT protocol initialized")
         # if settings.MQTT_ENABLED:
         #     if await self.mqtt_client.connect():
         #         protocols.append('mqtt')
@@ -55,13 +55,13 @@ class ProtocolManager:
             logger.error("No communication protocols initialized")
             return False
 
-    def register_message_handler(self, message_type: str, handler):
-        """Register handler for all protocols"""
-        if settings.MQTT_ENABLED and message_type == 'commands':
-            self.mqtt_client.register_message_handler(
-                settings.MQTT_TOPIC_COMMANDS,
-                handler
-            )
+    # def register_message_handler(self, message_type: str, handler):
+    #     """Register handler for all protocols"""
+    #     if settings.MQTT_ENABLED and message_type == 'commands':
+    #         self.mqtt_client.register_message_handler(
+    #             settings.MQTT_TOPIC_COMMANDS,
+    #             handler
+    #         )
         # if settings.MQTT_ENABLED and message_type == 'commands':
         #     self.mqtt_client.register_message_handler(
         #         settings.MQTT_TOPIC_COMMANDS,
@@ -77,8 +77,8 @@ class ProtocolManager:
         """Broadcast sensor data through all protocols"""
         tasks = []
 
-        if 'mqtt' in self.active_protocols:
-            tasks.append(self.mqtt_client.publish_sensor_data(sensor_data))
+        # if 'mqtt' in self.active_protocols:
+        #     tasks.append(self.mqtt_client.publish_sensor_data(sensor_data))
         # if 'mqtt' in self.active_protocols:
         #     tasks.append(self.mqtt_client.publish_sensor_data(sensor_data))
 
@@ -95,8 +95,8 @@ class ProtocolManager:
         """Broadcast alert through all protocols"""
         tasks = []
 
-        if 'mqtt' in self.active_protocols:
-            tasks.append(self.mqtt_client.publish_alert(alert_data))
+        # if 'mqtt' in self.active_protocols:
+        #     tasks.append(self.mqtt_client.publish_alert(alert_data))
         # if 'mqtt' in self.active_protocols:
         #     tasks.append(self.mqtt_client.publish_alert(alert_data))
 
@@ -109,10 +109,10 @@ class ProtocolManager:
         if tasks:
             await asyncio.gather(*tasks, return_exceptions=True)
 
-    async def broadcast_system_status(self, status_data: Dict[str, Any]):
-        """Broadcast system status"""
-        if 'mqtt' in self.active_protocols:
-            await self.mqtt_client.publish_system_status(status_data)
+    # async def broadcast_system_status(self, status_data: Dict[str, Any]):
+    #     """Broadcast system status"""
+    #     if 'mqtt' in self.active_protocols:
+    #         await self.mqtt_client.publish_system_status(status_data)
 
         # if 'mqtt' in self.active_protocols:
         #     await self.mqtt_client.publish_system_status(status_data)
@@ -148,15 +148,15 @@ class ProtocolManager:
         """Shutdown all protocols"""
         shutdown_tasks = []
 
-        if settings.MQTT_ENABLED:
-            shutdown_tasks.append(self.mqtt_client.disconnect())
+        # if settings.MQTT_ENABLED:
+        #     shutdown_tasks.append(self.mqtt_client.disconnect())
         # if settings.MQTT_ENABLED:
         #     shutdown_tasks.append(self.mqtt_client.disconnect())
         if settings.HTTP_ENABLED:
             shutdown_tasks.append(self.http_server.shutdown())
 
-        if settings.COAP_ENABLED:
-            shutdown_tasks.append(self.coap_server.shutdown())
+        # if settings.COAP_ENABLED:
+        #     shutdown_tasks.append(self.coap_server.shutdown())
 
         if shutdown_tasks:
             await asyncio.gather(*shutdown_tasks, return_exceptions=True)
