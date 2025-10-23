@@ -13,7 +13,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import json
 from dotenv import load_dotenv
-from src.services.api_client import APIClient
+
 
 load_dotenv()
 
