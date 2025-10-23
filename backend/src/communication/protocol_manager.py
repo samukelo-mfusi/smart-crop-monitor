@@ -104,13 +104,13 @@ class ProtocolManager:
         if tasks:
             await asyncio.gather(*tasks, return_exceptions=True)
 
-    # async def broadcast_system_status(self, status_data: Dict[str, Any]):
-    #     """Broadcast system status"""
-    #     if 'mqtt' in self.active_protocols:
-    #         await self.mqtt_client.publish_system_status(status_data)
+    async def broadcast_system_status(self, status_data: Dict[str, Any]):
+        """Broadcast system status"""
+        if 'mqtt' in self.active_protocols:
+            await self.mqtt_client.publish_system_status(status_data)
 
-        # if 'mqtt' in self.active_protocols:
-        #     await self.mqtt_client.publish_system_status(status_data)
+        if 'mqtt' in self.active_protocols:
+            await self.mqtt_client.publish_system_status(status_data)
 
     def get_protocol_status(self) -> Dict[str, Any]:
         """Get status of all protocols"""
