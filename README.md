@@ -61,30 +61,17 @@ password: Samukelo@01
 
 ## EXECUTABLE:
 
-The exe app is located in the dist/launcher folder. Double click on it to run the app. If it doesn`t run use the link https://smart-crop-monitor.streamlit.app/ (Recommended). Create accoount or use the above login details.
+The exe app is located in the dist/launcher folder. Double click on it to run the app. If it doesn`t run use the link https://smart-crop-monitor.streamlit.app/ (Recommended). 
 
-
-3. **Set up environment variables**:
-
-python -m venv .venv       
-
-.venv\Scripts\Activate.ps1
-  
+Create accoount or use the above login details.
 
 
 
 ### Running the Application
 
-**Method 1: Unified Launcher (Recommended)**
-
-cd backend 
-
-cd fronted (In a different terminal)
 
 
-
-
-**Method 2: Individual Services**
+**Method: Individual Services**
 
 
 # Terminal 1 - Backend
@@ -93,13 +80,14 @@ python run_system.py
 # Terminal 2 - Frontend
 streamlit run dashboard.py
 
-*Run executable in the dist folder*
 
 The application will be available at:
 - **Frontend**: http://localhost:8501
 - **Backend API**: http://localhost:8000
 - **API Documentation**: http://localhost:8000/docs
 
+
+- **Live**: https://smart-crop-monitor.streamlit.app/
 
 
 ## System Architecture
