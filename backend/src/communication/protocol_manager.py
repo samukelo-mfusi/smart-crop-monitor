@@ -55,13 +55,8 @@ class ProtocolManager:
             logger.error("No communication protocols initialized")
             return False
 
-    # def register_message_handler(self, message_type: str, handler):
+    def register_message_handler(self, message_type: str, handler):
     #     """Register handler for all protocols"""
-    #     if settings.MQTT_ENABLED and message_type == 'commands':
-    #         self.mqtt_client.register_message_handler(
-    #             settings.MQTT_TOPIC_COMMANDS,
-    #             handler
-    #         )
         # if settings.MQTT_ENABLED and message_type == 'commands':
         #     self.mqtt_client.register_message_handler(
         #         settings.MQTT_TOPIC_COMMANDS,
