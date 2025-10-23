@@ -1,9 +1,5 @@
 import sys
 import os
-
-
-sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
-
 import streamlit as st
 import requests
 import time
@@ -13,7 +9,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import json
 from dotenv import load_dotenv
-
+from src.services.api_client import APIClient
 
 load_dotenv()
 
