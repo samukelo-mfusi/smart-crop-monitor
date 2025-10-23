@@ -60,7 +60,7 @@ password: Janedoe@01
 
 ## EXECUTABLE:
 
-The exe app is located in the dist/launcher folder. Double click on it to run the app.
+The exe app is located in the dist/launcher folder. Double click on it to run the app. If it doesn`t run use the link https://smart-crop-monitor.streamlit.app/ (Recommended). Create accoount or use the above login details.
 
 
 
