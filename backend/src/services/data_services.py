@@ -10,8 +10,7 @@ from ..data_simulation.nasa_power_client import NASAPowerClient
 from ..data_simulation.openweather_client import OpenWeatherClient
 from ..data_simulation.sensor_simulator import SensorSimulator
 from ..data_simulation.soil_moisture_model import SoilMoistureModel
-from ..database.crud import create_sensor_reading, get_latest_sensor_readings, get_alerts, create_alert, get_all_users, \
-    get_recent_irrigation_events
+from ..database.crud import create_sensor_reading, get_latest_sensor_readings, get_alerts, create_alert, get_all_users, get_recent_irrigation_events
 from ..processing.data_processor import DataProcessor
 from ..alerts.alert_manager import AlertManager
 # from ..communication import protocol_manager
