@@ -6,7 +6,6 @@ from typing import Optional, Dict, Any
 
 logger = logging.getLogger(__name__)
 
-
 class APIClient:
     """Client for communicating with the backend API"""
 
