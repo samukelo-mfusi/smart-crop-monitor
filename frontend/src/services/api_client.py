@@ -114,8 +114,6 @@ class APIClient:
 
     def register(self, user_data: Dict[str, str]) -> tuple[bool, str]:
 
-    def register(self, user_data: Dict) -> tuple[bool, str]:
-
         """Register a new user"""
         response = self.make_request("POST", "/auth/register", user_data)
 
