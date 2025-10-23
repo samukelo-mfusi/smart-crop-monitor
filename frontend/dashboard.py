@@ -8,11 +8,8 @@ import plotly.graph_objects as go
 import os
 import json
 from dotenv import load_dotenv
-<<<<<<< HEAD
 from src.services.api_client import APIClient  
-=======
 from src.services.api_client import APIClient
->>>>>>> b46545bf3 (Add build and dist folders)
 
 load_dotenv()
 
@@ -20,10 +17,9 @@ API_BASE_URL = os.getenv("API_BASE_URL", "https://smart-crop-monitor-backend.onr
 API_TIMEOUT = 30
 
 client = APIClient(base_url=API_BASE_URL, timeout=API_TIMEOUT)
-<<<<<<< HEAD
 
-=======
->>>>>>> b46545bf3 (Add build and dist folders)
+
+
 API_TIMEOUT = 30
 MAX_RETRIES = 3
 
