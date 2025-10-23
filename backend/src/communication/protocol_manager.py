@@ -3,8 +3,6 @@ import logging
 import time
 from typing import Dict, Any
 from .mqtt_client import MQTTClient
-import self
-
 # from .mqtt_client import MQTTClient
 from .http_server import HTTPServer
 # from .coap_server import CoAPServer
