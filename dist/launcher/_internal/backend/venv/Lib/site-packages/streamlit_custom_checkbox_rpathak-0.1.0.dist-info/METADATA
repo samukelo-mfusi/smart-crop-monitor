@@ -1,0 +1,56 @@
+Metadata-Version: 2.1
+Name: streamlit-custom-checkbox-rpathak
+Version: 0.1.0
+Summary: A custom checkbox component for Streamlit
+Home-page: https://github.com/rpathak/streamlit-custom-checkbox-rpathak
+Author: Your Name
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: streamlit>=0.63
+
+# Streamlit Custom Checkbox
+
+A custom checkbox component for Streamlit with enhanced styling.
+
+## Installation
+
+```bash
+pip install streamlit-custom-checkbox-rpathak
+```
+
+## Usage
+
+```python
+import streamlit as st
+from streamlit_custom_checkbox import st_custom_checkbox
+
+# Basic usage
+result = st_custom_checkbox("Approve Document")
+
+# With initial value
+result = st_custom_checkbox("Enable Feature", value=True)
+
+# Disabled checkbox
+result = st_custom_checkbox("Disabled Option", disabled=True)
+```
+
+## Development
+
+To build the frontend:
+
+```bash
+cd streamlit_custom_checkbox/frontend
+npm install
+npm run build
+```
+
+## Features
+
+- Custom styling with green accent color
+- Dynamic border and background color changes
+- Support for disabled state
+- Proper Streamlit integration
