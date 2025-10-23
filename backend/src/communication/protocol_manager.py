@@ -6,7 +6,6 @@ from .mqtt_client import MQTTClient
 import self
 
 # from .mqtt_client import MQTTClient
->>>>>>> b46545bf3 (Add build and dist folders)
 from .http_server import HTTPServer
 # from .coap_server import CoAPServer
 from ..core.config import settings
