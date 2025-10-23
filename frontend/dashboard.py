@@ -1834,8 +1834,4 @@ def main():
 
 
 if __name__ == "__main__":
-<<<<<<< HEAD
     main()
-=======
-    main()
->>>>>>> b46545bf3 (Add build and dist folders)
