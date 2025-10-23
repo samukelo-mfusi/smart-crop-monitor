@@ -2,10 +2,7 @@ import asyncio
 import logging
 import time
 from typing import Dict, Any
-<<<<<<< HEAD
 from .mqtt_client import MQTTClient
-=======
-
 import self
 
 # from .mqtt_client import MQTTClient
@@ -19,11 +16,8 @@ logger = logging.getLogger(__name__)
 
 class ProtocolManager:
     def __init__(self):
-<<<<<<< HEAD
         self.mqtt_client = MQTTClient()
-=======
-        # self.mqtt_client = MQTTClient()
->>>>>>> b46545bf3 (Add build and dist folders)
+        # self.mqtt_client = MQTTClient()rs)
         self.http_server = HTTPServer()
         # self.coap_server = CoAPServer()
         self.active_protocols = []
@@ -34,17 +28,14 @@ class ProtocolManager:
         protocols = []
 
         # Initialize MQTT
-<<<<<<< HEAD
         if settings.MQTT_ENABLED:
             if await self.mqtt_client.connect():
                 protocols.append('mqtt')
                 logger.info("MQTT protocol initialized")
-=======
         # if settings.MQTT_ENABLED:
         #     if await self.mqtt_client.connect():
         #         protocols.append('mqtt')
         #         logger.info("MQTT protocol initialized")
->>>>>>> b46545bf3 (Add build and dist folders)
 
         # Initialize HTTP
         if settings.HTTP_ENABLED:
@@ -69,20 +60,16 @@ class ProtocolManager:
 
     def register_message_handler(self, message_type: str, handler):
         """Register handler for all protocols"""
-<<<<<<< HEAD
         if settings.MQTT_ENABLED and message_type == 'commands':
             self.mqtt_client.register_message_handler(
                 settings.MQTT_TOPIC_COMMANDS,
                 handler
             )
-=======
         # if settings.MQTT_ENABLED and message_type == 'commands':
         #     self.mqtt_client.register_message_handler(
         #         settings.MQTT_TOPIC_COMMANDS,
         #         handler
         #     )
->>>>>>> b46545bf3 (Add build and dist folders)
-
         if settings.HTTP_ENABLED:
             self.http_server.register_message_handler(message_type, handler)
 
@@ -93,13 +80,10 @@ class ProtocolManager:
         """Broadcast sensor data through all protocols"""
         tasks = []
 
-<<<<<<< HEAD
         if 'mqtt' in self.active_protocols:
             tasks.append(self.mqtt_client.publish_sensor_data(sensor_data))
-=======
         # if 'mqtt' in self.active_protocols:
         #     tasks.append(self.mqtt_client.publish_sensor_data(sensor_data))
->>>>>>> b46545bf3 (Add build and dist folders)
 
         if 'http' in self.active_protocols:
             tasks.append(self.http_server.broadcast_sensor_data(sensor_data))
@@ -114,13 +98,10 @@ class ProtocolManager:
         """Broadcast alert through all protocols"""
         tasks = []
 
-<<<<<<< HEAD
         if 'mqtt' in self.active_protocols:
             tasks.append(self.mqtt_client.publish_alert(alert_data))
-=======
         # if 'mqtt' in self.active_protocols:
         #     tasks.append(self.mqtt_client.publish_alert(alert_data))
->>>>>>> b46545bf3 (Add build and dist folders)
 
         if 'http' in self.active_protocols:
             tasks.append(self.http_server.broadcast_alert(alert_data))
@@ -133,28 +114,25 @@ class ProtocolManager:
 
     async def broadcast_system_status(self, status_data: Dict[str, Any]):
         """Broadcast system status"""
-<<<<<<< HEAD
         if 'mqtt' in self.active_protocols:
             await self.mqtt_client.publish_system_status(status_data)
-=======
+
         # if 'mqtt' in self.active_protocols:
         #     await self.mqtt_client.publish_system_status(status_data)
->>>>>>> b46545bf3 (Add build and dist folders)
 
     def get_protocol_status(self) -> Dict[str, Any]:
         """Get status of all protocols"""
         return {
-<<<<<<< HEAD
+
             'mqtt': {
                 'enabled': settings.MQTT_ENABLED,
                 'connected': self.mqtt_client.is_connected if settings.MQTT_ENABLED else False
             },
-=======
+
             # 'mqtt': {
             #     'enabled': settings.MQTT_ENABLED,
             #     'connected': self.mqtt_client.is_connected if settings.MQTT_ENABLED else False
             # },
->>>>>>> b46545bf3 (Add build and dist folders)
             'http': {
                 'enabled': settings.HTTP_ENABLED,
                 'port': settings.HTTP_PORT
@@ -173,14 +151,10 @@ class ProtocolManager:
         """Shutdown all protocols"""
         shutdown_tasks = []
 
-<<<<<<< HEAD
         if settings.MQTT_ENABLED:
             shutdown_tasks.append(self.mqtt_client.disconnect())
-=======
         # if settings.MQTT_ENABLED:
         #     shutdown_tasks.append(self.mqtt_client.disconnect())
->>>>>>> b46545bf3 (Add build and dist folders)
-
         if settings.HTTP_ENABLED:
             shutdown_tasks.append(self.http_server.shutdown())
 
@@ -192,8 +166,5 @@ class ProtocolManager:
 
 
 # Global protocol manager instance
-<<<<<<< HEAD
 protocol_manager = ProtocolManager()
-=======
-protocol_manager = ProtocolManager()
->>>>>>> b46545bf3 (Add build and dist folders)
+
