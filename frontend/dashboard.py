@@ -1,8 +1,5 @@
 import sys
 import os
-
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), 'src')))
-
 import streamlit as st
 import requests
 import time
@@ -11,14 +8,6 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import json
-from dotenv import load_dotenv
-
-try:
-    from src.services.api_client import APIClient
-    print("APIClient imported successfully")
-except Exception as e:
-    print(f"Failed to import APIClient: {e}")
-    raise
 
 load_dotenv()
 
