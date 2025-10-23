@@ -42,7 +42,7 @@ class Settings:
     MQTT_USERNAME = os.getenv("MQTT_USERNAME", "your_mqtt_username")
     MQTT_PASSWORD = os.getenv("MQTT_PASSWORD", "your_mqtt_password")
 
- 
+    HTTP_ENABLED = os.getenv("HTTP_ENABLED", "True").lower() == "true"
     HTTP_PORT = int(os.getenv("HTTP_PORT", "8081"))
     HTTP_HOST = os.getenv("HTTP_HOST", "0.0.0.0")
 
