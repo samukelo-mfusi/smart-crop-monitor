@@ -43,7 +43,7 @@ class Settings:
     MQTT_PASSWORD = os.getenv("MQTT_PASSWORD", "your_mqtt_password")
 
     HTTP_ENABLED = os.getenv("HTTP_ENABLED", "True").lower() == "true"
-    HTTP_PORT = int(os.getenv("HTTP_PORT", "8081"))
+    HTTP_PORT = int(os.getenv("HTTP_PORT", "8080"))
     HTTP_HOST = os.getenv("HTTP_HOST", "0.0.0.0")
 
     COAP_ENABLED = os.getenv("COAP_ENABLED", "True").lower() == "true"
