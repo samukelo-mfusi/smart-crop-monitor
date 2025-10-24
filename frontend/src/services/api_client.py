@@ -65,55 +65,74 @@ class APIClient:
 
 
     def login(self, username: str, password: str) -> tuple[bool, str, Optional[Dict]]:
-        """Authenticate user and get token - FIXED"""
+    """Authenticate user and get token"""
+    try:
+        # Try the login endpoint that matches your FastAPI auth routes
         data = {
             "username": username,
             "password": password,
-            "grant_type": "password"
+            "remember_me": False
         }
+        
+        response = requests.post(
+            f"{self.base_url}/auth/login",
+            json=data,  # Use JSON, not form data
+            headers={"Content-Type": "application/json"},
+            timeout=self.timeout
+        )
 
-        # Use requests directly for proper form data
-        try:
-            response = requests.post(
-                f"{self.base_url}/auth/token",
-                data=data,  # This encodes as form data automatically
-                headers={"Content-Type": "application/x-www-form-urlencoded"},
-                timeout=self.timeout
-            )
-
-            if response and response.status_code == 200:
-                token_data = response.json()
-                self.token = token_data['access_token']
+        if response and response.status_code == 200:
+            token_data = response.json()
+            self.token = token_data.get('access_token')
+            if self.token:
                 return True, "Login successful", token_data
             else:
-                error_msg = "Invalid username or password"
-                if response:
-                    try:
-                        error_data = response.json()
-                        error_msg = error_data.get('detail', error_msg)
-                    except:
-                        error_msg = f"HTTP {response.status_code}: {response.text}"
-                return False, error_msg, None
-        except Exception as e:
-            return False, f"Login error: {str(e)}", None
-
-
-    def register(self, user_data: Dict) -> tuple[bool, str]:
-        """Register a new user"""
-        response = self.make_request("POST", "/auth/register", user_data)
-
-        if response and response.status_code in [200, 201]:
-            return True, "Registration successful"
+                return False, "No access token in response", None
         else:
-            error_msg = "Registration failed"
-
+            error_msg = "Invalid username or password"
             if response:
                 try:
                     error_data = response.json()
                     error_msg = error_data.get('detail', error_msg)
                 except:
                     error_msg = f"HTTP {response.status_code}: {response.text}"
+            return False, error_msg, None
+            
+    except Exception as e:
+        return False, f"Login error: {str(e)}", None
+
+    def register(self, user_data: Dict) -> tuple[bool, str]:
+    """Register a new user - CORRECTED"""
+    try:
+        # Use requests directly instead of make_request for better error handling
+        response = requests.post(
+            f"{self.base_url}/auth/register",
+            json=user_data,  # Send as JSON
+            headers={"Content-Type": "application/json"},
+            timeout=self.timeout
+        )
+
+        if response and response.status_code in [200, 201]:
+            return True, "Registration successful"
+        else:
+            error_msg = "Registration failed"
+            if response:
+                try:
+                    error_data = response.json()
+                    error_msg = error_data.get('detail', error_msg)
+                    # Handle specific validation errors
+                    if 'validation_error' in error_data:
+                        error_msg = error_data['validation_error']
+                except:
+                    error_msg = f"HTTP {response.status_code}: {response.text}"
             return False, error_msg
+            
+    except requests.exceptions.ConnectionError:
+        return False, "Cannot connect to backend service"
+    except requests.exceptions.Timeout:
+        return False, "Registration timeout - backend not responding"
+    except Exception as e:
+        return False, f"Registration error: {str(e)}"
 
     def get_dashboard_data(self) -> Optional[Dict]:
 
