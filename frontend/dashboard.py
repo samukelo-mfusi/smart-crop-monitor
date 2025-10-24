@@ -749,7 +749,6 @@ def render_forgot_password_page():
                 else:
                     st.error(message)
 
-
 def render_register_page():
     st.markdown("""
         <div style="text-align: center; margin-bottom: 2rem;">
@@ -785,10 +784,11 @@ def render_register_page():
                 if not password_validation["valid"]:
                     st.error(password_validation["message"])
                 else:
-                    success, message = register_user({
-                        "full_name": full_name,
+                    # Use the APIClient register method
+                    success, message = client.register({
                         "username": username,
                         "email": email,
+                        "full_name": full_name,
                         "password": password
                     })
                     if success:
