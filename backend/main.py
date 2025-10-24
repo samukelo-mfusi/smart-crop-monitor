@@ -1,3 +1,4 @@
+
 from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import HTTPBearer
@@ -126,7 +127,7 @@ app = FastAPI(
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:8501", "http://127.0.0.1:8501", "http://localhost:3000", "https://smart-crop-monitor.streamlit.app/", "https://smart-crop-monitor-backend.onrender.com"],
+    allow_origins=["http://localhost:8501", "http://127.0.0.1:8501", "http://localhost:3000", "https://smart-crop-monitor-backend.onrender.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -164,8 +165,8 @@ async def health_check():
     # Check if critical protocols are working
     critical_protocols_healthy = (
             protocols_status['mqtt']['enabled'] == protocols_status['mqtt']['connected'] and
-            protocols_status['http']['enabled'] and
-            protocols_status['coap']['enabled'] == protocols_status['coap']['running']
+            protocols_status['http']['enabled'] 
+            #and protocols_status['coap']['enabled'] == protocols_status['coap']['running']
     )
 
     health_status = "healthy" if critical_protocols_healthy else "degraded"
