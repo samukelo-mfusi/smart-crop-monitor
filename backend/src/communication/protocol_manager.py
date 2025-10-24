@@ -24,7 +24,7 @@ class ProtocolManager:
                 protocols.append('mqtt')
                 logger.info("MQTT protocol initialized")
 
-        # HTTP is handled by FastAPI, so it's always "enabled"
+        # HTTP is handled by FastAPI, so it's always available
         protocols.append('http')
         logger.info("HTTP protocol (FastAPI) initialized")
 
@@ -44,7 +44,7 @@ class ProtocolManager:
                 settings.MQTT_TOPIC_COMMANDS,
                 handler
             )
-        # HTTP handlers are registered directly in FastAPI routes
+        # HTTP handlers are registered in FastAPI routes
 
     async def broadcast_sensor_data(self, sensor_data: Dict[str, Any]):
         """Broadcast sensor data through protocols"""
@@ -53,7 +53,7 @@ class ProtocolManager:
         if 'mqtt' in self.active_protocols:
             tasks.append(self.mqtt_client.publish_sensor_data(sensor_data))
 
-        # HTTP broadcasting happens through FastAPI WebSocket endpoints
+        # HTTP broadcasting happens through FastAPI endpoints
         # You can add WebSocket broadcasting here if needed
 
         if tasks:
@@ -66,8 +66,6 @@ class ProtocolManager:
         if 'mqtt' in self.active_protocols:
             tasks.append(self.mqtt_client.publish_alert(alert_data))
 
-        # HTTP broadcasting happens through FastAPI WebSocket endpoints
-
         if tasks:
             await asyncio.gather(*tasks, return_exceptions=True)
 
@@ -78,35 +76,32 @@ class ProtocolManager:
         if 'mqtt' in self.active_protocols:
             tasks.append(self.mqtt_client.publish_system_status(status_data))
 
-        # HTTP broadcasting happens through FastAPI WebSocket endpoints
-
         if tasks:
             await asyncio.gather(*tasks, return_exceptions=True)
 
     def get_protocol_status(self) -> Dict[str, Any]:
-    """Get status of all protocols"""
-    return {
-        'mqtt': {
-            'enabled': settings.MQTT_ENABLED,
-            'connected': self.mqtt_client.is_connected if settings.MQTT_ENABLED else False
-        },
-        'http': {
-            'enabled': True, # FastAPI is always enabled
-            'port': settings.HTTP_PORT
-        },
-        # 'coap': {
-        #     'enabled': settings.COAP_ENABLED,
-        #     'running': False 
-        # },
-        'active_protocols': self.active_protocols,
-        'uptime': time.time() - self.start_time
-    }
+        """Get status of all protocols"""
+        return {
+            'mqtt': {
+                'enabled': settings.MQTT_ENABLED,
+                'connected': self.mqtt_client.is_connected if settings.MQTT_ENABLED else False
+            },
+            'http': {
+                'enabled': True, 
+                'port': settings.HTTP_PORT
+            },
+            # 'coap': {
+            #     'enabled': settings.COAP_ENABLED,
+            #     'running': False 
+            # },
+            'active_protocols': self.active_protocols,
+            'uptime': time.time() - self.start_time
+        }
 
     async def shutdown(self):
         """Shutdown all protocols"""
         if settings.MQTT_ENABLED:
             await self.mqtt_client.disconnect()
-        # FastAPI handles its own shutdown
 
 
 # Global protocol manager instance
