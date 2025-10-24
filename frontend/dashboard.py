@@ -13,7 +13,7 @@ from src.services.api_client import APIClient
 
 load_dotenv()
 
-API_BASE_URL = os.getenv("API_BASE_URL", "https://smart-crop-monitor-backend.onrender.com")
+API_BASE_URL = os.getenv("API_BASE_URL", "https://smart-crop-monitor-backend.vercel.app")
 API_TIMEOUT = 30
 
 client = APIClient(base_url=API_BASE_URL, timeout=API_TIMEOUT)
