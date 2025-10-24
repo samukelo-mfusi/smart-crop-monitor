@@ -84,19 +84,23 @@ class ProtocolManager:
             await asyncio.gather(*tasks, return_exceptions=True)
 
     def get_protocol_status(self) -> Dict[str, Any]:
-        """Get status of all protocols"""
-        return {
-            'mqtt': {
-                'enabled': settings.MQTT_ENABLED,
-                'connected': self.mqtt_client.is_connected if settings.MQTT_ENABLED else False
-            },
-            'http': {
-                'enabled': True, # FastAPI is always enabled
-                'port': settings.HTTP_PORT
-            },
-            'active_protocols': self.active_protocols,
-            'uptime': time.time() - self.start_time
-        }
+    """Get status of all protocols"""
+    return {
+        'mqtt': {
+            'enabled': settings.MQTT_ENABLED,
+            'connected': self.mqtt_client.is_connected if settings.MQTT_ENABLED else False
+        },
+        'http': {
+            'enabled': True, # FastAPI is always enabled
+            'port': settings.HTTP_PORT
+        },
+        # 'coap': {
+        #     'enabled': settings.COAP_ENABLED,
+        #     'running': False 
+        # },
+        'active_protocols': self.active_protocols,
+        'uptime': time.time() - self.start_time
+    }
 
     async def shutdown(self):
         """Shutdown all protocols"""
