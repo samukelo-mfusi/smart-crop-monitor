@@ -1,4 +1,3 @@
-
 from aiohttp import web
 import json
 import logging
@@ -107,6 +106,104 @@ class HTTPServer:
             return web.Response(
                 text=json.dumps({"error": str(e)}),
                 status=500,
+                content_type='application/json'
+            )
+
+    async def handle_commands(self, request):
+        """Handle incoming commands via HTTP"""
+        try:
+            data = await request.json()
+
+            if 'type' not in data:
+                return web.Response(
+                    text=json.dumps({"error": "Missing command type"}),
+                    status=400,
+                    content_type='application/json'
+                )
+
+            logger.info(f"HTTP command received: {data.get('type')}")
+
+            await self._call_handlers('commands', data)
+
+            return web.Response(
+                text=json.dumps({
+                    "status": "success",
+                    "protocol": "http",
+                    "message": "Command processed"
+                }),
+                content_type='application/json'
+            )
+        except Exception as e:
+            logger.error(f"Error handling HTTP command: {e}")
+            return web.Response(
+                text=json.dumps({"error": str(e)}),
+                status=500,
+                content_type='application/json'
+            )
+
+    async def handle_system_status(self, request):
+        """System status endpoint"""
+        return web.Response(
+            text=json.dumps({
+                "status": "operational",
+                "protocol": "http",
+                "server": "running"
+            }),
+            content_type='application/json'
+        )
+
+    async def handle_health(self, request):
+        """Health check endpoint"""
+        return web.Response(
+            text=json.dumps({
+                "status": "healthy",
+                "protocol": "http",
+                "server": "running"
+            }),
+            content_type='application/json'
+        )
+
+    async def _call_handlers(self, handler_type: str, data: Dict[str, Any]):
+        """Call registered handlers for specific message type"""
+        if handler_type in self.message_handlers:
+            for handler in self.message_handlers[handler_type]:
+                try:
+                    await handler(data)
+                except Exception as e:
+                    logger.error(f"Error in HTTP handler: {e}")
+
+    def register_message_handler(self, handler_type: str, handler: Callable):
+        """Register handler for specific message type"""
+        if handler_type not in self.message_handlers:
+            self.message_handlers[handler_type] = []
+        self.message_handlers[handler_type].append(handler)
+        logger.info(f"Registered HTTP handler for: {handler_type}")
+
+    async def broadcast_sensor_data(self, sensor_data: Dict[str, Any]):
+        """Broadcast sensor data via HTTP (for clients that poll)"""
+        logger.debug(f"HTTP would broadcast sensor data: {sensor_data.get('sensor_type')}")
+        return True
+
+    async def broadcast_alert(self, alert_data: Dict[str, Any]):
+        """Broadcast alert via HTTP"""
+        logger.debug(f"HTTP would broadcast alert: {alert_data.get('message')}")
+        return True
+
+    async def broadcast_system_status(self, status_data: Dict[str, Any]):
+        """Broadcast system status via HTTP"""
+        logger.debug(f"HTTP would broadcast system status: {status_data}")
+        return True
+
+    async def shutdown(self):
+        """Shutdown HTTP server gracefully"""
+        try:
+            if self.site:
+                await self.site.stop()
+            if self.runner:
+                await self.runner.cleanup()
+            logger.info("HTTP server shutdown complete")
+        except Exception as e:
+            logger.error(f"Error shutting down HTTP server: {e}")                status=500,
                 content_type='application/json'
             )
 
