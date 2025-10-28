@@ -11,11 +11,10 @@ class APIClient:
     """Client for communicating with the backend API"""
 
     def __init__(self, base_url: str, timeout: int = 50):
-        self.base_url = base_url.rstrip('/')  # Remove trailing slash if present
+        self.base_url = base_url.rstrip('/') 
         self.timeout = timeout
         self.session = requests.Session()
         self.token: Optional[str] = None
-        print(f"🔗 APIClient initialized with URL: {self.base_url}")  # Debug
 
     def set_token(self, token: str):
         """Set authentication token"""
