@@ -2,7 +2,6 @@ import streamlit as st
 import sys
 import os
 
-# Fix Python path to find your APIClient
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
 from services.api_client import APIClient
@@ -18,11 +17,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-API_BASE_URL = os.getenv("API_BASE_URL", "https://smart-crop-monitor-gdsg.onrender.com")
+# Force the Render URL - environment variables might not be loading in Streamlit Cloud
+API_BASE_URL = "https://smart-crop-monitor-gdsg.onrender.com"
 API_TIMEOUT = 30
 
-client = APIClient(base_url=API_BASE_URL, timeout=API_TIMEOUT)
+print(f" Connecting to backend: {API_BASE_URL}")
 
+client = APIClient(base_url=API_BASE_URL, timeout=API_TIMEOUT)
 # Modern CSS with enhanced styling
 st.markdown("""
 <style>
