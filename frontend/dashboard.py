@@ -47,7 +47,7 @@ load_dotenv()
 
 # Configuration
 API_BASE_URL = "https://smart-crop-monitor-gdsg.onrender.com"
-API_TIMEOUT = 30
+API_TIMEOUT = 50
 
 # Initialize client
 client = APIClient(base_url=API_BASE_URL, timeout=API_TIMEOUT)
