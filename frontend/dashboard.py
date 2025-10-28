@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 # Import APIClient
 try:
     from services.api_client import APIClient
-    st.sidebar.success(" ")
+    st.sidebar.success("Growing Smarter, Not Harder")
     APICLIENT_LOADED = True
 except ImportError as e:
     st.sidebar.error(f" APIClient import failed: {e}")
