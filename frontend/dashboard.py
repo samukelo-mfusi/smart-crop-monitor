@@ -767,7 +767,7 @@ def render_register_page():
     st.markdown("""
         <div style="text-align: center; margin-bottom: 2rem;">
             <h2 style="color:#2c3e50; margin-bottom:0.5rem;">Create Your Account</h2>
-            <p style="color:#7f8c8d;">Join our smart irrigation platform</p>
+            <p style="color:#7f8c8d;">Join our smart crop monitor platform</p>
         </div>
     """, unsafe_allow_html=True)
 
@@ -960,7 +960,7 @@ def render_header():
     <div class="main-header">
         <div style="display: flex; justify-content: space-between; align-items: center;">
             <div>
-                <h1 style="margin: 0; font-size: 2rem; color: white; font-weight: 800;">🌱 Smart Irrigation System</h1>
+                <h1 style="margin: 0; font-size: 2rem; color: white; font-weight: 800;">🌱 Smart Crop Monitor</h1>
                 <p style="margin: 0; color: rgba(255,255,255,0.9); font-size: 1.1rem;">
                     Real-time Monitoring & Analytics
                     <span class="data-source-badge {data_source_class}">{data_source_text} Data</span>
