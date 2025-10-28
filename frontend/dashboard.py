@@ -5,13 +5,8 @@ import os
 # Fix Python path to find your APIClient
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
-try:
-    from services.api_client import APIClient
-    st.success("APIClient imported successfully!")
-except ImportError as e:
-    st.error(f" Import failed: {e}")
-    raise
-
+from services.api_client import APIClient
+    
 import requests
 import time
 from datetime import datetime, timedelta
