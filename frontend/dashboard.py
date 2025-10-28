@@ -10,26 +10,10 @@ import plotly.graph_objects as go
 import json
 from dotenv import load_dotenv
 
-# EXACT PATH SETUP FOR YOUR STRUCTURE
-current_file = __file__
-frontend_dir = os.path.dirname(os.path.abspath(current_file))
-src_dir = os.path.join(frontend_dir, 'src')
-
-# Debug: Show the paths
-st.sidebar.write(f" Current file: {current_file}")
-st.sidebar.write(f" Frontend dir: {frontend_dir}")
-st.sidebar.write(f" Src dir: {src_dir}")
-
-# Add to Python path
-if src_dir not in sys.path:
-    sys.path.insert(0, src_dir)
-
-st.sidebar.write(f" Python path: {sys.path}")
-
 # Import APIClient
 try:
     from services.api_client import APIClient
-    st.sidebar.success(" APIClient imported successfully!")
+    st.sidebar.success(" ")
     APICLIENT_LOADED = True
 except ImportError as e:
     st.sidebar.error(f" APIClient import failed: {e}")
