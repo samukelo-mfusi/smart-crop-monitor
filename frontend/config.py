@@ -7,7 +7,7 @@ load_dotenv()
 class FrontendConfig:
     # API Configuration
     
-    API_BASE_URL = os.getenv("API_BASE_URL", "https://smart-crop-monitor-backend.onrender.com")
+    API_BASE_URL = os.getenv("API_BASE_URL", "https://smart-crop-monitor.onrender.com")
     API_TIMEOUT = int(os.getenv("API_TIMEOUT", "30"))
 
     # Application Settings
