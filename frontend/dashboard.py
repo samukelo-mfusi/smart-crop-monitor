@@ -680,7 +680,7 @@ def render_login_page():
     st.markdown("""
         <div class="welcome-animation">
             <div style="text-align: center; margin-bottom: 2rem;">
-                <h1 style="color:#27ae60; margin-bottom:0.5rem; font-size: 2.5rem;">🌱 Smart Irrigation</h1>
+                <h1 style="color:#27ae60; margin-bottom:0.5rem; font-size: 2.5rem;">🌱 Smart Crop Monitor</h1>
                 <h3 style="color:#7f8c8d; font-weight:400; margin-bottom: 2rem;">Growing Smarter, Not Harder</h3>
             </div>
         </div>
