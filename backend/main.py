@@ -125,7 +125,7 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-# CORS middleware - YOUR ORIGINAL PRODUCTION SETTINGS
+# CORS middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -312,126 +312,10 @@ async def restart_protocols():
             detail=f"Error restarting protocols: {str(e)}"
         )
 
-# Development server
 if __name__ == "__main__":
     uvicorn.run(
         "main:app",
         host="0.0.0.0",
         port=int(os.environ.get("PORT", 8000)),
         reload=True
-        )        "timestamp": datetime.now().isoformat(),
-        "protocols": protocol_manager.get_protocol_status(),
-        "endpoints": {
-            "api_docs": "/docs",
-            "health": "/health",
-            "system_status": "/system/status"
-        }
-    }
-
-
-@app.get("/health", summary="Health check", response_description="System health status")
-async def health_check():
-    """Comprehensive health check endpoint"""
-    protocols_status = protocol_manager.get_protocol_status()
-
-    # Check if critical protocols are working
-    critical_protocols_healthy = (
-            protocols_status['mqtt']['enabled'] == protocols_status['mqtt']['connected'] and
-            protocols_status['http']['enabled'] 
-            #and protocols_status['coap']['enabled'] == protocols_status['coap']['running']
-    )
-
-    health_status = "healthy" if critical_protocols_healthy else "degraded"
-
-    return {
-        "status": health_status,
-        "timestamp": datetime.now().isoformat(),
-        "version": settings.VERSION,
-        "protocols": protocols_status,
-        "database": "connected",
-        "external_apis": {
-            "nasa_power": "available",
-            "openweather": "available" if settings.OPENWEATHER_API_KEY and settings.OPENWEATHER_API_KEY != "Invalid API Key" else "Invalid Key"
-        }
-    }
-
-
-@app.get("/system/status", summary="System status", response_description="Detailed system status")
-async def system_status():
-    """Detailed system status information"""
-    protocols_status = protocol_manager.get_protocol_status()
-
-    status_data = {
-        "system": "operational",
-        "timestamp": datetime.now().isoformat(),
-        "version": settings.VERSION,
-        "data_sources": {
-            "nasa_power": "active",
-            "openweather": "active" if settings.OPENWEATHER_API_KEY and settings.OPENWEATHER_API_KEY != "Invalid API Key" else "Invalid Key",
-            "sensor_ingestion": "active"
-        },
-        "protocols": protocols_status,
-        "active_protocols": protocols_status['active_protocols'],
-        "metrics": {
-            "data_collection_interval": settings.DATA_COLLECTION_INTERVAL,
-            "data_retention_days": settings.DATA_RETENTION_DAYS,
-            "alert_thresholds": {
-                "soil_moisture_critical": settings.SOIL_MOISTURE_CRITICAL,
-                "soil_moisture_warning": settings.SOIL_MOISTURE_WARNING,
-                "temperature_critical": settings.TEMPERATURE_CRITICAL
-            }
-        }
-    }
-
-    # Broadcast system status via protocols
-    await protocol_manager.broadcast_system_status(status_data)
-
-    return status_data
-
-
-@app.get("/protocols/status", summary="Protocols status", response_description="Detailed protocols status")
-async def protocols_status():
-    """Get detailed status of all communication protocols"""
-    return protocol_manager.get_protocol_status()
-
-
-@app.post("/system/restart-protocols", summary="Restart protocols", response_description="Protocol restart status")
-async def restart_protocols():
-    """Restart all communication protocols (admin function)"""
-    try:
-        logger.warning("Protocol restart requested via API")
-
-        # Shutdown existing protocols
-        await protocol_manager.shutdown()
-
-        # Reinitialize protocols
-        success = await protocol_manager.initialize_protocols()
-
-        if success:
-            logger.info("Protocols restarted successfully via API")
-            return {
-                "status": "success",
-                "message": "Protocols restarted successfully",
-                "timestamp": datetime.now().isoformat(),
-                "protocols": protocol_manager.get_protocol_status()
-            }
-        else:
-            logger.error("Failed to restart protocols via API")
-            raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                detail="Failed to restart protocols"
-            )
-
-    except Exception as e:
-        logger.error(f"Error restarting protocols: {e}")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Error restarting protocols: {str(e)}"
-        )
-        
-if __name__ == "__main__":
-    uvicorn.run(
-        "backend.main:app",
-        host="0.0.0.0",
-        port=int(os.environ.get("PORT", 8000))
     )
