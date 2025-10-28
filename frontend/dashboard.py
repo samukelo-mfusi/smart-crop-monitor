@@ -9,18 +9,19 @@ import plotly.graph_objects as go
 import os
 import json
 from dotenv import load_dotenv
-from .src.services.api_client import APIClient
+import sys
 
+sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
+
+from services.api_client import APIClient
 
 load_dotenv()
 
 API_BASE_URL = os.getenv("API_BASE_URL", "https://smart-crop-monitor-gdsg.onrender.com")
-
 API_TIMEOUT = 30
 
 client = APIClient(base_url=API_BASE_URL, timeout=API_TIMEOUT)
 
-API_TIMEOUT = 30
 MAX_RETRIES = 3
 
 # Modern CSS with enhanced styling
