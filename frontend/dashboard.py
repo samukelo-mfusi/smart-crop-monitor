@@ -1,19 +1,25 @@
-
 import streamlit as st
+import sys
+import os
+
+# Fix Python path to find your APIClient
+sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
+
+try:
+    from services.api_client import APIClient
+    st.success("APIClient imported successfully!")
+except ImportError as e:
+    st.error(f" Import failed: {e}")
+    raise
+
 import requests
 import time
 from datetime import datetime, timedelta
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-import os
 import json
 from dotenv import load_dotenv
-import sys
-
-sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
-
-from services.api_client import APIClient
 
 load_dotenv()
 
@@ -21,8 +27,6 @@ API_BASE_URL = os.getenv("API_BASE_URL", "https://smart-crop-monitor-gdsg.onrend
 API_TIMEOUT = 30
 
 client = APIClient(base_url=API_BASE_URL, timeout=API_TIMEOUT)
-
-MAX_RETRIES = 3
 
 # Modern CSS with enhanced styling
 st.markdown("""
