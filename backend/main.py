@@ -255,14 +255,10 @@ async def restart_protocols():
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Error restarting protocols: {str(e)}"
         )
-
-
+        
 if __name__ == "__main__":
     uvicorn.run(
-        "main:app",
+        "backend.main:app",
         host="0.0.0.0",
-        port=8000,
-        reload=settings.DEBUG,
-        log_level="info",
-        access_log=True
+        port=int(os.environ.get("PORT", 8000))
     )
