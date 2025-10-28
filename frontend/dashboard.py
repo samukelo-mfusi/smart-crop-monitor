@@ -10,39 +10,38 @@ import plotly.graph_objects as go
 import json
 from dotenv import load_dotenv
 
-# Set up Python path to find APIClient
-current_dir = os.path.dirname(os.path.abspath(__file__))
-src_dir = os.path.join(current_dir, 'src')
-sys.path.insert(0, src_dir)
+# EXACT PATH SETUP FOR YOUR STRUCTURE
+current_file = __file__
+frontend_dir = os.path.dirname(os.path.abspath(current_file))
+src_dir = os.path.join(frontend_dir, 'src')
 
-# Import APIClient with error handling
+# Debug: Show the paths
+st.sidebar.write(f" Current file: {current_file}")
+st.sidebar.write(f" Frontend dir: {frontend_dir}")
+st.sidebar.write(f" Src dir: {src_dir}")
+
+# Add to Python path
+if src_dir not in sys.path:
+    sys.path.insert(0, src_dir)
+
+st.sidebar.write(f" Python path: {sys.path}")
+
+# Import APIClient
 try:
     from services.api_client import APIClient
+    st.sidebar.success(" APIClient imported successfully!")
     APICLIENT_LOADED = True
 except ImportError as e:
+    st.sidebar.error(f" APIClient import failed: {e}")
     APICLIENT_LOADED = False
-    st.error(f"APIClient import failed: {e}")
     
-    # Fallback APIClient
+    # Simple fallback
     class APIClient:
         def __init__(self, base_url=None, timeout=30):
-            self.base_url = base_url or "https://smart-crop-monitor-gdsg.onrender.com"
+            self.base_url = base_url
             self.timeout = timeout
-            self.token = None
-        
-        def login(self, username, password):
-            try:
-                import requests
-                response = requests.post(
-                    f"{self.base_url}/auth/login",
-                    json={"username": username, "password": password},
-                    timeout=self.timeout
-                )
-                if response.status_code == 200:
-                    return True, "Login successful", response.json()
-                return False, "Login failed", None
-            except Exception as e:
-                return False, f"Error: {str(e)}", None
+        def login(self, *args, **kwargs):
+            return False, "APIClient import failed", None
 
 load_dotenv()
 
@@ -53,7 +52,6 @@ API_TIMEOUT = 30
 # Initialize client
 client = APIClient(base_url=API_BASE_URL, timeout=API_TIMEOUT)
 
-# Your CSS starts here
 st.markdown("""
 <style>
     .main { background-color: #f8f9fa; max-width: 100%; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
