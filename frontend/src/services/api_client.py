@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 class APIClient:
     """Client for communicating with the backend API"""
 
-    def __init__(self, base_url: str, timeout: int = 30):
+    def __init__(self, base_url: str, timeout: int = 50):
         self.base_url = base_url.rstrip('/')  # Remove trailing slash if present
         self.timeout = timeout
         self.session = requests.Session()
