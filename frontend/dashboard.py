@@ -63,17 +63,6 @@ st.markdown("""
     .dashboard-card { background: white; border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e9ecef; height: 100%; transition: all 0.3s ease; }
     .dashboard-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.15); }
     .card-header { font-size: 1.1rem; font-weight: 700; color: #2c3e50; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 3px solid #667eea; display: flex; align-items: center; gap: 0.5rem; }
-    .metric-card { background: white; border-radius: 16px; padding: 1.5rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-left: 
-# Modern CSS with enhanced styling
-st.markdown("""
-<style>
-    .main { background-color: #f8f9fa; max-width: 100%; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-    .main-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-    .auth-container { display: flex; justify-content: center; align-items: center; min-height: 100vh; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2rem; }
-    .auth-card { background: white; border-radius: 20px; padding: 3rem; box-shadow: 0 20px 60px rgba(0,0,0,0.15); width: 100%; max-width: 450px; margin: 0 auto; }
-    .dashboard-card { background: white; border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e9ecef; height: 100%; transition: all 0.3s ease; }
-    .dashboard-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.15); }
-    .card-header { font-size: 1.1rem; font-weight: 700; color: #2c3e50; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 3px solid #667eea; display: flex; align-items: center; gap: 0.5rem; }
     .metric-card { background: white; border-radius: 16px; padding: 1.5rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-left: 5px solid #667eea; height: 100%; transition: all 0.3s ease; }
     .metric-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.15); }
     .metric-card.moisture { border-left-color: #3498db; }
