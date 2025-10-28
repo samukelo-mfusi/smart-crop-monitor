@@ -1,11 +1,6 @@
 import streamlit as st
 import sys
 import os
-
-sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
-
-from services.api_client import APIClient
-    
 import requests
 import time
 from datetime import datetime, timedelta
@@ -15,12 +10,36 @@ import plotly.graph_objects as go
 import json
 from dotenv import load_dotenv
 
+# Get the absolute path to the frontend/src directory
+current_file = __file__
+frontend_dir = os.path.dirname(os.path.abspath(current_file))
+src_dir = os.path.join(frontend_dir, 'src')
+
+# Add to Python path
+if src_dir not in sys.path:
+    sys.path.insert(0, src_dir)
+
+st.write(f"🔍 Python path: {sys.path}")  # Debug
+
+try:
+    from services.api_client import APIClient
+    st.success("")
+except ImportError as e:
+    st.error(f"APIClient import failed: {e}")
+    # Simple fallback
+    class APIClient:
+        def __init__(self, base_url=None, timeout=30):
+            self.base_url = base_url
+            self.timeout = timeout
+
 load_dotenv()
 
 API_BASE_URL = "https://smart-crop-monitor-gdsg.onrender.com"
 API_TIMEOUT = 30
 
 client = APIClient(base_url=API_BASE_URL, timeout=API_TIMEOUT)
+
+# Continue with your CSS and rest of the app...
 # Modern CSS with enhanced styling
 st.markdown("""
 <style>
