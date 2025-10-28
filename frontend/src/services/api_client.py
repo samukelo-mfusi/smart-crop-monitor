@@ -65,48 +65,47 @@ class APIClient:
             return None
 
     def login(self, username: str, password: str) -> tuple[bool, str, Optional[Dict]]:
-    """Authenticate user and get token"""
-    try:
-        data = {
-            "username": username,
-            "password": password,
-            "remember_me": False
-        }
-        
-        # Debug: Show the actual URL being used
-        login_url = f"{self.base_url}/auth/login"
-        print(f"🔗 Attempting login at: {login_url}")
-        
-        response = requests.post(
-            login_url,
-            json=data,
-            headers={"Content-Type": "application/json"},
-            timeout=self.timeout
-        )
-
-        if response and response.status_code == 200:
-            token_data = response.json()
-            self.token = token_data.get('access_token')
-            if self.token:
-                return True, "Login successful", token_data
-            else:
-                return False, "No access token in response", None
-        else:
-            error_msg = "Invalid username or password"
-            if response:
-                try:
-                    error_data = response.json()
-                    error_msg = error_data.get('detail', error_msg)
-                except:
-                    error_msg = f"HTTP {response.status_code}: {response.text}"
-            return False, error_msg, None
+        """Authenticate user and get token"""
+        try:
+            data = {
+                "username": username,
+                "password": password,
+                "remember_me": False
+            }
             
-    except requests.exceptions.ConnectionError as e:
-        return False, f"Cannot connect to backend at {self.base_url}. Please check if the server is running.", None
-    except requests.exceptions.Timeout:
-        return False, "Login timeout - backend not responding", None
-    except Exception as e:
-        return False, f"Login error: {str(e)}", None
+            login_url = f"{self.base_url}/auth/login"
+            print(f"🎯 Login attempt to: {login_url}")
+            
+            response = requests.post(
+                login_url,
+                json=data,
+                headers={"Content-Type": "application/json"},
+                timeout=self.timeout
+            )
+
+            if response and response.status_code == 200:
+                token_data = response.json()
+                self.token = token_data.get('access_token')
+                if self.token:
+                    return True, "Login successful", token_data
+                else:
+                    return False, "No access token in response", None
+            else:
+                error_msg = "Invalid username or password"
+                if response:
+                    try:
+                        error_data = response.json()
+                        error_msg = error_data.get('detail', error_msg)
+                    except:
+                        error_msg = f"HTTP {response.status_code}: {response.text}"
+                return False, error_msg, None
+                
+        except requests.exceptions.ConnectionError as e:
+            return False, f"Cannot connect to backend at {self.base_url}", None
+        except requests.exceptions.Timeout:
+            return False, "Login timeout - backend not responding", None
+        except Exception as e:
+            return False, f"Login error: {str(e)}", None
 
     def register(self, user_data: Dict) -> tuple[bool, str]:
         """Register a new user"""
@@ -147,6 +146,80 @@ class APIClient:
         return None
 
     def get_historical_data(self, days: int = 7) -> list:
+        """Get historical data"""
+        response = self.make_request("GET", f"/api/historical-data?days={days}")
+        if response and response.status_code == 200:
+            data = response.json()
+            return data.get('historical_data', [])
+        return []
+
+    def start_irrigation(self, zone: str, duration: int) -> tuple[bool, str]:
+        """Start irrigation for a zone"""
+        data = {
+            "zone": zone,
+            "duration": duration
+        }
+
+        response = self.make_request("POST", "/api/control/irrigate", data)
+
+        if response and response.status_code == 200:
+            return True, "Irrigation started successfully"
+        else:
+            error_msg = "Failed to start irrigation"
+            if response:
+                error_msg = f"HTTP {response.status_code}: {response.text}"
+            return False, error_msg
+
+    def get_alerts(self, acknowledged: bool = False) -> list:
+        """Get system alerts"""
+        response = self.make_request("GET", f"/api/data/alerts?acknowledged={str(acknowledged).lower()}")
+        if response and response.status_code == 200:
+            return response.json()
+        return []
+
+    def acknowledge_alert(self, alert_id: int) -> bool:
+        """Acknowledge an alert"""
+        response = self.make_request("POST", f"/api/alerts/{alert_id}/acknowledge")
+        return response and response.status_code == 200
+
+    def get_system_settings(self) -> Dict:
+        """Get system settings"""
+        response = self.make_request("GET", "/api/system/settings")
+        if response and response.status_code == 200:
+            return response.json().get('settings', {})
+        return {}
+
+    def update_system_setting(self, key: str, value: str) -> bool:
+        """Update system setting"""
+        data = {"setting_value": value}
+        response = self.make_request("PUT", f"/api/system/settings/{key}", data)
+        return response and response.status_code == 200
+
+    def refresh_real_world_data(self) -> tuple[bool, str]:
+        """Trigger real-world data refresh"""
+        response = self.make_request("POST", "/api/data/refresh")
+        if response and response.status_code == 200:
+            return True, "Data refresh started"
+        else:
+            error_msg = "Failed to start data refresh"
+            if response:
+                error_msg = f"HTTP {response.status_code}: {response.text}"
+            return False, error_msg
+
+    def get_data_status(self) -> Optional[Dict]:
+        """Get data refresh status"""
+        response = self.make_request("GET", "/api/data/status")
+        if response and response.status_code == 200:
+            return response.json()
+        return None
+
+    def health_check(self) -> bool:
+        """Check API health"""
+        try:
+            response = self.session.get(f"{self.base_url}/health", timeout=5)
+            return response.status_code == 200
+        except:
+            return False    def get_historical_data(self, days: int = 7) -> list:
         """Get historical data"""
         response = self.make_request("GET", f"/api/historical-data?days={days}")
         if response and response.status_code == 200:
