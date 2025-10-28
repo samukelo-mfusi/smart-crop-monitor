@@ -13,7 +13,7 @@ A complete implementation of an IoT-based smart crop monitoring system that leve
 
 ## Requirements
 
-- Python 3.8+
+- Python 3.11.0+
 - FastAPI
 - Streamlit
 - NASA POWER API access
@@ -88,10 +88,6 @@ streamlit run dashboard.py
 
 
 The application will be available at:
-- **Frontend**: http://localhost:8501
-- **Backend API**: http://localhost:8000
-- **API Documentation**: http://localhost:8000/docs
-
 
 - **Live**: https://smart-crop-monitor.streamlit.app/
 
