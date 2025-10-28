@@ -10,36 +10,60 @@ import plotly.graph_objects as go
 import json
 from dotenv import load_dotenv
 
-# Get the absolute path to the frontend/src directory
-current_file = __file__
-frontend_dir = os.path.dirname(os.path.abspath(current_file))
-src_dir = os.path.join(frontend_dir, 'src')
+# Set up Python path to find APIClient
+current_dir = os.path.dirname(os.path.abspath(__file__))
+src_dir = os.path.join(current_dir, 'src')
+sys.path.insert(0, src_dir)
 
-# Add to Python path
-if src_dir not in sys.path:
-    sys.path.insert(0, src_dir)
-
-st.write(f"🔍 Python path: {sys.path}")  # Debug
-
+# Import APIClient with error handling
 try:
     from services.api_client import APIClient
-    st.success("")
+    APICLIENT_LOADED = True
 except ImportError as e:
+    APICLIENT_LOADED = False
     st.error(f"APIClient import failed: {e}")
-    # Simple fallback
+    
+    # Fallback APIClient
     class APIClient:
         def __init__(self, base_url=None, timeout=30):
-            self.base_url = base_url
+            self.base_url = base_url or "https://smart-crop-monitor-gdsg.onrender.com"
             self.timeout = timeout
+            self.token = None
+        
+        def login(self, username, password):
+            try:
+                import requests
+                response = requests.post(
+                    f"{self.base_url}/auth/login",
+                    json={"username": username, "password": password},
+                    timeout=self.timeout
+                )
+                if response.status_code == 200:
+                    return True, "Login successful", response.json()
+                return False, "Login failed", None
+            except Exception as e:
+                return False, f"Error: {str(e)}", None
 
 load_dotenv()
 
+# Configuration
 API_BASE_URL = "https://smart-crop-monitor-gdsg.onrender.com"
 API_TIMEOUT = 30
 
+# Initialize client
 client = APIClient(base_url=API_BASE_URL, timeout=API_TIMEOUT)
 
-# Continue with your CSS and rest of the app...
+# Your CSS starts here
+st.markdown("""
+<style>
+    .main { background-color: #f8f9fa; max-width: 100%; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    .main-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+    .auth-container { display: flex; justify-content: center; align-items: center; min-height: 100vh; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2rem; }
+    .auth-card { background: white; border-radius: 20px; padding: 3rem; box-shadow: 0 20px 60px rgba(0,0,0,0.15); width: 100%; max-width: 450px; margin: 0 auto; }
+    .dashboard-card { background: white; border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e9ecef; height: 100%; transition: all 0.3s ease; }
+    .dashboard-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.15); }
+    .card-header { font-size: 1.1rem; font-weight: 700; color: #2c3e50; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 3px solid #667eea; display: flex; align-items: center; gap: 0.5rem; }
+    .metric-card { background: white; border-radius: 16px; padding: 1.5rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-left: 
 # Modern CSS with enhanced styling
 st.markdown("""
 <style>
