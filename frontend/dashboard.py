@@ -17,22 +17,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# TEMPORARY FIX - Hardcode the Render URL
 API_BASE_URL = "https://smart-crop-monitor-gdsg.onrender.com"
 API_TIMEOUT = 30
-
-# Debug: Show what URL we're using
-st.sidebar.write(f"🎯 Backend URL: {API_BASE_URL}")
-
-# Test connection immediately
-try:
-    test_response = requests.get(f"{API_BASE_URL}/health", timeout=10)
-    if test_response.status_code == 200:
-        st.sidebar.success("✅ Backend is reachable!")
-    else:
-        st.sidebar.error(f"❌ Backend responded with: HTTP {test_response.status_code}")
-except Exception as e:
-    st.sidebar.error(f"❌ Cannot reach backend: {str(e)}")
 
 client = APIClient(base_url=API_BASE_URL, timeout=API_TIMEOUT)
 # Modern CSS with enhanced styling
