@@ -865,7 +865,7 @@ def render_sidebar():
         st.markdown("""
             <div style="text-align: center; margin-bottom: 2rem; padding: 1rem;">
                 <h2 style="color: green; margin-bottom: 0.5rem; font-size: 1.5rem;">🌱</h2>
-                <p style="color: #27ae60; font-size: 0.9rem; margin-bottom: 0.5rem;">Smart Irrigation</p>
+                <p style="color: #27ae60; font-size: 0.9rem; margin-bottom: 0.5rem;">Smart Crop Monitor</p>
                 <div style="background: #27ae60; padding: 4px 12px; border-radius: 20px; display: inline-block;">
                     <p style="color: white; font-size: 0.7rem; font-weight: 700; margin: 0;">LIVE</p>
                 </div>
