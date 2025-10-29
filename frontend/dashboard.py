@@ -958,17 +958,17 @@ def render_sidebar():
         last_ping = st.session_state.auth.get('last_ping')
         ping_time = "Never" if not last_ping else last_ping.strftime('%H:%M:%S')
         
-        st.markdown(f"""
-            <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 12px; margin-bottom: 1rem;">
-                <div style="font-size: 0.8rem; color: #bdc3c7; margin-bottom: 0.5rem;">Backend Status</div>
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span style="color: #ecf0f1; font-size: 0.8rem; font-weight: 600;">
-                        {backend_status.title()}
-                    </span>
-                    <span style="color: #bdc3c7; font-size: 0.7rem;">{ping_time}</span>
-                </div>
-            </div>
-        """, unsafe_allow_html=True)
+        # st.markdown(f"""
+        #     <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 12px; margin-bottom: 1rem;">
+        #         <div style="font-size: 0.8rem; color: #bdc3c7; margin-bottom: 0.5rem;">Backend Status</div>
+        #         <div style="display: flex; justify-content: space-between; align-items: center;">
+        #             <span style="color: #ecf0f1; font-size: 0.8rem; font-weight: 600;">
+        #                 {backend_status.title()}
+        #             </span>
+        #             <span style="color: #bdc3c7; font-size: 0.7rem;">{ping_time}</span>
+        #         </div>
+        #     </div>
+        # """, unsafe_allow_html=True)
 
         refresh_status = st.session_state.auth.get('data_refresh_status', {})
         last_success = refresh_status.get('last_success')
