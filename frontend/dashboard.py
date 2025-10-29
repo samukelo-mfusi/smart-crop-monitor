@@ -963,7 +963,7 @@ def render_sidebar():
                 <div style="font-size: 0.8rem; color: #bdc3c7; margin-bottom: 0.5rem;">Backend Status</div>
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <span style="color: #ecf0f1; font-size: 0.8rem; font-weight: 600;">
-                        {{backend_status.title()}
+                        {backend_status.title()}
                     </span>
                     <span style="color: #bdc3c7; font-size: 0.7rem;">{ping_time}</span>
                 </div>
