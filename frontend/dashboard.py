@@ -12,22 +12,28 @@ from dotenv import load_dotenv
 
 # Import APIClient
 try:
-    from services.api_client import APIClient
+    from src.services.api_client import APIClient
     st.sidebar.success("Growing Smarter, Not Harder")
     APICLIENT_LOADED = True
 except ImportError as e:
-    st.sidebar.error(f" APIClient import failed: {e}")
-    APICLIENT_LOADED = False
-    
-    # Simple fallback
-    class APIClient:
-        def __init__(self, base_url=None, timeout=30):
-            self.base_url = base_url
-            self.timeout = timeout
-        def login(self, *args, **kwargs):
-            return False, "APIClient import failed", None
-        def register(self, user_data):
-            return False, "APIClient import failed"
+    # Try alternative import paths
+    try:
+        from services.api_client import APIClient
+        st.sidebar.success("Growing Smarter, Not Harder")
+        APICLIENT_LOADED = True
+    except ImportError:
+        st.sidebar.warning("APIClient not found - using fallback")
+        APICLIENT_LOADED = False
+        
+        # Simple fallback
+        class APIClient:
+            def __init__(self, base_url=None, timeout=30):
+                self.base_url = base_url
+                self.timeout = timeout
+            def login(self, *args, **kwargs):
+                return False, "APIClient not available", None
+            def register(self, user_data):
+                return False, "APIClient not available"
 
 load_dotenv()
 
