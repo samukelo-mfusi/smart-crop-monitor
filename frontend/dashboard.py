@@ -851,7 +851,7 @@ def render_register_page():
                     st.error(password_validation["message"])
                 else:
                     # Use the APIClient register method
-                    success, message = client.register({
+                    success, message = register_user({
                         "username": username,
                         "email": email,
                         "full_name": full_name,
