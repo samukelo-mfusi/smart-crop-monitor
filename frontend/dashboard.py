@@ -953,14 +953,7 @@ def render_sidebar():
 
         # Backend status in sidebar
         backend_status = st.session_state.auth.get('backend_status', 'unknown')
-        status_icons = {
-            'healthy': '✅',
-            'unhealthy': '⚠️',
-            'timeout': '🔄', 
-            'offline': '🔌',
-            'error': '❌',
-            'unknown': '🔍'
-        }
+        
         
         last_ping = st.session_state.auth.get('last_ping')
         ping_time = "Never" if not last_ping else last_ping.strftime('%H:%M:%S')
@@ -970,7 +963,7 @@ def render_sidebar():
                 <div style="font-size: 0.8rem; color: #bdc3c7; margin-bottom: 0.5rem;">Backend Status</div>
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <span style="color: #ecf0f1; font-size: 0.8rem; font-weight: 600;">
-                        {status_icons[backend_status]} {backend_status.title()}
+                        {{backend_status.title()}
                     </span>
                     <span style="color: #bdc3c7; font-size: 0.7rem;">{ping_time}</span>
                 </div>
