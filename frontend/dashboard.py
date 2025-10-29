@@ -26,12 +26,16 @@ except ImportError as e:
             self.timeout = timeout
         def login(self, *args, **kwargs):
             return False, "APIClient import failed", None
+        def register(self, user_data):
+            return False, "APIClient import failed"
 
 load_dotenv()
 
 # Configuration
 API_BASE_URL = "https://smart-crop-monitor-gdsg.onrender.com"
+HEALTH_ENDPOINT = "https://smart-crop-monitor-backend.onrender.com/health"
 API_TIMEOUT = 50
+MAX_RETRIES = 3
 
 # Initialize client
 client = APIClient(base_url=API_BASE_URL, timeout=API_TIMEOUT)
@@ -146,9 +150,34 @@ if 'auth' not in st.session_state:
             'in_progress': False,
             'last_success': None
         },
-        'api_errors': []
+        'api_errors': [],
+        'backend_status': 'unknown',
+        'last_ping': None
     }
 
+def ping_backend():
+    """Ping the backend to keep it awake and check status"""
+    try:
+        start_time = time.time()
+        response = requests.get(HEALTH_ENDPOINT, timeout=10)
+        ping_time = round((time.time() - start_time) * 1000, 2)
+        
+        if response.status_code == 200:
+            st.session_state.auth['backend_status'] = 'healthy'
+            st.session_state.auth['last_ping'] = datetime.now()
+            return True, f"Backend is healthy (ping: {ping_time}ms)"
+        else:
+            st.session_state.auth['backend_status'] = 'unhealthy'
+            return False, f"Backend returned status {response.status_code}"
+    except requests.exceptions.Timeout:
+        st.session_state.auth['backend_status'] = 'timeout'
+        return False, "Backend timeout - may be spinning up"
+    except requests.exceptions.ConnectionError:
+        st.session_state.auth['backend_status'] = 'offline'
+        return False, "Backend is offline - starting up..."
+    except Exception as e:
+        st.session_state.auth['backend_status'] = 'error'
+        return False, f"Backend error: {str(e)}"
 
 def log_error(error_type: str, error_message: str):
     error_entry = {
@@ -159,7 +188,6 @@ def log_error(error_type: str, error_message: str):
     st.session_state.auth['api_errors'].append(error_entry)
     if len(st.session_state.auth['api_errors']) > 10:
         st.session_state.auth['api_errors'] = st.session_state.auth['api_errors'][-10:]
-
 
 def make_api_request(url: str, method: str = "GET", data: dict = None, headers: dict = None, retry_count: int = 0):
     try:
@@ -184,12 +212,10 @@ def make_api_request(url: str, method: str = "GET", data: dict = None, headers: 
         log_error("request", f"Request failed: {str(e)}")
         return None
 
-
 def is_valid_email(email: str) -> bool:
     import re
     pattern = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
     return re.match(pattern, email) is not None
-
 
 def validate_password_strength(password: str) -> dict:
     if len(password) < 8:
@@ -208,7 +234,6 @@ def validate_password_strength(password: str) -> dict:
         return {"valid": False, "message": "Password must contain at least one special character"}
 
     return {"valid": True, "message": "Password is strong"}
-
 
 def register_user(user_data: dict) -> tuple:
     try:
@@ -236,9 +261,17 @@ def register_user(user_data: dict) -> tuple:
         log_error("registration", error_msg)
         return False, error_msg
 
-
 def login_user(username: str, password: str, remember_me: bool = False) -> tuple:
     try:
+        # First ping backend to wake it up
+        with st.spinner("Waking up backend..."):
+            ping_success, ping_message = ping_backend()
+            if not ping_success:
+                st.warning(f"Backend is starting up: {ping_message}. This may take 30-60 seconds...")
+                # Try one more time after short delay
+                time.sleep(5)
+                ping_backend()
+
         with st.spinner("Signing you in..."):
             data = {
                 "username": username,
@@ -292,7 +325,6 @@ def login_user(username: str, password: str, remember_me: bool = False) -> tuple
         log_error("login", error_msg)
         return False, error_msg
 
-
 def handle_forgot_password(email: str) -> tuple:
     try:
         with st.spinner("Sending reset instructions..."):
@@ -315,7 +347,6 @@ def handle_forgot_password(email: str) -> tuple:
             return False, error_detail
     except Exception as e:
         return False, f"Error: {str(e)}"
-
 
 def handle_password_reset(token: str, new_password: str, confirm_password: str) -> tuple:
     if new_password != confirm_password:
@@ -350,7 +381,6 @@ def handle_password_reset(token: str, new_password: str, confirm_password: str) 
     except Exception as e:
         return False, f"Error: {str(e)}"
 
-
 def validate_reset_token(token: str) -> tuple:
     try:
         response = requests.post(
@@ -366,7 +396,6 @@ def validate_reset_token(token: str) -> tuple:
     except Exception as e:
         return False, f"Error validating token: {str(e)}"
 
-
 def get_current_user_info():
     try:
         headers = {"Authorization": f"Bearer {st.session_state.auth['token']}"}
@@ -376,7 +405,6 @@ def get_current_user_info():
     except Exception as e:
         log_error("user_info", f"Failed to get user info: {str(e)}")
     return None
-
 
 def make_authenticated_request(endpoint: str, method: str = "GET", data: dict = None):
     if not st.session_state.auth.get('token'):
@@ -401,7 +429,6 @@ def make_authenticated_request(endpoint: str, method: str = "GET", data: dict = 
         log_error("auth_request", f"Authenticated request failed: {str(e)}")
         return None
 
-
 def refresh_dashboard_data():
     try:
         response = make_authenticated_request("/api/dashboard-data")
@@ -420,7 +447,6 @@ def refresh_dashboard_data():
         log_error("dashboard_refresh", error_msg)
         return False
 
-
 def get_data_refresh_status():
     try:
         response = make_authenticated_request("/api/data/status")
@@ -432,7 +458,6 @@ def get_data_refresh_status():
     except Exception as e:
         log_error("status_check", f"Failed to get data status: {str(e)}")
         return None
-
 
 def start_irrigation(zone: str, duration: int):
     try:
@@ -453,7 +478,6 @@ def start_irrigation(zone: str, duration: int):
         log_error("irrigation", error_msg)
         return False, error_msg
 
-
 def get_alerts():
     try:
         response = make_authenticated_request("/api/data/alerts?acknowledged=false")
@@ -464,7 +488,6 @@ def get_alerts():
         log_error("alerts", f"Failed to get alerts: {str(e)}")
         return []
 
-
 def acknowledge_alert(alert_id: int):
     try:
         response = make_authenticated_request(f"/api/alerts/{alert_id}/acknowledge", method="POST")
@@ -472,7 +495,6 @@ def acknowledge_alert(alert_id: int):
     except Exception as e:
         log_error("alert_ack", f"Failed to acknowledge alert {alert_id}: {str(e)}")
         return False
-
 
 def get_sensor_data():
     try:
@@ -483,7 +505,6 @@ def get_sensor_data():
     except Exception as e:
         log_error("sensor_data", f"Failed to get sensor data: {str(e)}")
         return []
-
 
 def get_historical_data(days: int = 7):
     try:
@@ -497,7 +518,6 @@ def get_historical_data(days: int = 7):
         log_error("historical_data", f"Failed to get historical data: {str(e)}")
         return []
 
-
 def get_system_settings():
     try:
         response = make_authenticated_request("/api/system/settings")
@@ -507,7 +527,6 @@ def get_system_settings():
     except Exception as e:
         log_error("settings", f"Failed to get system settings: {str(e)}")
         return {}
-
 
 def update_system_setting(setting_key: str, setting_value: str):
     try:
@@ -519,7 +538,6 @@ def update_system_setting(setting_key: str, setting_value: str):
         log_error("settings_update", f"Failed to update setting {setting_key}: {str(e)}")
         return False
 
-
 def get_moisture_status(moisture_level: float) -> tuple:
     if moisture_level >= 60:
         return "Optimal", "status-wet", "#27ae60"
@@ -527,7 +545,6 @@ def get_moisture_status(moisture_level: float) -> tuple:
         return "Moderate", "status-active", "#f39c12"
     else:
         return "Dry", "status-critical", "#e74c3c"
-
 
 def create_moisture_gauge(value, zone_name):
     fig = go.Figure(go.Indicator(
@@ -562,7 +579,6 @@ def create_moisture_gauge(value, zone_name):
         font={'color': "#2c3e50"}
     )
     return fig
-
 
 def create_historical_chart():
     try:
@@ -607,7 +623,6 @@ def create_historical_chart():
     except Exception as e:
         log_error("chart", f"Error creating historical chart: {str(e)}")
         return None
-
 
 def create_zone_chart(zone_data, title):
     try:
@@ -657,7 +672,6 @@ def create_zone_chart(zone_data, title):
         log_error("zone_chart", f"Error creating zone chart: {str(e)}")
         return go.Figure()
 
-
 def render_auth_page():
     query_params = st.query_params
     reset_token = query_params.get("token", [None])[0]
@@ -675,13 +689,41 @@ def render_auth_page():
     else:
         render_login_page()
 
-
 def render_login_page():
     st.markdown("""
         <div class="welcome-animation">
             <div style="text-align: center; margin-bottom: 2rem;">
                 <h1 style="color:#27ae60; margin-bottom:0.5rem; font-size: 2.5rem;">🌱 Smart Crop Monitor</h1>
                 <h3 style="color:#7f8c8d; font-weight:400; margin-bottom: 2rem;">Growing Smarter, Not Harder</h3>
+            </div>
+        </div>
+    """, unsafe_allow_html=True)
+
+    # Backend status indicator
+    backend_status = st.session_state.auth.get('backend_status', 'unknown')
+    status_colors = {
+        'healthy': '#27ae60',
+        'unhealthy': '#f39c12', 
+        'timeout': '#e74c3c',
+        'offline': '#e74c3c',
+        'error': '#e74c3c',
+        'unknown': '#95a5a6'
+    }
+    
+    status_messages = {
+        'healthy': '✅ Backend is ready',
+        'unhealthy': '⚠️ Backend has issues',
+        'timeout': '🔄 Backend is starting up (30-60s)',
+        'offline': '🔌 Backend is offline',
+        'error': '❌ Backend error',
+        'unknown': '🔍 Checking backend status...'
+    }
+
+    st.markdown(f"""
+        <div style="background: {status_colors[backend_status]}20; border: 1px solid {status_colors[backend_status]}; 
+                    border-radius: 12px; padding: 1rem; margin-bottom: 1.5rem; text-align: center;">
+            <div style="color: {status_colors[backend_status]}; font-weight: 600;">
+                {status_messages[backend_status]}
             </div>
         </div>
     """, unsafe_allow_html=True)
@@ -695,6 +737,17 @@ def render_login_page():
             remember_me = st.checkbox("Remember me", value=st.session_state.auth.get('remember_me', False))
 
         password = st.text_input("🔒 Password", type="password", placeholder="Enter your password")
+
+        # Wake up backend button
+        if backend_status != 'healthy':
+            if st.button("🔧 Wake Up Backend", use_container_width=True, type="secondary"):
+                with st.spinner("Waking up backend..."):
+                    success, message = ping_backend()
+                    if success:
+                        st.success(message)
+                    else:
+                        st.warning(message)
+                    st.rerun()
 
         # Forgot password and login button in same row
         col1, col2 = st.columns([1, 1])
@@ -727,7 +780,6 @@ def render_login_page():
     if st.button("Create Account", use_container_width=True, type="primary"):
         st.session_state.auth['show_register'] = True
         st.rerun()
-
 
 def render_forgot_password_page():
     st.markdown("""
@@ -812,7 +864,6 @@ def render_register_page():
                     else:
                         st.error(message)
 
-
 def render_reset_password_page(token: str):
     st.markdown("""
         <div style="text-align: center; margin-bottom: 2rem;">
@@ -894,6 +945,32 @@ def render_sidebar():
             """<div style="margin-top: 2rem;"><hr style="margin: 1rem 0; border-color: rgba(255,255,255,0.1);"></div>""",
             unsafe_allow_html=True)
 
+        # Backend status in sidebar
+        backend_status = st.session_state.auth.get('backend_status', 'unknown')
+        status_icons = {
+            'healthy': '✅',
+            'unhealthy': '⚠️',
+            'timeout': '🔄', 
+            'offline': '🔌',
+            'error': '❌',
+            'unknown': '🔍'
+        }
+        
+        last_ping = st.session_state.auth.get('last_ping')
+        ping_time = "Never" if not last_ping else last_ping.strftime('%H:%M:%S')
+        
+        st.markdown(f"""
+            <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 12px; margin-bottom: 1rem;">
+                <div style="font-size: 0.8rem; color: #bdc3c7; margin-bottom: 0.5rem;">Backend Status</div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="color: #ecf0f1; font-size: 0.8rem; font-weight: 600;">
+                        {status_icons[backend_status]} {backend_status.title()}
+                    </span>
+                    <span style="color: #bdc3c7; font-size: 0.7rem;">{ping_time}</span>
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
+
         refresh_status = st.session_state.auth.get('data_refresh_status', {})
         last_success = refresh_status.get('last_success')
         in_progress = refresh_status.get('in_progress', False)
@@ -930,10 +1007,21 @@ def render_sidebar():
                    </div>
                """, unsafe_allow_html=True)
 
-        if st.button("🔄 Refresh Data", use_container_width=True):
-            if refresh_dashboard_data():
-                st.success("Dashboard refreshed!")
-            st.rerun()
+        col1, col2 = st.columns(2)
+        with col1:
+            if st.button("🔄 Refresh", use_container_width=True):
+                if refresh_dashboard_data():
+                    st.success("Dashboard refreshed!")
+                st.rerun()
+                
+        with col2:
+            if st.button("🔧 Ping", use_container_width=True, type="secondary"):
+                success, message = ping_backend()
+                if success:
+                    st.success(message)
+                else:
+                    st.warning(message)
+                st.rerun()
 
         last_refresh = st.session_state.auth.get('last_refresh')
         if last_refresh:
@@ -945,7 +1033,6 @@ def render_sidebar():
             st.session_state.auth['user'] = None
             st.session_state.auth['data'] = {}
             st.rerun()
-
 
 def render_header():
     user = st.session_state.auth.get('user', {})
@@ -975,7 +1062,6 @@ def render_header():
         </div>
     </div>
     """, unsafe_allow_html=True)
-
 
 def render_dashboard():
     """Render main dashboard - uses REAL API data only"""
@@ -1184,7 +1270,6 @@ def render_dashboard():
             """, unsafe_allow_html=True)
         st.markdown('</div>', unsafe_allow_html=True)
 
-
 def render_sensor_data():
     """Render sensor data page"""
     render_header()
@@ -1346,61 +1431,6 @@ def render_sensor_data():
     else:
         st.info("No sensor data available yet. Data will appear after the system collects real measurements from APIs.")
 
-
-def create_zone_chart(zone_data, title):
-    """Create a chart for a specific zone's sensor data"""
-    try:
-        # Pivot the data to have sensor types as columns
-        pivot_df = zone_data.pivot_table(
-            index='timestamp',
-            columns='sensor_type',
-            values='value',
-            aggfunc='mean'
-        ).reset_index()
-
-        fig = go.Figure()
-
-        # Define colors for different sensor types
-        colors = {
-            'soil': '#3498db',
-            'temp': '#e74c3c',
-            'humidity': '#2980b9',
-            'light': '#f39c12'
-        }
-
-        # Add traces for each sensor type that exists in the data
-        for sensor_type in pivot_df.columns:
-            if sensor_type != 'timestamp' and sensor_type in colors:
-                # Scale soil moisture to percentage for display
-                y_data = pivot_df[sensor_type] * 100 if sensor_type == 'soil' else pivot_df[sensor_type]
-
-                fig.add_trace(go.Scatter(
-                    x=pivot_df['timestamp'],
-                    y=y_data,
-                    mode='lines+markers',
-                    name=sensor_type.upper(),
-                    line=dict(color=colors[sensor_type], width=2),
-                    marker=dict(size=4)
-                ))
-
-        fig.update_layout(
-            title=title,
-            height=300,
-            margin=dict(l=20, r=20, t=40, b=20),
-            paper_bgcolor='rgba(0,0,0,0)',
-            plot_bgcolor='rgba(0,0,0,0)',
-            showlegend=True,
-            xaxis_title="Time",
-            yaxis_title="Value"
-        )
-
-        return fig
-
-    except Exception as e:
-        log_error("zone_chart", f"Error creating zone chart: {str(e)}")
-        # Return empty figure if error
-        return go.Figure()
-
 def render_irrigation():
     """Render irrigation control page"""
     render_header()
@@ -1481,7 +1511,6 @@ def render_irrigation():
         </ul>
     </div>
     """, unsafe_allow_html=True)
-
 
 def render_analytics():
     """Render analytics page"""
@@ -1575,7 +1604,6 @@ def render_analytics():
 
     st.markdown('</div>', unsafe_allow_html=True)
 
-
 def render_alerts():
     """Render alerts page"""
     render_header()
@@ -1639,7 +1667,6 @@ def render_alerts():
                 <p>All systems are operating normally.</p>
             </div>
         """, unsafe_allow_html=True)
-
 
 def render_settings():
     """Render settings page"""
@@ -1811,9 +1838,14 @@ def render_settings():
 
     st.markdown('</div>', unsafe_allow_html=True)
 
-
 def main():
     """Main application controller"""
+    
+    # Auto-ping backend on app load if not authenticated
+    if not st.session_state.auth['authenticated']:
+        if (not st.session_state.auth.get('last_ping') or 
+            (datetime.now() - st.session_state.auth.get('last_ping', datetime.now())).seconds > 300):  # Ping every 5 minutes
+            ping_backend()
 
     # Check authentication
     if not st.session_state.auth['authenticated']:
@@ -1843,7 +1875,6 @@ def main():
         st.error(f"Error rendering page: {str(e)}")
         log_error("page_render", f"Failed to render {current_page}: {str(e)}")
         st.info("Please try refreshing the page or check the API connection.")
-
 
 if __name__ == "__main__":
     main()
