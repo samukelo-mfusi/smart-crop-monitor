@@ -700,33 +700,33 @@ def render_login_page():
     """, unsafe_allow_html=True)
 
     # Backend status indicator
-    # backend_status = st.session_state.auth.get('backend_status', 'unknown')
-    # status_colors = {
-    #     'healthy': '#27ae60',
-    #     'unhealthy': '#f39c12', 
-    #     'timeout': '#e74c3c',
-    #     'offline': '#e74c3c',
-    #     'error': '#e74c3c',
-    #     'unknown': '#95a5a6'
-    # }
+    backend_status = st.session_state.auth.get('backend_status', 'unknown')
+    status_colors = {
+        'healthy': '#27ae60',
+        'unhealthy': '#f39c12', 
+        'timeout': '#e74c3c',
+        'offline': '#e74c3c',
+        'error': '#e74c3c',
+        'unknown': '#95a5a6'
+    }
     
-    # status_messages = {
-    #     'healthy': '✅ Backend is ready',
-    #     'unhealthy': '⚠️ Backend has issues',
-    #     'timeout': '🔄 Backend is starting up (30-60s)',
-    #     'offline': '🔌 Backend is offline',
-    #     'error': '❌ Backend error',
-    #     'unknown': '🔍 Checking backend status...'
-    # }
+    status_messages = {
+        'healthy': 'Perfect!, Ready to monitor your crops',
+        'unhealthy': 'Just a moment - System is checking sensors...',
+        'timeout': 'Waking up the garden monitor...',
+        'offline': 'Starting your crop monitoring system...',
+        'error': 'Having trouble connecting to sensors',
+        'unknown': 'Checking on your plants...'
+    }
 
-    # st.markdown(f"""
-    #     <div style="background: {status_colors[backend_status]}20; border: 1px solid {status_colors[backend_status]}; 
-    #                 border-radius: 12px; padding: 1rem; margin-bottom: 1.5rem; text-align: center;">
-    #         <div style="color: {status_colors[backend_status]}; font-weight: 600;">
-    #             {status_messages[backend_status]}
-    #         </div>
-    #     </div>
-    # """, unsafe_allow_html=True)
+    st.markdown(f"""
+        <div style="background: {status_colors[backend_status]}20; border: 1px solid {status_colors[backend_status]}; 
+                    border-radius: 12px; padding: 1rem; margin-bottom: 1.5rem; text-align: center;">
+            <div style="color: {status_colors[backend_status]}; font-weight: 600;">
+                {status_messages[backend_status]}
+            </div>
+        </div>
+    """, unsafe_allow_html=True)
 
     with st.form("login_form"):
         col1, col2 = st.columns([2, 1])
